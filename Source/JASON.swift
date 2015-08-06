@@ -98,7 +98,7 @@ extension JSON {
         if object == nil { return self }
         
         if let nsArray = nsArray {
-            return JSON(nsArray.secureSubscript(index))
+            return JSON(nsArray[safe: index])
         }
         
         return JSON(object: nil)
@@ -448,7 +448,7 @@ private extension NSArray {
     
         :returns: The element at the given index or nil
     */
-    func secureSubscript(index: Int) -> AnyObject? {
+    subscript(safe index: Int) -> AnyObject? {
         if index < 0 || index >= count {
             return nil
         }
