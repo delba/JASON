@@ -5,7 +5,6 @@
 <p align="center">
 <a href="https://img.shields.io/cocoapods/v/JASON.svg"><img alt="CocoaPods compatible" src="https://img.shields.io/cocoapods/v/JASON.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
-<a href="https://github.com/delba/JASON/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/delba/JASON.svg"/></a>
 </p>
 
 JASON is a JSON deserializer written in Swift. It offers a nice and comprehensive API without sacrificing performance. The implementation is minimal and easily extendable; the library is tested and thoughtfully documented. JASON is fast. JASON is installable through your favorite dependency manager.
