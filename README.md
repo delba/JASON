@@ -7,7 +7,7 @@
 <a href="https://github.com/delba/JASON/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/delba/JASON.svg"/></a>
 </p>
 
-JASON is a JSON deserializer written in Swift. It offers a nice and comprehensive API without sacrificing performance. The implementation is minimal and easily extendable; the library is tested and thoughtfully documented. JASON is fast. JASON is installable through Carthage.
+JASON is a JSON deserializer written in Swift. It offers a nice and comprehensive API without sacrificing performance. The implementation is minimal and easily extendable; the library is tested and thoughtfully documented. JASON is fast. JASON is installable through your favorite dependency manager.
 
 <p align="center">
 <a href="#features">Features</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#license">License</a>
@@ -15,10 +15,10 @@ JASON is a JSON deserializer written in Swift. It offers a nice and comprehensiv
 
 ## Features
 
-- [x] Built for performance - [`benchmarks`](https://github.com/delba/JASON/tree/benchmarks)
-- [x] User-friendly API 
 - [x] Fully tested and documented
-- [x] Installation via Carthage
+- [x] Fast - [`benchmarks`](https://github.com/delba/JASON/tree/benchmarks)
+- [x] [Installation](#installation) through Carthage or CocoaPods
+- [x] User-friendly API
 - [x] Compatible with Swift 2 - [`swift-2.0`](https://github.com/delba/JASON/tree/swift-2.0)
 - [x] Extensions available - [`extensions`](https://github.com/delba/JASON/tree/extensions)
 
@@ -222,6 +222,8 @@ user.nickname // Vintage Rachel
 
 ## Installation
 
+### Carthage
+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
 You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
@@ -235,6 +237,24 @@ To integrate Alamofire into your Xcode project using Carthage, specify it in you
 
 ```ogdl
 github "delba/JASON" >= 0.1
+```
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
+
+You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate JASON into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+use_frameworks!
+
+pod 'JASON', '~> 0.1'
 ```
 
 ## License
