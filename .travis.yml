@@ -10,4 +10,4 @@ osx_image: xcode6.4
 xcode_sdk: iphonesimulator8.4
 
 script:
-  - xcodebuild test -project JASON.xcodeproj -scheme JASON iOS Tests
+  - xcodebuild test -project JASON.xcodeproj -scheme "JASON iOS Tests"
