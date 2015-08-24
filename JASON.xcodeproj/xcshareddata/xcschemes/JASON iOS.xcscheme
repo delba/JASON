@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
                BuildableName = "JASON.framework"
-               BlueprintName = "JASON"
+               BlueprintName = "JASON iOS"
                ReferencedContainer = "container:JASON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D05C7ED1B3EA79A0050416C"
-               BuildableName = "JASONTests.xctest"
-               BlueprintName = "JASONTests"
+               BuildableName = "JASON iOS Tests.xctest"
+               BlueprintName = "JASON iOS Tests"
                ReferencedContainer = "container:JASON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D05C7ED1B3EA79A0050416C"
-               BuildableName = "JASONTests.xctest"
-               BlueprintName = "JASONTests"
+               BuildableName = "JASON iOS Tests.xctest"
+               BlueprintName = "JASON iOS Tests"
                ReferencedContainer = "container:JASON.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
             BuildableName = "JASON.framework"
-            BlueprintName = "JASON"
+            BlueprintName = "JASON iOS"
             ReferencedContainer = "container:JASON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,7 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
             BuildableName = "JASON.framework"
-            BlueprintName = "JASON"
+            BlueprintName = "JASON iOS"
             ReferencedContainer = "container:JASON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -95,7 +95,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
             BuildableName = "JASON.framework"
-            BlueprintName = "JASON"
+            BlueprintName = "JASON iOS"
             ReferencedContainer = "container:JASON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

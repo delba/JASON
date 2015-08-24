@@ -12,6 +12,11 @@
 		6D05C7F61B3EA79A0050416C /* JASONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7F51B3EA79A0050416C /* JASONTests.swift */; };
 		6D05C8001B3EA7BE0050416C /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
 		6DB807321B52FA2400775DFD /* JASON.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB807311B52FA2400775DFD /* JASON.json */; };
+		6DED0DCC1B8B8E34007B3283 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DED0DC11B8B8E34007B3283 /* JASON.framework */; };
+		6DED0DDA1B8B8E92007B3283 /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
+		6DED0DDB1B8B8E97007B3283 /* JASON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D05C7E81B3EA79A0050416C /* JASON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DED0DDC1B8B9320007B3283 /* JASONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7F51B3EA79A0050416C /* JASONTests.swift */; };
+		6DED0DDD1B8B9329007B3283 /* JASON.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB807311B52FA2400775DFD /* JASON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,17 +27,26 @@
 			remoteGlobalIDString = 6D05C7E21B3EA79A0050416C;
 			remoteInfo = SimplyJSON;
 		};
+		6DED0DCD1B8B8E34007B3283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D05C7DA1B3EA79A0050416C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DED0DC01B8B8E34007B3283;
+			remoteInfo = "JASON OSX";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6D05C7E31B3EA79A0050416C /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D05C7E71B3EA79A0050416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D05C7E81B3EA79A0050416C /* JASON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JASON.h; sourceTree = "<group>"; };
-		6D05C7EE1B3EA79A0050416C /* JASONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JASONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D05C7EE1B3EA79A0050416C /* JASON iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JASON iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D05C7F41B3EA79A0050416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D05C7F51B3EA79A0050416C /* JASONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JASONTests.swift; sourceTree = "<group>"; };
 		6D05C7FF1B3EA7BE0050416C /* JASON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JASON.swift; sourceTree = "<group>"; };
 		6DB807311B52FA2400775DFD /* JASON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JASON.json; sourceTree = "<group>"; };
+		6DED0DC11B8B8E34007B3283 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DED0DCB1B8B8E34007B3283 /* JASON OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JASON OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF495031B516E11006168DF /* JASON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JASON.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +63,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D05C7EF1B3EA79A0050416C /* JASON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DED0DBD1B8B8E34007B3283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DED0DC81B8B8E34007B3283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DED0DCC1B8B8E34007B3283 /* JASON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				6D05C7E31B3EA79A0050416C /* JASON.framework */,
-				6D05C7EE1B3EA79A0050416C /* JASONTests.xctest */,
+				6D05C7EE1B3EA79A0050416C /* JASON iOS Tests.xctest */,
+				6DED0DC11B8B8E34007B3283 /* JASON.framework */,
+				6DED0DCB1B8B8E34007B3283 /* JASON OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,12 +136,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DED0DBE1B8B8E34007B3283 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DED0DDB1B8B8E97007B3283 /* JASON.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6D05C7E21B3EA79A0050416C /* JASON */ = {
+		6D05C7E21B3EA79A0050416C /* JASON iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D05C7F91B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON" */;
+			buildConfigurationList = 6D05C7F91B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON iOS" */;
 			buildPhases = (
 				6D05C7DE1B3EA79A0050416C /* Sources */,
 				6D05C7DF1B3EA79A0050416C /* Frameworks */,
@@ -121,14 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = JASON;
+			name = "JASON iOS";
 			productName = SimplyJSON;
 			productReference = 6D05C7E31B3EA79A0050416C /* JASON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6D05C7ED1B3EA79A0050416C /* JASONTests */ = {
+		6D05C7ED1B3EA79A0050416C /* JASON iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D05C7FC1B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASONTests" */;
+			buildConfigurationList = 6D05C7FC1B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON iOS Tests" */;
 			buildPhases = (
 				6D05C7EA1B3EA79A0050416C /* Sources */,
 				6D05C7EB1B3EA79A0050416C /* Frameworks */,
@@ -139,9 +178,45 @@
 			dependencies = (
 				6D05C7F11B3EA79A0050416C /* PBXTargetDependency */,
 			);
-			name = JASONTests;
+			name = "JASON iOS Tests";
 			productName = SimplyJSONTests;
-			productReference = 6D05C7EE1B3EA79A0050416C /* JASONTests.xctest */;
+			productReference = 6D05C7EE1B3EA79A0050416C /* JASON iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6DED0DC01B8B8E34007B3283 /* JASON OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DED0DD41B8B8E34007B3283 /* Build configuration list for PBXNativeTarget "JASON OSX" */;
+			buildPhases = (
+				6DED0DBC1B8B8E34007B3283 /* Sources */,
+				6DED0DBD1B8B8E34007B3283 /* Frameworks */,
+				6DED0DBE1B8B8E34007B3283 /* Headers */,
+				6DED0DBF1B8B8E34007B3283 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JASON OSX";
+			productName = "JASON OSX";
+			productReference = 6DED0DC11B8B8E34007B3283 /* JASON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6DED0DCA1B8B8E34007B3283 /* JASON OSX Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DED0DD71B8B8E34007B3283 /* Build configuration list for PBXNativeTarget "JASON OSX Tests" */;
+			buildPhases = (
+				6DED0DC71B8B8E34007B3283 /* Sources */,
+				6DED0DC81B8B8E34007B3283 /* Frameworks */,
+				6DED0DC91B8B8E34007B3283 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DED0DCE1B8B8E34007B3283 /* PBXTargetDependency */,
+			);
+			name = "JASON OSX Tests";
+			productName = "JASON OSXTests";
+			productReference = 6DED0DCB1B8B8E34007B3283 /* JASON OSX Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -159,6 +234,12 @@
 					6D05C7ED1B3EA79A0050416C = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
+					6DED0DC01B8B8E34007B3283 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					6DED0DCA1B8B8E34007B3283 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 				};
 			};
 			buildConfigurationList = 6D05C7DD1B3EA79A0050416C /* Build configuration list for PBXProject "JASON" */;
@@ -173,8 +254,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D05C7E21B3EA79A0050416C /* JASON */,
-				6D05C7ED1B3EA79A0050416C /* JASONTests */,
+				6D05C7E21B3EA79A0050416C /* JASON iOS */,
+				6D05C7ED1B3EA79A0050416C /* JASON iOS Tests */,
+				6DED0DC01B8B8E34007B3283 /* JASON OSX */,
+				6DED0DCA1B8B8E34007B3283 /* JASON OSX Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +275,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DB807321B52FA2400775DFD /* JASON.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DED0DBF1B8B8E34007B3283 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DED0DC91B8B8E34007B3283 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DED0DDD1B8B9329007B3283 /* JASON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,13 +312,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DED0DBC1B8B8E34007B3283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DED0DDA1B8B8E92007B3283 /* JASON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DED0DC71B8B8E34007B3283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DED0DDC1B8B9320007B3283 /* JASONTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		6D05C7F11B3EA79A0050416C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D05C7E21B3EA79A0050416C /* JASON */;
+			target = 6D05C7E21B3EA79A0050416C /* JASON iOS */;
 			targetProxy = 6D05C7F01B3EA79A0050416C /* PBXContainerItemProxy */;
+		};
+		6DED0DCE1B8B8E34007B3283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DED0DC01B8B8E34007B3283 /* JASON OSX */;
+			targetProxy = 6DED0DCD1B8B8E34007B3283 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -360,7 +479,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = JASONTests;
+				PRODUCT_NAME = "JASON iOS Tests";
 			};
 			name = Debug;
 		};
@@ -373,7 +492,87 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = JASONTests;
+				PRODUCT_NAME = "JASON iOS Tests";
+			};
+			name = Release;
+		};
+		6DED0DD51B8B8E34007B3283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JASON OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = JASON;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6DED0DD61B8B8E34007B3283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "JASON OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = JASON;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6DED0DD81B8B8E34007B3283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JASON OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "JASON OSX Tests";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6DED0DD91B8B8E34007B3283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JASON OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "JASON OSX Tests";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -389,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D05C7F91B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON" */ = {
+		6D05C7F91B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D05C7FA1B3EA79A0050416C /* Debug */,
@@ -398,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D05C7FC1B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASONTests" */ = {
+		6D05C7FC1B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D05C7FD1B3EA79A0050416C /* Debug */,
@@ -406,6 +605,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6DED0DD41B8B8E34007B3283 /* Build configuration list for PBXNativeTarget "JASON OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DED0DD51B8B8E34007B3283 /* Debug */,
+				6DED0DD61B8B8E34007B3283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6DED0DD71B8B8E34007B3283 /* Build configuration list for PBXNativeTarget "JASON OSX Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DED0DD81B8B8E34007B3283 /* Debug */,
+				6DED0DD91B8B8E34007B3283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

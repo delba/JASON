@@ -4,15 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JASON.xcscheme_^#shared#^_</key>
+		<key>JASON OSX Tests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
-		<key>JASONTests.xcscheme_^#shared#^_</key>
+		<key>JASON OSX.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>JASON iOS Tests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>JASON iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>6D05C7ED1B3EA79A0050416C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DED0DC01B8B8E34007B3283</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DED0DCA1B8B8E34007B3283</key>
 		<dict>
 			<key>primary</key>
 			<true/>

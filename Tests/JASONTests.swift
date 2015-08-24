@@ -24,7 +24,7 @@
 // SOFTWARE.
 //
 
-import UIKit
+import Foundation
 import XCTest
 import JASON
 

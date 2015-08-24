@@ -24,7 +24,7 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for JASON.
 FOUNDATION_EXPORT double JASONVersionNumber;
