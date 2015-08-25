@@ -142,7 +142,7 @@ Property          | Type                   | Default value
 `dictionary`      | `[String: AnyObject]?` |
 `dictionaryValue` | `[String: AnyObject]`  | `[:]`
 
-> You can find more getters on the `extensions branch`
+> You can find more getters on the [`extensions` branch](https://github.com/delba/JASON/tree/extensions)
 
 ##### Using Operators
 
