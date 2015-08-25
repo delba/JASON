@@ -1,20 +1,18 @@
 //
-//  JASON
+//  JASON.swift
 //
-// The MIT License (MIT)
-// 
-// Copyright (c) 2015 Damien D.
-// 
+// Copyright (c) 2015 Damien (http://delba.io)
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -31,35 +29,35 @@ import Foundation
 public struct JSON {
     /// The object on which any subsequent method operates
     public let object: AnyObject?
-    
+
     /**
         Creates an instance of JSON from AnyObject.
-    
+
         - parameter object: An instance of any class
-    
+
         - returns: the created JSON
     */
     public init(_ object: AnyObject?) {
         self.init(object: object)
     }
-    
+
     /**
         Creates an instance of JSON from NSData.
-    
+
         - parameter data: An instance of NSData
-    
+
         - returns: the created JSON
     */
     public init(_ data: NSData?) {
         self.init(object: JSON.objectWithData(data))
     }
-    
+
     /**
         Creates an instance of JSON from AnyObject.
         Takes an explicit parameter name to prevent calls to init(_:) with NSData? when nil is passed.
-    
+
         - parameter object: An instance of any class
-    
+
         - returns: the created JSON
     */
     private init(object: AnyObject?) {
@@ -72,35 +70,35 @@ public struct JSON {
 extension JSON {
     /**
         Creates a new instance of JSON.
-    
+
         - parameter index: A string
-    
+
         - returns: a new instance of JSON or itself is object is nil.
     */
     public subscript(index: String) -> JSON {
         if object == nil { return self }
-        
+
         if let nsDictionary = nsDictionary {
             return JSON(nsDictionary[index])
         }
-        
+
         return JSON(object: nil)
     }
-    
+
     /**
         Creates a new instance of JSON.
-    
+
         - parameter index: A string
-    
+
         - returns: a new instance of JSON or itself is object is nil.
     */
     public subscript(index: Int) -> JSON {
         if object == nil { return self }
-        
+
         if let nsArray = nsArray {
             return JSON(nsArray[safe: index])
         }
-        
+
         return JSON(object: nil)
     }
 }
@@ -130,7 +128,7 @@ extension JSON {
     public var double: Double? { return object as? Double }
     /// The value as a 64-bit floating-point number or 0.0 if not present/convertible
     public var doubleValue: Double { return double ?? 0 }
-    
+
     /// The value as a 32-bit floating-point number or nil if not present/convertible
     public var float: Float? { return object as? Float }
     /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
@@ -253,14 +251,14 @@ public func <! <T: Any>(inout lhs: T!, json: JSON) {
 extension JSON: SequenceType {
     /**
         The required method to conform to the SequenceType protocol.
-    
+
         - returns: a generator over the elements of arrayValue converted to JSON
     */
     public func generate() -> IndexingGenerator<[JSON]> {
         if let nsArray = nsArray {
             return nsArray.map({ JSON($0) }).generate()
         }
-        
+
         return [JSON]().generate()
     }
 }
@@ -271,31 +269,31 @@ extension JSON: SequenceType {
 extension JSON: StringLiteralConvertible {
     /**
         Creates an instance of JSON from a string literal
-    
+
         - parameter stringLiteral: A string literal
-    
+
         - returns: An instance of JSON
     */
     public init(stringLiteral value: StringLiteralType) {
         self.init(value)
     }
-    
+
     /**
         Creates an instance of JSON from a string literal
-    
+
         - parameter extendedGraphemeClusterLiteral: A string literal
-    
+
         - returns: An instance of JSON
     */
     public init(extendedGraphemeClusterLiteral value: StringLiteralType) {
         self.init(value)
     }
-    
+
     /**
         Creates an instance of JSON from a string literal
-    
+
         - parameter unicodeScalarLiteral: A string literal
-    
+
         - returns: An instance of JSON
     */
     public init(unicodeScalarLiteral value: StringLiteralType) {
@@ -307,9 +305,9 @@ extension JSON: StringLiteralConvertible {
 extension JSON: IntegerLiteralConvertible {
     /**
         Creates an instance of JSON from an integer literal.
-    
+
         - parameter integerLiteral: An integer literal
-    
+
         - returns: An instance of JSON
     */
     public init(integerLiteral value: IntegerLiteralType) {
@@ -321,9 +319,9 @@ extension JSON: IntegerLiteralConvertible {
 extension JSON: FloatLiteralConvertible {
     /**
         Creates an instance of JSON from a float literal.
-    
+
         - parameter floatLiteral: A float literal
-    
+
         - returns: An instance of JSON
     */
     public init(floatLiteral value: FloatLiteralType) {
@@ -335,9 +333,9 @@ extension JSON: FloatLiteralConvertible {
 extension JSON: BooleanLiteralConvertible {
     /**
         Creates an instance of JSON from a boolean literal.
-    
+
         - parameter booleanLiteral: A boolean literal
-    
+
         - returns: An instance of JSON
     */
     public init(booleanLiteral value: BooleanLiteralType) {
@@ -349,18 +347,18 @@ extension JSON: BooleanLiteralConvertible {
 extension JSON: DictionaryLiteralConvertible {
     /**
         Creates an instance of JSON from a dictionary literal.
-    
+
         - parameter dictionaryLiteral: A dictionary literal
-        
+
         - returns: An instance of JSON
     */
     public init(dictionaryLiteral elements: (String, AnyObject)...) {
         var dictionary = [String: AnyObject]()
-        
+
         for (key, value) in elements {
             dictionary[key] = value
         }
-        
+
         self.init(dictionary)
     }
 }
@@ -369,9 +367,9 @@ extension JSON: DictionaryLiteralConvertible {
 extension JSON: ArrayLiteralConvertible {
     /**
         Creates an instance of JSON from an array literal.
-    
+
         - parameter arrayLiteral: An array literal
-        
+
         - returns: An instance of JSON
     */
     public init(arrayLiteral elements: AnyObject...) {
@@ -383,9 +381,9 @@ extension JSON: ArrayLiteralConvertible {
 extension JSON: NilLiteralConvertible {
     /**
         Creates an instance of JSON from a nil literal.
-    
+
         - parameter nilLiteral: A nil literal
-    
+
         - returns: An instance of JSON
     */
     public init(nilLiteral: ()) {
@@ -398,9 +396,9 @@ extension JSON: NilLiteralConvertible {
 private extension JSON {
     /**
         Converts an instance of NSData to AnyObject.
-    
+
         - parameter data: An instance of NSData or nil
-    
+
         - returns: An instance of AnyObject or nil
     */
     static func objectWithData(data: NSData?) -> AnyObject? {
@@ -411,15 +409,15 @@ private extension JSON {
                 return nil
             }
         }
-        
+
         return nil
     }
-    
+
     /**
         Given a struct or a class of any type, it returns its default value.
-    
+
         - parameter type: A type
-        
+
         - returns: An instance of the given type or nil
     */
     static func defaultValueFor<T: Any>(type: T.Type) -> T? {
@@ -447,14 +445,14 @@ private extension JSON {
 private extension NSArray {
     /**
         Returns the element at the given index or nil if the index is out of bounds.
-        
+
         - parameter index: An integer
-    
+
         - returns: The element at the given index or nil
     */
     subscript(safe index: Int) -> AnyObject? {
         guard index >= 0 && index < count else { return nil }
-        
+
         return self[index]
     }
 }

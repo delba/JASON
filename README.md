@@ -16,7 +16,7 @@ JASON is a JSON deserializer written in Swift. It offers a nice and comprehensiv
 ## Features
 
 - [x] Built for performance - [`benchmarks`](https://github.com/delba/JASON/tree/benchmarks)
-- [x] User-friendly API 
+- [x] User-friendly API
 - [x] Fully tested and documented
 - [x] Installation via Carthage
 - [x] Extensions available - [`extensions`](https://github.com/delba/JASON/tree/extensions)
@@ -122,7 +122,7 @@ let name = friends["characters"][0]["first_name"].stringValue
 ```
 
 These getters come by two, `json.<type>` and `json.<type>Value`, and returns an optional or a non-optional type, respectively.
- 
+
 If the value can't be converted to the given type, the optional getter will return nil and the non-optional one a default value.
 
 Property          | Type                   | Default value
@@ -142,7 +142,7 @@ Property          | Type                   | Default value
 `dictionary`      | `[String: AnyObject]?` |
 `dictionaryValue` | `[String: AnyObject]`  | `[:]`
 
-> You can find more getters on the `extensions branch` 
+> You can find more getters on the `extensions branch`
 
 ##### Using Operators
 
@@ -238,9 +238,7 @@ github "delba/JASON" "swift-2.0"
 
 ## License
 
-The MIT License (MIT)
-
-Copyright (c) 2015 Damien D.
+Copyright (c) 2015 Damien (http://delba.io)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

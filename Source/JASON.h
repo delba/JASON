@@ -1,9 +1,7 @@
 //
-//  JASON
+//  JASON.h
 //
-// The MIT License (MIT)
-//
-// Copyright (c) 2015 Damien D.
+// Copyright (c) 2015 Damien (http://delba.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -33,5 +31,3 @@ FOUNDATION_EXPORT double JASONVersionNumber;
 FOUNDATION_EXPORT const unsigned char JASONVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <JASON/PublicHeader.h>
-
-
