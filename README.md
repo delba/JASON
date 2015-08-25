@@ -20,7 +20,6 @@ JASON is a JSON deserializer written in Swift. It offers a nice and comprehensiv
 - [x] Support for iOS and OS X
 - [x] Fast - [`benchmarks`](https://github.com/delba/JASON/tree/benchmarks)
 - [x] [Installation](#installation) through Carthage or CocoaPods
-- [x] User-friendly API
 - [x] Compatible with Swift 2 - [`swift-2.0`](https://github.com/delba/JASON/tree/swift-2.0)
 - [x] Extensions available - [`extensions`](https://github.com/delba/JASON/tree/extensions)
 
