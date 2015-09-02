@@ -26,7 +26,63 @@ import UIKit
 import XCTest
 import JASON
 
+extension JSONKeys {
+    static let string = JSONKey<String>("string")
+    static let optionalString = JSONKey<String?>("optionalString")
+    static let int = JSONKey<Int>("int")
+    static let optionalInt = JSONKey<Int?>("optionalInt")
+    static let double = JSONKey<Double>("double")
+    static let optionalDouble = JSONKey<Double?>("optionalDouble")
+    static let float = JSONKey<Float>("float")
+    static let optionalFloat = JSONKey<Float?>("optionalFloat")
+    static let bool = JSONKey<Bool>("bool")
+    static let optionalBool = JSONKey<Bool?>("optionalBool")
+    static let array = JSONKey<[AnyObject]>("array")
+    static let optionalArray = JSONKey<[AnyObject]?>("optionalArray")
+    static let dictionary = JSONKey<[String: AnyObject]>("dictionary")
+    static let optionalDictionary = JSONKey<[String: AnyObject]>("optionalDictionary")
+    static let arrayJSON = JSONKey<[JSON]>("arrayJSON")
+    static let optionalArrayJSON = JSONKey<[JSON]?>("optionalArrayJSON")
+    static let dictionaryJSON = JSONKey<[String: JSON]>("dictionaryJSON")
+    static let optinoalDictionaryJSON = JSONKey<[String: JSON]?>("optionalDictionaryJSON")
+}
+
+
 class JASONTests: XCTestCase {
+    
+    func testStaticSubscripts() {
+        let json: JSON = [
+            "string": "string",
+            "optionalString": "string",
+            "int": 42,
+            "optionalInt": 42,
+            "double": 4.2,
+            "optionalDouble": 4.2,
+            "float": 4.2,
+            "optionalFloat": 4.2,
+            "bool": true,
+            "optionalBool": true,
+            "array": ["string", 42, 4.2, true],
+            "optionalArray": ["string", 42, 4.2, true],
+            "dictionary": ["string": 42],
+            "optionalDictionary": ["string": 42],
+        ]
+        
+        XCTAssertEqual("string", json[.string])
+        XCTAssertEqual("string", json[.optionalString])
+        XCTAssertEqual(42, json[.int])
+        XCTAssertEqual(42, json[.optionalInt])
+        XCTAssertEqual(4.2, json[.double])
+        XCTAssertEqual(4.2, json[.optionalDouble])
+        XCTAssertEqual(4.2, json[.float])
+        XCTAssertEqual(4.2, json[.optionalFloat])
+        XCTAssertEqual(true, json[.bool])
+        XCTAssertEqual(true, json[.optionalBool])
+        XCTAssertEqualArrays(["string", 42, 4.2, true], json[.array])
+        XCTAssertEqualArrays(["string", 42, 4.2, true], json[.optionalArray]!)
+        XCTAssertEqualDictionaries(["string": 42], json[.dictionary])
+        XCTAssertEqualDictionaries(["string": 42], json[.optionalDictionary])
+    }
 
     func testInitWithObject() {
         let object: AnyObject = ["name": "Brandon Walsh"]

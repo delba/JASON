@@ -190,6 +190,115 @@ private extension JSON {
     var nsArray: NSArray? { return object as? NSArray }
 }
 
+// MARK: Static subscripts
+
+public class JSONKeys {}
+
+public class JSONKey<ValueType>: JSONKeys {
+    public let _key: String
+    
+    public init(_ key: String) {
+        self._key = key
+    }
+}
+
+extension JSON {
+    /// The value as a string or nil if not present/convertible
+    public subscript(key: JSONKey<String?>) -> String? {
+        return self[key._key].string
+    }
+    
+    /// The value as a string or "" if not present/convertible
+    public subscript(key: JSONKey<String>) -> String {
+        return self[key._key].stringValue
+    }
+    
+    /// The value as a boolean or nil if not present/convertible
+    public subscript(key: JSONKey<Bool?>) -> Bool? {
+        return self[key._key].bool
+    }
+    
+    /// The value as a boolean or false if not present/convertible
+    public subscript(key: JSONKey<Bool>) -> Bool {
+        return self[key._key].boolValue
+    }
+    
+    /// The value as a 64-bit signed integer or nil if not present/convertible
+    public subscript(key: JSONKey<Int?>) -> Int? {
+        return self[key._key].int
+    }
+    
+    /// The value as a 64-bit signed integer or 0 if not present/convertible
+    public subscript(key: JSONKey<Int>) -> Int {
+        return self[key._key].intValue
+    }
+    
+    /// The value as a 64-bit floating-point number or nil if not present/convertible
+    public subscript(key: JSONKey<Double?>) -> Double? {
+        return self[key._key].double
+    }
+    
+    /// The value as a 64-bit floating-point number or 0.0 if not present/convertible
+    public subscript(key: JSONKey<Double>) -> Double {
+        return self[key._key].doubleValue
+    }
+    
+    /// The value as a 32-bit floating-point number or nil if not present/convertible
+    public subscript(key: JSONKey<Float?>) -> Float? {
+        return self[key._key].float
+    }
+    
+    /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
+    public subscript(key: JSONKey<Float>) -> Float {
+        return self[key._key].floatValue
+    }
+    
+}
+
+extension JSON {
+    /// The value as an array or nil if not present/convertible
+    public subscript(key: JSONKey<[AnyObject]?>) -> [AnyObject]? {
+        return self[key._key].array
+    }
+    
+    /// The value as an array or an empty array if not present/convertible
+    public subscript(key: JSONKey<[AnyObject]>) -> [AnyObject] {
+        return self[key._key].arrayValue
+    }
+    
+    /// The value as an array or nil if not present/convertible
+    public subscript(key: JSONKey<[JSON]?>) -> [JSON]? {
+        return self[key._key].jsonArray
+    }
+    
+    /// The value as an array or an empty array if not present/convertible
+    public subscript(key: JSONKey<[JSON]>) -> [JSON] {
+        return self[key._key].jsonArrayValue
+    }
+}
+
+extension JSON {
+    /// The value as a dictionary or nil if not present/convertible
+    public subscript(key: JSONKey<[String: AnyObject]?>) -> [String: AnyObject]? {
+        return self[key._key].dictionary
+    }
+    
+    /// The value as a dictionary or an empty dictionary if not present/convertible
+    public subscript(key: JSONKey<[String: AnyObject]>) -> [String: AnyObject] {
+        return self[key._key].dictionaryValue
+    }
+    
+    /// The value as a dictionary or nil if not present/convertible
+    public subscript(key: JSONKey<[String: JSON]?>) -> [String: JSON]? {
+        return self[key._key].jsonDictionary
+    }
+    
+    /// The value as a dictionary or an empty dictionary if not present/convertible
+    public subscript(key: JSONKey<[String: JSON]>) -> [String: JSON] {
+        return self[key._key].jsonDictionaryValue
+    }
+}
+
 // MARK: Operators
 
 infix operator <| {
