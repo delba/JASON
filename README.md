@@ -236,6 +236,24 @@ To integrate Alamofire into your Xcode project using Carthage, specify it in you
 github "delba/JASON" "swift-2.0"
 ```
 
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
+
+You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate JASON into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+use_frameworks!
+
+pod 'JASON', :git => 'https://github.com/delba/JASON.git', :branch => 'swift-2.0'
+```
+
 ## License
 
 Copyright (c) 2015 Damien (http://delba.io)
