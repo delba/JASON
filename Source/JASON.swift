@@ -254,12 +254,15 @@ extension JSON: SequenceType {
 
         - returns: a generator over the elements of arrayValue converted to JSON
     */
-    public func generate() -> IndexingGenerator<[JSON]> {
-        if let nsArray = nsArray {
-            return nsArray.map({ JSON($0) }).generate()
+    public func generate() -> AnyGenerator<JSON> {
+        guard let generator = nsArray?.generate() else {
+            return anyGenerator({ nil })
         }
-
-        return [JSON]().generate()
+        
+        return anyGenerator {
+            print("before conversion to json")
+            return JSON(generator.next())
+        }
     }
 }
 
