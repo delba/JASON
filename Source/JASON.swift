@@ -255,13 +255,18 @@ extension JSON: SequenceType {
         - returns: a generator over the elements of arrayValue converted to JSON
     */
     public func generate() -> AnyGenerator<JSON> {
-        guard let generator = nsArray?.generate() else {
-            return anyGenerator({ nil })
+        guard let array = nsArray else {
+            return anyGenerator { nil }
         }
         
+        var index = 0
+        
         return anyGenerator {
-            print("before conversion to json")
-            return JSON(generator.next())
+            if index < array.count {
+                return JSON(array[index++])
+            } else {
+                return nil
+            }
         }
     }
 }
