@@ -175,6 +175,35 @@ class JASONTests: XCTestCase {
         XCTAssertNil(json["name"].dictionary)
         XCTAssertEqualDictionaries([String: AnyObject](), json["name"].dictionaryValue)
     }
+    
+    func testJsonDictionary() {
+        let json: JSON = [
+            "name": "Brandon Walsh",
+            "mother": [
+                "name": "Cindy Walsh"
+            ]
+        ]
+        
+        var key: String
+        
+        // Value is present and convertible
+        
+        key = "mother"
+        XCTAssertEqual("Cindy Walsh", json[key].jsonDictionary!["name"]!.string!)
+        XCTAssertEqual("Cindy Walsh", json[key].jsonDictionaryValue["name"]!.stringValue)
+
+        // Value is not present
+
+        key = "father"
+        XCTAssert(json[key].jsonDictionary == nil)
+        XCTAssert(json[key].dictionaryValue.isEmpty)
+
+        // Value is not convertible
+
+        key = "name"
+        XCTAssert(json[key].jsonDictionary == nil)
+        XCTAssert(json[key].jsonDictionaryValue.isEmpty)
+    }
 
     func testArray() {
         let json: JSON = [
@@ -196,6 +225,28 @@ class JASONTests: XCTestCase {
 
         XCTAssertNil(json["name"].array)
         XCTAssertEqualArrays([AnyObject](), json["name"].arrayValue)
+    }
+    
+    func testJsonArray() {
+        let json: JSON = [
+            "name": "Brandon Walsh",
+            "friends": ["Steve Sanders", "Dylan McKay"]
+        ]
+        
+        // Value is present and convertible
+
+        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArray!.map{$0.stringValue})
+        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArrayValue.map{$0.stringValue})
+
+        // Value is not present
+
+        XCTAssert(json["romances"].jsonArray == nil)
+        XCTAssert(json["romances"].jsonArrayValue.isEmpty)
+
+        // Value is not convertible
+
+        XCTAssert(json["name"].jsonArray == nil)
+        XCTAssert(json["name"].jsonArrayValue.isEmpty)
     }
 
     func testStringOperators() {

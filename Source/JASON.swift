@@ -153,6 +153,13 @@ extension JSON {
     public var dictionaryValue: [String: AnyObject] { return dictionary ?? [:] }
 }
 
+extension JSON {
+    /// The value as a dictionary or nil if not present/convertible
+    public var jsonDictionary: [String: JSON]? { return dictionary?.reduceValues{ JSON($0) }}
+    /// The value as a dictionary or an empty dictionary if not present/convertible
+    public var jsonDictionaryValue: [String: JSON] { return jsonDictionary ?? [:] }
+}
+
 // MARK: Array
 
 extension JSON {
@@ -160,6 +167,13 @@ extension JSON {
     public var array: [AnyObject]? { return object as? [AnyObject] }
     /// The value as an array or an empty array if not present/convertible
     public var arrayValue: [AnyObject] { return array ?? [] }
+}
+
+extension JSON {
+    /// The value as an array or nil if not present/convertible
+    public var jsonArray: [JSON]? { return array?.map{ JSON($0) } }
+    /// The value as an array or an empty array if not present/convertible
+    public var jsonArrayValue: [JSON] { return jsonArray ?? [] }
 }
 
 // MARK: NSDictionary
@@ -460,5 +474,14 @@ private extension NSArray {
         }
 
         return self[index]
+    }
+}
+
+private extension Dictionary {
+    func reduceValues <T: Any>(transform: (value: Value) -> T) -> [Key: T] {
+        return reduce(self, [Key: T]()) { (var dictionary, kv) in
+            dictionary[kv.0] = transform(value: kv.1)
+            return dictionary
+        }
     }
 }
