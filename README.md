@@ -125,22 +125,26 @@ These getters come by two, `json.<type>` and `json.<type>Value`, and returns an 
 
 If the value can't be converted to the given type, the optional getter will return nil and the non-optional one a default value.
 
-Property          | Type                   | Default value
------------------ | ---------------------- | -------------
-`string`          | `String?`              |
-`stringValue`     | `String`               | `""`
-`bool`            | `Bool?`                |
-`boolValue`       | `Bool`                 | `false`
-`int`             | `Int?`                 |
-`intValue`        | `Int`                  | `0`
-`double`          | `Double?`              |
-`doubleValue`     | `Double`               | `0.0`
-`float`           | `Float?`               |
-`floatValue`      | `Float`                | `0.0`
-`array`           | `[AnyObject]?`         |
-`arrayValue`      | `[AnyObject]`          | `[]`
-`dictionary`      | `[String: AnyObject]?` |
-`dictionaryValue` | `[String: AnyObject]`  | `[:]`
+Property              | Type                   | Default value
+-----------------     | ---------------------- | -------------
+`string`              | `String?`              |
+`stringValue`         | `String`               | `""`
+`bool`                | `Bool?`                |
+`boolValue`           | `Bool`                 | `false`
+`int`                 | `Int?`                 |
+`intValue`            | `Int`                  | `0`
+`double`              | `Double?`              |
+`doubleValue`         | `Double`               | `0.0`
+`float`               | `Float?`               |
+`floatValue`          | `Float`                | `0.0`
+`array`               | `[AnyObject]?`         |
+`arrayValue`          | `[AnyObject]`          | `[]`
+`jsonArray`           | `[JSON]?`              |
+`jsonArrayValue`      | `[JSON]`               | `[]`
+`dictionary`          | `[String: AnyObject]?` |
+`dictionaryValue`     | `[String: AnyObject]`  | `[:]`
+`jsonDictionary`      | `[String: JSON]?`      |
+`jsonDictionaryValue` | `[String: JSON]`       | `[:]`
 
 > You can find more getters on the [`extensions` branch](https://github.com/delba/JASON/tree/extensions)
 
