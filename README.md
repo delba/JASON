@@ -3,8 +3,9 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
-<a href="https://github.com/delba/JASON/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/delba/JASON.svg"/></a>
+    <a href="https://travis-ci.org/delba/JASON"><img alt="Travis Status" src="https://img.shields.io/travis/delba/JASON.svg"/></a>
+    <a href="https://img.shields.io/cocoapods/v/JASON.svg"><img alt="CocoaPods compatible" src="https://img.shields.io/cocoapods/v/JASON.svg"/></a>
+    <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
 </p>
 
 JASON is a JSON deserializer written in Swift. It offers a nice and comprehensive API without sacrificing performance. The implementation is minimal and easily extendable; the library is tested and thoughtfully documented. JASON is fast. JASON is installable through Carthage.
@@ -234,7 +235,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate JASON into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "delba/JASON" >= 1.0
