@@ -4,25 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JASON OSX Tests.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>JASON OSX.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>JASON iOS Tests.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>JASON iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>JASON tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>JASON watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -33,6 +33,41 @@
 			<true/>
 		</dict>
 		<key>6D05C7ED1B3EA79A0050416C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C68831C8C5510005782C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C688C1C8C5510005782C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C689F1C8C5528005782C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C68AC1C8C5539005782C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C68B51C8C5539005782C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C68C81C8C5549005782C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D7C68D11C8C5549005782C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

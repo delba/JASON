@@ -7,48 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D05C7E91B3EA79A0050416C /* JASON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D05C7E81B3EA79A0050416C /* JASON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D05C7EF1B3EA79A0050416C /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D05C7E31B3EA79A0050416C /* JASON.framework */; };
-		6D05C7F61B3EA79A0050416C /* JASONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7F51B3EA79A0050416C /* JASONTests.swift */; };
-		6D05C8001B3EA7BE0050416C /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
-		6DB807321B52FA2400775DFD /* JASON.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB807311B52FA2400775DFD /* JASON.json */; };
+		6D7C688E1C8C5510005782C9 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C68841C8C5510005782C9 /* JASON.framework */; };
+		6D7C68B71C8C5539005782C9 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C68AD1C8C5539005782C9 /* JASON.framework */; };
+		6D7C68D31C8C5549005782C9 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C68C91C8C5549005782C9 /* JASON.framework */; };
+		6D7C68E01C8C558F005782C9 /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
+		6D7C68E11C8C5590005782C9 /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
+		6D7C68E21C8C5593005782C9 /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
+		6D7C68E31C8C5594005782C9 /* JASON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7FF1B3EA7BE0050416C /* JASON.swift */; };
+		6D7C68E41C8C559A005782C9 /* JASON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D05C7E81B3EA79A0050416C /* JASON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7C68E51C8C559C005782C9 /* JASON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D05C7E81B3EA79A0050416C /* JASON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7C68E61C8C559D005782C9 /* JASON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D05C7E81B3EA79A0050416C /* JASON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7C68E71C8C559E005782C9 /* JASON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D05C7E81B3EA79A0050416C /* JASON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7C68EC1C8C6501005782C9 /* JASON.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB807311B52FA2400775DFD /* JASON.json */; };
+		6D7C68ED1C8C6501005782C9 /* JASONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7F51B3EA79A0050416C /* JASONTests.swift */; };
+		6D7C68EE1C8C6502005782C9 /* JASON.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB807311B52FA2400775DFD /* JASON.json */; };
+		6D7C68EF1C8C6502005782C9 /* JASONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7F51B3EA79A0050416C /* JASONTests.swift */; };
+		6D7C68F01C8C6503005782C9 /* JASON.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB807311B52FA2400775DFD /* JASON.json */; };
+		6D7C68F11C8C6503005782C9 /* JASONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05C7F51B3EA79A0050416C /* JASONTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6D05C7F01B3EA79A0050416C /* PBXContainerItemProxy */ = {
+		6D7C688F1C8C5510005782C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6D05C7DA1B3EA79A0050416C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6D05C7E21B3EA79A0050416C;
-			remoteInfo = SimplyJSON;
+			remoteGlobalIDString = 6D7C68831C8C5510005782C9;
+			remoteInfo = "JASON iOS";
+		};
+		6D7C68B81C8C5539005782C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D05C7DA1B3EA79A0050416C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D7C68AC1C8C5539005782C9;
+			remoteInfo = "JASON tvOS";
+		};
+		6D7C68D41C8C5549005782C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D05C7DA1B3EA79A0050416C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D7C68C81C8C5549005782C9;
+			remoteInfo = "JASON OSX";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D05C7E31B3EA79A0050416C /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D05C7E71B3EA79A0050416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D05C7E81B3EA79A0050416C /* JASON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JASON.h; sourceTree = "<group>"; };
-		6D05C7EE1B3EA79A0050416C /* JASONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JASONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D05C7F41B3EA79A0050416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D05C7F51B3EA79A0050416C /* JASONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JASONTests.swift; sourceTree = "<group>"; };
 		6D05C7FF1B3EA7BE0050416C /* JASON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JASON.swift; sourceTree = "<group>"; };
+		6D7C68841C8C5510005782C9 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C688D1C8C5510005782C9 /* JASON iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JASON iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C68A01C8C5528005782C9 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C68AD1C8C5539005782C9 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C68B61C8C5539005782C9 /* JASON tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JASON tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C68C91C8C5549005782C9 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C68D21C8C5549005782C9 /* JASON OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JASON OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB807311B52FA2400775DFD /* JASON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JASON.json; sourceTree = "<group>"; };
 		6DF495031B516E11006168DF /* JASON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JASON.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6D05C7DF1B3EA79A0050416C /* Frameworks */ = {
+		6D7C68801C8C5510005782C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D05C7EB1B3EA79A0050416C /* Frameworks */ = {
+		6D7C688A1C8C5510005782C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D05C7EF1B3EA79A0050416C /* JASON.framework in Frameworks */,
+				6D7C688E1C8C5510005782C9 /* JASON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C689C1C8C5528005782C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68A91C8C5539005782C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68B31C8C5539005782C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68B71C8C5539005782C9 /* JASON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68C51C8C5549005782C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68CF1C8C5549005782C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68D31C8C5549005782C9 /* JASON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,18 +126,23 @@
 		6D05C7D91B3EA79A0050416C = {
 			isa = PBXGroup;
 			children = (
-				6DF495031B516E11006168DF /* JASON.playground */,
+				6D05C7E41B3EA79A0050416C /* Products */,
 				6D05C7E51B3EA79A0050416C /* Source */,
 				6D05C7F21B3EA79A0050416C /* Tests */,
-				6D05C7E41B3EA79A0050416C /* Products */,
+				6DF495031B516E11006168DF /* JASON.playground */,
 			);
 			sourceTree = "<group>";
 		};
 		6D05C7E41B3EA79A0050416C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D05C7E31B3EA79A0050416C /* JASON.framework */,
-				6D05C7EE1B3EA79A0050416C /* JASONTests.xctest */,
+				6D7C68841C8C5510005782C9 /* JASON.framework */,
+				6D7C688D1C8C5510005782C9 /* JASON iOS Tests.xctest */,
+				6D7C68A01C8C5528005782C9 /* JASON.framework */,
+				6D7C68AD1C8C5539005782C9 /* JASON.framework */,
+				6D7C68B61C8C5539005782C9 /* JASON tvOS Tests.xctest */,
+				6D7C68C91C8C5549005782C9 /* JASON.framework */,
+				6D7C68D21C8C5549005782C9 /* JASON OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,9 +150,8 @@
 		6D05C7E51B3EA79A0050416C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6D7C68E81C8C57A6005782C9 /* Supporting Files */,
 				6D05C7FF1B3EA7BE0050416C /* JASON.swift */,
-				6D05C7E81B3EA79A0050416C /* JASON.h */,
-				6D05C7E71B3EA79A0050416C /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -87,61 +159,192 @@
 		6D05C7F21B3EA79A0050416C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6D05C7F51B3EA79A0050416C /* JASONTests.swift */,
+				6D7C68E91C8C57B2005782C9 /* Supporting Files */,
 				6DB807311B52FA2400775DFD /* JASON.json */,
-				6D05C7F41B3EA79A0050416C /* Info.plist */,
+				6D05C7F51B3EA79A0050416C /* JASONTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		6D7C68E81C8C57A6005782C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D05C7E71B3EA79A0050416C /* Info.plist */,
+				6D05C7E81B3EA79A0050416C /* JASON.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D7C68E91C8C57B2005782C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D05C7F41B3EA79A0050416C /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6D05C7E01B3EA79A0050416C /* Headers */ = {
+		6D7C68811C8C5510005782C9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D05C7E91B3EA79A0050416C /* JASON.h in Headers */,
+				6D7C68E41C8C559A005782C9 /* JASON.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C689D1C8C5528005782C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68E51C8C559C005782C9 /* JASON.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68AA1C8C5539005782C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68E61C8C559D005782C9 /* JASON.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68C61C8C5549005782C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68E71C8C559E005782C9 /* JASON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6D05C7E21B3EA79A0050416C /* JASON */ = {
+		6D7C68831C8C5510005782C9 /* JASON iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D05C7F91B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON" */;
+			buildConfigurationList = 6D7C68991C8C5510005782C9 /* Build configuration list for PBXNativeTarget "JASON iOS" */;
 			buildPhases = (
-				6D05C7DE1B3EA79A0050416C /* Sources */,
-				6D05C7DF1B3EA79A0050416C /* Frameworks */,
-				6D05C7E01B3EA79A0050416C /* Headers */,
-				6D05C7E11B3EA79A0050416C /* Resources */,
+				6D7C687F1C8C5510005782C9 /* Sources */,
+				6D7C68801C8C5510005782C9 /* Frameworks */,
+				6D7C68811C8C5510005782C9 /* Headers */,
+				6D7C68821C8C5510005782C9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = JASON;
-			productName = SimplyJSON;
-			productReference = 6D05C7E31B3EA79A0050416C /* JASON.framework */;
+			name = "JASON iOS";
+			productName = "JASON iOS";
+			productReference = 6D7C68841C8C5510005782C9 /* JASON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6D05C7ED1B3EA79A0050416C /* JASONTests */ = {
+		6D7C688C1C8C5510005782C9 /* JASON iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D05C7FC1B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASONTests" */;
+			buildConfigurationList = 6D7C689A1C8C5510005782C9 /* Build configuration list for PBXNativeTarget "JASON iOS Tests" */;
 			buildPhases = (
-				6D05C7EA1B3EA79A0050416C /* Sources */,
-				6D05C7EB1B3EA79A0050416C /* Frameworks */,
-				6D05C7EC1B3EA79A0050416C /* Resources */,
+				6D7C68891C8C5510005782C9 /* Sources */,
+				6D7C688A1C8C5510005782C9 /* Frameworks */,
+				6D7C688B1C8C5510005782C9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6D05C7F11B3EA79A0050416C /* PBXTargetDependency */,
+				6D7C68901C8C5510005782C9 /* PBXTargetDependency */,
 			);
-			name = JASONTests;
-			productName = SimplyJSONTests;
-			productReference = 6D05C7EE1B3EA79A0050416C /* JASONTests.xctest */;
+			name = "JASON iOS Tests";
+			productName = "JASON iOSTests";
+			productReference = 6D7C688D1C8C5510005782C9 /* JASON iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D7C689F1C8C5528005782C9 /* JASON watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D7C68A51C8C5528005782C9 /* Build configuration list for PBXNativeTarget "JASON watchOS" */;
+			buildPhases = (
+				6D7C689B1C8C5528005782C9 /* Sources */,
+				6D7C689C1C8C5528005782C9 /* Frameworks */,
+				6D7C689D1C8C5528005782C9 /* Headers */,
+				6D7C689E1C8C5528005782C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JASON watchOS";
+			productName = "JASON watchOS";
+			productReference = 6D7C68A01C8C5528005782C9 /* JASON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D7C68AC1C8C5539005782C9 /* JASON tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D7C68BE1C8C5539005782C9 /* Build configuration list for PBXNativeTarget "JASON tvOS" */;
+			buildPhases = (
+				6D7C68A81C8C5539005782C9 /* Sources */,
+				6D7C68A91C8C5539005782C9 /* Frameworks */,
+				6D7C68AA1C8C5539005782C9 /* Headers */,
+				6D7C68AB1C8C5539005782C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JASON tvOS";
+			productName = "JASON tvOS";
+			productReference = 6D7C68AD1C8C5539005782C9 /* JASON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D7C68B51C8C5539005782C9 /* JASON tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D7C68C11C8C5539005782C9 /* Build configuration list for PBXNativeTarget "JASON tvOS Tests" */;
+			buildPhases = (
+				6D7C68B21C8C5539005782C9 /* Sources */,
+				6D7C68B31C8C5539005782C9 /* Frameworks */,
+				6D7C68B41C8C5539005782C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D7C68B91C8C5539005782C9 /* PBXTargetDependency */,
+			);
+			name = "JASON tvOS Tests";
+			productName = "JASON tvOSTests";
+			productReference = 6D7C68B61C8C5539005782C9 /* JASON tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D7C68C81C8C5549005782C9 /* JASON OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D7C68DA1C8C5549005782C9 /* Build configuration list for PBXNativeTarget "JASON OSX" */;
+			buildPhases = (
+				6D7C68C41C8C5549005782C9 /* Sources */,
+				6D7C68C51C8C5549005782C9 /* Frameworks */,
+				6D7C68C61C8C5549005782C9 /* Headers */,
+				6D7C68C71C8C5549005782C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JASON OSX";
+			productName = "JASON OSX";
+			productReference = 6D7C68C91C8C5549005782C9 /* JASON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D7C68D11C8C5549005782C9 /* JASON OSX Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D7C68DD1C8C5549005782C9 /* Build configuration list for PBXNativeTarget "JASON OSX Tests" */;
+			buildPhases = (
+				6D7C68CE1C8C5549005782C9 /* Sources */,
+				6D7C68CF1C8C5549005782C9 /* Frameworks */,
+				6D7C68D01C8C5549005782C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D7C68D51C8C5549005782C9 /* PBXTargetDependency */,
+			);
+			name = "JASON OSX Tests";
+			productName = "JASON OSXTests";
+			productReference = 6D7C68D21C8C5549005782C9 /* JASON OSX Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -151,15 +354,30 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Damien;
 				TargetAttributes = {
-					6D05C7E21B3EA79A0050416C = {
-						CreatedOnToolsVersion = 6.3.2;
+					6D7C68831C8C5510005782C9 = {
+						CreatedOnToolsVersion = 7.2;
 					};
-					6D05C7ED1B3EA79A0050416C = {
-						CreatedOnToolsVersion = 6.3.2;
+					6D7C688C1C8C5510005782C9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6D7C689F1C8C5528005782C9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6D7C68AC1C8C5539005782C9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6D7C68B51C8C5539005782C9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6D7C68C81C8C5549005782C9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6D7C68D11C8C5549005782C9 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -175,54 +393,146 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D05C7E21B3EA79A0050416C /* JASON */,
-				6D05C7ED1B3EA79A0050416C /* JASONTests */,
+				6D7C68831C8C5510005782C9 /* JASON iOS */,
+				6D7C688C1C8C5510005782C9 /* JASON iOS Tests */,
+				6D7C68C81C8C5549005782C9 /* JASON OSX */,
+				6D7C68D11C8C5549005782C9 /* JASON OSX Tests */,
+				6D7C68AC1C8C5539005782C9 /* JASON tvOS */,
+				6D7C68B51C8C5539005782C9 /* JASON tvOS Tests */,
+				6D7C689F1C8C5528005782C9 /* JASON watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6D05C7E11B3EA79A0050416C /* Resources */ = {
+		6D7C68821C8C5510005782C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D05C7EC1B3EA79A0050416C /* Resources */ = {
+		6D7C688B1C8C5510005782C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB807321B52FA2400775DFD /* JASON.json in Resources */,
+				6D7C68EC1C8C6501005782C9 /* JASON.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C689E1C8C5528005782C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68AB1C8C5539005782C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68B41C8C5539005782C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68F01C8C6503005782C9 /* JASON.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68C71C8C5549005782C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68D01C8C5549005782C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68EE1C8C6502005782C9 /* JASON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6D05C7DE1B3EA79A0050416C /* Sources */ = {
+		6D7C687F1C8C5510005782C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D05C8001B3EA7BE0050416C /* JASON.swift in Sources */,
+				6D7C68E01C8C558F005782C9 /* JASON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D05C7EA1B3EA79A0050416C /* Sources */ = {
+		6D7C68891C8C5510005782C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D05C7F61B3EA79A0050416C /* JASONTests.swift in Sources */,
+				6D7C68ED1C8C6501005782C9 /* JASONTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C689B1C8C5528005782C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68E11C8C5590005782C9 /* JASON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68A81C8C5539005782C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68E21C8C5593005782C9 /* JASON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68B21C8C5539005782C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68F11C8C6503005782C9 /* JASONTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68C41C8C5549005782C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68E31C8C5594005782C9 /* JASON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D7C68CE1C8C5549005782C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7C68EF1C8C6502005782C9 /* JASONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6D05C7F11B3EA79A0050416C /* PBXTargetDependency */ = {
+		6D7C68901C8C5510005782C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D05C7E21B3EA79A0050416C /* JASON */;
-			targetProxy = 6D05C7F01B3EA79A0050416C /* PBXContainerItemProxy */;
+			target = 6D7C68831C8C5510005782C9 /* JASON iOS */;
+			targetProxy = 6D7C688F1C8C5510005782C9 /* PBXContainerItemProxy */;
+		};
+		6D7C68B91C8C5539005782C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D7C68AC1C8C5539005782C9 /* JASON tvOS */;
+			targetProxy = 6D7C68B81C8C5539005782C9 /* PBXContainerItemProxy */;
+		};
+		6D7C68D51C8C5549005782C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D7C68C81C8C5549005782C9 /* JASON OSX */;
+			targetProxy = 6D7C68D41C8C5549005782C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -265,7 +575,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -307,7 +618,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,72 +629,244 @@
 			};
 			name = Release;
 		};
-		6D05C7FA1B3EA79A0050416C /* Debug */ = {
+		6D7C68951C8C5510005782C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "delba.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.delba.JASON;
 				PRODUCT_NAME = JASON;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		6D05C7FB1B3EA79A0050416C /* Release */ = {
+		6D7C68961C8C5510005782C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "delba.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.delba.JASON;
 				PRODUCT_NAME = JASON;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		6D05C7FD1B3EA79A0050416C /* Debug */ = {
+		6D7C68971C8C5510005782C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "delba.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = JASONTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		6D05C7FE1B3EA79A0050416C /* Release */ = {
+		6D7C68981C8C5510005782C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "delba.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = JASONTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6D7C68A61C8C5528005782C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-watchOS";
+				PRODUCT_NAME = JASON;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		6D7C68A71C8C5528005782C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-watchOS";
+				PRODUCT_NAME = JASON;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		6D7C68BF1C8C5539005782C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.delba.JASON;
+				PRODUCT_NAME = JASON;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		6D7C68C01C8C5539005782C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.delba.JASON;
+				PRODUCT_NAME = JASON;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		6D7C68C21C8C5539005782C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		6D7C68C31C8C5539005782C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		6D7C68DB1C8C5549005782C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = io.delba.JASON;
+				PRODUCT_NAME = JASON;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6D7C68DC1C8C5549005782C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = io.delba.JASON;
+				PRODUCT_NAME = JASON;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6D7C68DE1C8C5549005782C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6D7C68DF1C8C5549005782C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.delba.JASON-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -398,20 +882,65 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D05C7F91B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASON" */ = {
+		6D7C68991C8C5510005782C9 /* Build configuration list for PBXNativeTarget "JASON iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D05C7FA1B3EA79A0050416C /* Debug */,
-				6D05C7FB1B3EA79A0050416C /* Release */,
+				6D7C68951C8C5510005782C9 /* Debug */,
+				6D7C68961C8C5510005782C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D05C7FC1B3EA79A0050416C /* Build configuration list for PBXNativeTarget "JASONTests" */ = {
+		6D7C689A1C8C5510005782C9 /* Build configuration list for PBXNativeTarget "JASON iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D05C7FD1B3EA79A0050416C /* Debug */,
-				6D05C7FE1B3EA79A0050416C /* Release */,
+				6D7C68971C8C5510005782C9 /* Debug */,
+				6D7C68981C8C5510005782C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D7C68A51C8C5528005782C9 /* Build configuration list for PBXNativeTarget "JASON watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D7C68A61C8C5528005782C9 /* Debug */,
+				6D7C68A71C8C5528005782C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D7C68BE1C8C5539005782C9 /* Build configuration list for PBXNativeTarget "JASON tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D7C68BF1C8C5539005782C9 /* Debug */,
+				6D7C68C01C8C5539005782C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D7C68C11C8C5539005782C9 /* Build configuration list for PBXNativeTarget "JASON tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D7C68C21C8C5539005782C9 /* Debug */,
+				6D7C68C31C8C5539005782C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D7C68DA1C8C5549005782C9 /* Build configuration list for PBXNativeTarget "JASON OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D7C68DB1C8C5549005782C9 /* Debug */,
+				6D7C68DC1C8C5549005782C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D7C68DD1C8C5549005782C9 /* Build configuration list for PBXNativeTarget "JASON OSX Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D7C68DE1C8C5549005782C9 /* Debug */,
+				6D7C68DF1C8C5549005782C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

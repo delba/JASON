@@ -22,12 +22,7 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
-//! Project version number for JASON.
 FOUNDATION_EXPORT double JASONVersionNumber;
-
-//! Project version string for JASON.
 FOUNDATION_EXPORT const unsigned char JASONVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <JASON/PublicHeader.h>

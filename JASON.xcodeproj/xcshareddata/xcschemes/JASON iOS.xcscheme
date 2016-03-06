@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
+               BlueprintIdentifier = "6D7C68831C8C5510005782C9"
                BuildableName = "JASON.framework"
-               BlueprintName = "JASON"
+               BlueprintName = "JASON iOS"
                ReferencedContainer = "container:JASON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D7C688C1C8C5510005782C9"
+               BuildableName = "JASON iOS Tests.xctest"
+               BlueprintName = "JASON iOS Tests"
+               ReferencedContainer = "container:JASON.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6D7C68831C8C5510005782C9"
+            BuildableName = "JASON.framework"
+            BlueprintName = "JASON iOS"
+            ReferencedContainer = "container:JASON.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
+            BlueprintIdentifier = "6D7C68831C8C5510005782C9"
             BuildableName = "JASON.framework"
-            BlueprintName = "JASON"
+            BlueprintName = "JASON iOS"
             ReferencedContainer = "container:JASON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D05C7E21B3EA79A0050416C"
+            BlueprintIdentifier = "6D7C68831C8C5510005782C9"
             BuildableName = "JASON.framework"
-            BlueprintName = "JASON"
+            BlueprintName = "JASON iOS"
             ReferencedContainer = "container:JASON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
