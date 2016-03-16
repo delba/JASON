@@ -1,5 +1,5 @@
 //
-//  JASON.h
+//  SequenceType.swift
 //
 //  Copyright (c) 2016 Damien (http://delba.io)
 //
@@ -22,7 +22,26 @@
 //  SOFTWARE.
 //
 
-@import Foundation;
+/// Conforming types gain access to reduce, map, filter et al.
+extension JSON: SequenceType {
+    /**
+        The required method to conform to the SequenceType protocol.
 
-FOUNDATION_EXPORT double JASONVersionNumber;
-FOUNDATION_EXPORT const unsigned char JASONVersionString[];
+        - returns: a generator over the elements of arrayValue converted to JSON
+    */
+    public func generate() -> AnyGenerator<JSON> {
+        guard let array = nsArray else {
+            return anyGenerator { nil }
+        }
+        
+        var index = 0
+        
+        return anyGenerator {
+            if index < array.count {
+                return JSON(array[index++])
+            } else {
+                return nil
+            }
+        }
+    }
+}
