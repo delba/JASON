@@ -187,7 +187,6 @@
 				6DE4854B1C98C94900D0EBD8 /* Operators.swift */,
 				6DE485411C98C87200D0EBD8 /* Properties.swift */,
 				6DE4855A1C98E00B00D0EBD8 /* SequenceType.swift */,
-				6DE485461C98C8E800D0EBD8 /* Utils.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -207,6 +206,7 @@
 			children = (
 				6D05C7E71B3EA79A0050416C /* Info.plist */,
 				6D05C7E81B3EA79A0050416C /* JASON.h */,
+				6DE485461C98C8E800D0EBD8 /* Utils.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
