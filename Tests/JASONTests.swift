@@ -26,25 +26,25 @@ import UIKit
 import XCTest
 import JASON
 
-extension Keys {
-    static let string = Key<String>("string")
-    static let optionalString = Key<String?>("optionalString")
-    static let int = Key<Int>("int")
-    static let optionalInt = Key<Int?>("optionalInt")
-    static let double = Key<Double>("double")
-    static let optionalDouble = Key<Double?>("optionalDouble")
-    static let float = Key<Float>("float")
-    static let optionalFloat = Key<Float?>("optionalFloat")
-    static let bool = Key<Bool>("bool")
-    static let optionalBool = Key<Bool?>("optionalBool")
-    static let array = Key<[AnyObject]>("array")
-    static let optionalArray = Key<[AnyObject]?>("optionalArray")
-    static let dictionary = Key<[String: AnyObject]>("dictionary")
-    static let optionalDictionary = Key<[String: AnyObject]>("optionalDictionary")
-    static let arrayJSON = Key<[JSON]>("arrayJSON")
-    static let optionalArrayJSON = Key<[JSON]?>("optionalArrayJSON")
-    static let dictionaryJSON = Key<[String: JSON]>("dictionaryJSON")
-    static let optinoalDictionaryJSON = Key<[String: JSON]?>("optionalDictionaryJSON")
+extension JSONKeys {
+    static let string = JSONKey<String>("string")
+    static let optionalString = JSONKey<String?>("optionalString")
+    static let int = JSONKey<Int>("int")
+    static let optionalInt = JSONKey<Int?>("optionalInt")
+    static let double = JSONKey<Double>("double")
+    static let optionalDouble = JSONKey<Double?>("optionalDouble")
+    static let float = JSONKey<Float>("float")
+    static let optionalFloat = JSONKey<Float?>("optionalFloat")
+    static let bool = JSONKey<Bool>("bool")
+    static let optionalBool = JSONKey<Bool?>("optionalBool")
+    static let array = JSONKey<[AnyObject]>("array")
+    static let optionalArray = JSONKey<[AnyObject]?>("optionalArray")
+    static let dictionary = JSONKey<[String: AnyObject]>("dictionary")
+    static let optionalDictionary = JSONKey<[String: AnyObject]>("optionalDictionary")
+    static let arrayJSON = JSONKey<[JSON]>("arrayJSON")
+    static let optionalArrayJSON = JSONKey<[JSON]?>("optionalArrayJSON")
+    static let dictionaryJSON = JSONKey<[String: JSON]>("dictionaryJSON")
+    static let optinoalDictionaryJSON = JSONKey<[String: JSON]?>("optionalDictionaryJSON")
 }
 
 
