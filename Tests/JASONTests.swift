@@ -84,6 +84,20 @@ class JASONTests: XCTestCase {
         XCTAssertEqualDictionaries(["string": 42], json[.dictionary])
         XCTAssertEqualDictionaries(["string": 42], json[.optional_dictionary])
     }
+    
+    func testPath() {
+        let json: JSON = [
+            "user": [
+                "name": "Jason",
+                "nicknames": [
+                    "J"
+                ]
+            ]
+        ]
+        
+        XCTAssertEqual("Jason", json[path: "user", "name"].stringValue)
+        XCTAssertEqual("J", json[path: "user", "nicknames", 0].stringValue)
+    }
 
     func testInitWithObject() {
         let object: AnyObject = ["name": "Brandon Walsh"]
