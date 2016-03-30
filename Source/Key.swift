@@ -101,6 +101,10 @@ extension JSON {
         return self[key.type].floatValue
     }
     
+    /// The value as JSON
+    public subscript(key: Key<JSON>) -> JSON {
+        return self[key.type]
+    }
 }
 
 extension JSON {
