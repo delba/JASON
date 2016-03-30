@@ -101,13 +101,17 @@ extension JSON {
     }
     
     /**
-     Creates a new instance of JSON.
-     
-     - parameter indexes: Any
-     
-     - returns: a new instance of JSON or itself if its object is nil
+        Creates a new instance of JSON.
+        
+        - parameter indexes: Any
+        
+        - returns: a new instance of JSON or itself if its object is nil
      */
     public subscript(path indexes: Any...) -> JSON {
+        return self[indexes]
+    }
+    
+    internal subscript(indexes: [Any]) -> JSON {
         if object == nil { return self }
         
         var json = self

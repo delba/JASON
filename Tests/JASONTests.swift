@@ -97,6 +97,11 @@ class JASONTests: XCTestCase {
         
         XCTAssertEqual("Jason", json[path: "user", "name"].stringValue)
         XCTAssertEqual("J", json[path: "user", "nicknames", 0].stringValue)
+        
+        let name = JSONKey<String>(path: "user", "name")
+        let nickname = JSONKey<String>(path: "user", "nicknames", 0)
+        XCTAssertEqual("Jason", json[name])
+        XCTAssertEqual("J", json[nickname])
     }
 
     func testInitWithObject() {

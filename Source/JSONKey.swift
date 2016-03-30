@@ -27,6 +27,7 @@ public class JSONKeys {}
 private enum KeyType {
     case String(Swift.String)
     case Int(Swift.Int)
+    case Path([Any])
 }
 
 public class JSONKey<ValueType>: JSONKeys {
@@ -39,6 +40,10 @@ public class JSONKey<ValueType>: JSONKeys {
     public init(_ key: Int) {
         self.type = .Int(key)
     }
+    
+    public init(path indexes: Any...) {
+        self.type = .Path(indexes)
+    }
 }
 
 private extension JSON {
@@ -46,6 +51,7 @@ private extension JSON {
         switch type {
         case .String(let key): return self[key]
         case .Int(let key): return self[key]
+        case .Path(let indexes): return self[indexes]
         }
     }
 }
