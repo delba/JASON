@@ -28,23 +28,24 @@ import JASON
 
 extension JSONKeys {
     static let string = JSONKey<String>("string")
-    static let optionalString = JSONKey<String?>("optionalString")
+    static let optional_string = JSONKey<String?>("optional_string")
     static let int = JSONKey<Int>("int")
-    static let optionalInt = JSONKey<Int?>("optionalInt")
+    static let optional_int = JSONKey<Int?>("optional_int")
     static let double = JSONKey<Double>("double")
-    static let optionalDouble = JSONKey<Double?>("optionalDouble")
+    static let optional_double = JSONKey<Double?>("optional_double")
     static let float = JSONKey<Float>("float")
-    static let optionalFloat = JSONKey<Float?>("optionalFloat")
+    static let optional_float = JSONKey<Float?>("optional_float")
     static let bool = JSONKey<Bool>("bool")
-    static let optionalBool = JSONKey<Bool?>("optionalBool")
+    static let optional_bool = JSONKey<Bool?>("optional_bool")
     static let array = JSONKey<[AnyObject]>("array")
-    static let optionalArray = JSONKey<[AnyObject]?>("optionalArray")
+    static let optional_array = JSONKey<[AnyObject]?>("optional_array")
     static let dictionary = JSONKey<[String: AnyObject]>("dictionary")
-    static let optionalDictionary = JSONKey<[String: AnyObject]>("optionalDictionary")
+    static let optional_dictionary = JSONKey<[String: AnyObject]>("optional_dictionary")
     static let arrayJSON = JSONKey<[JSON]>("arrayJSON")
-    static let optionalArrayJSON = JSONKey<[JSON]?>("optionalArrayJSON")
+    static let optional_arrayJSON = JSONKey<[JSON]?>("optional_arrayJSON")
     static let dictionaryJSON = JSONKey<[String: JSON]>("dictionaryJSON")
-    static let optinoalDictionaryJSON = JSONKey<[String: JSON]?>("optionalDictionaryJSON")
+    static let optional_dictionaryJSON = JSONKey<[String: JSON]?>("optional_dictionaryJSON")
+    static let json = JSONKey<JSON>("json")
 }
 
 
@@ -53,35 +54,35 @@ class JASONTests: XCTestCase {
     func testStaticSubscripts() {
         let json: JSON = [
             "string": "string",
-            "optionalString": "string",
+            "optional_string": "string",
             "int": 42,
-            "optionalInt": 42,
+            "optional_int": 42,
             "double": 4.2,
-            "optionalDouble": 4.2,
+            "optional_double": 4.2,
             "float": 4.2,
-            "optionalFloat": 4.2,
+            "optional_float": 4.2,
             "bool": true,
-            "optionalBool": true,
+            "optional_bool": true,
             "array": ["string", 42, 4.2, true],
-            "optionalArray": ["string", 42, 4.2, true],
+            "optional_array": ["string", 42, 4.2, true],
             "dictionary": ["string": 42],
-            "optionalDictionary": ["string": 42],
+            "optional_dictionary": ["string": 42],
         ]
         
         XCTAssertEqual("string", json[.string])
-        XCTAssertEqual("string", json[.optionalString])
+        XCTAssertEqual("string", json[.optional_string])
         XCTAssertEqual(42, json[.int])
-        XCTAssertEqual(42, json[.optionalInt])
+        XCTAssertEqual(42, json[.optional_int])
         XCTAssertEqual(4.2, json[.double])
-        XCTAssertEqual(4.2, json[.optionalDouble])
+        XCTAssertEqual(4.2, json[.optional_double])
         XCTAssertEqual(4.2, json[.float])
-        XCTAssertEqual(4.2, json[.optionalFloat])
+        XCTAssertEqual(4.2, json[.optional_float])
         XCTAssertEqual(true, json[.bool])
-        XCTAssertEqual(true, json[.optionalBool])
+        XCTAssertEqual(true, json[.optional_bool])
         XCTAssertEqualArrays(["string", 42, 4.2, true], json[.array])
-        XCTAssertEqualArrays(["string", 42, 4.2, true], json[.optionalArray]!)
+        XCTAssertEqualArrays(["string", 42, 4.2, true], json[.optional_array]!)
         XCTAssertEqualDictionaries(["string": 42], json[.dictionary])
-        XCTAssertEqualDictionaries(["string": 42], json[.optionalDictionary])
+        XCTAssertEqualDictionaries(["string": 42], json[.optional_dictionary])
     }
 
     func testInitWithObject() {
