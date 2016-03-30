@@ -108,3 +108,10 @@ internal extension JSON {
     /// The value as an array (NSArray) or nil if not present/convertible
     var nsArray: NSArray? { return object as? NSArray }
 }
+
+// MARK: - NSURL
+
+extension JSON {
+    /// The value as an instance of NSURL or nil if not convertible
+    public var nsURL: NSURL? { return NSURL(string: stringValue) }
+}

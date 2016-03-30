@@ -111,6 +111,11 @@ extension JSON {
     public subscript(key: JSONKey<JSON>) -> JSON {
         return self[key.type]
     }
+    
+    /// The value as NSURL?
+    public subscript(key: JSONKey<NSURL?>) -> NSURL? {
+        return self[key.type].nsURL
+    }
 }
 
 extension JSON {
