@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/delba/JASON/raw/assets/master@2x.png">
+<img src="https://github.com/delba/JASON/raw/assets/JASON@2x.png">
 </p>
 
 <p align="center">
