@@ -1,5 +1,5 @@
 //
-//  JASON.h
+//  SequenceTypeTests.swift
 //
 //  Copyright (c) 2016 Damien (http://delba.io)
 //
@@ -22,8 +22,17 @@
 //  SOFTWARE.
 //
 
-@import Foundation;
-@import CoreGraphics;
+import XCTest
+import JASON
 
-FOUNDATION_EXPORT double JASONVersionNumber;
-FOUNDATION_EXPORT const unsigned char JASONVersionString[];
+class SequenceTypeTests: XCTestCase {
+    func testSequences() {
+        let json: JSON = [
+            "name": "Brandon Walsh",
+            "friends": ["Steve Sanders", "Dylan McKay"]
+        ]
+
+        let names = json["friends"].map {$0.stringValue}
+        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], names)
+    }
+}

@@ -22,6 +22,55 @@ JASON is a JSON deserializer written in Swift. It offers a nice and comprehensiv
 - [x] Installation via Carthage
 - [x] Extensions available - [`extensions`](https://github.com/delba/JASON/tree/extensions)
 
+```swift
+extension JSONKeys {
+    static let id    = JSONKey<Int>("id")
+    static let title = JSONKey<String>("title")
+    
+    static let normal_image_url = JSONKey<NSURL?>(path: "images", "normal")
+    static let hidpi_image_url  = JSONKey<NSURL?>(path: "images", "hidpi")
+    
+    static let user = JSONKey<JSON>("user")
+    static let name = JSONKey<String>("name") 
+}
+
+struct Shot {
+    let id: Int
+    let title: String
+    
+    var normalImageURL: NSURL!
+    var hidpiImageURL: NSURL?
+    
+    let user: User
+
+    init(_ json: JSON) {
+        id    = json[.id]
+        title = json[.title]
+        
+        normalImageURL = json[.normal_image_url]
+        hidpiImageURL  = json[.hidpi_image_url]
+        
+        user = User(json[.user])
+    }
+}
+
+struct User {
+    let id: Int
+    let name: String
+
+    init(_ json: JSON) {
+        id   = json[.id]
+        name = json[.name]
+    }
+}
+
+Alamofire.request(.GET, "dribbble.com/shots")
+    .responseJASON {
+        // ...
+        let shots = json.arrayJSON.map({ Shot.init })
+    }
+```
+
 ## Usage
 
 ### Initialization
@@ -88,6 +137,12 @@ It will *never* break if the key doesn't exist or the index is out of bounds.
 
 ```swift
 friends["whatever"][42]["whatever"][42] // that's fine too
+```
+
+Alternatively, you can use `json[path: Any...]`:
+
+```swift
+friends[path: "characters", 0, "first_name"]
 ```
 
 ##### Iterating over a JSON array

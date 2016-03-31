@@ -52,6 +52,11 @@ extension JSON {
     public var float: Float? { return object as? Float }
     /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
     public var floatValue: Float { return float ?? 0 }
+    
+    /// The value as a CGFloat or nil if not present/convertible
+    public var cgFloat: CGFloat? { return object as? CGFloat }
+    /// The value as a CGFloat or 0.0 if not present/convertible
+    public var cgFloatValue: CGFloat { return cgFloat ?? 0 }
 }
 
 // MARK: - Bool
@@ -107,4 +112,11 @@ internal extension JSON {
 internal extension JSON {
     /// The value as an array (NSArray) or nil if not present/convertible
     var nsArray: NSArray? { return object as? NSArray }
+}
+
+// MARK: - NSURL
+
+extension JSON {
+    /// The value as an instance of NSURL or nil if not convertible
+    public var nsURL: NSURL? { return NSURL(string: stringValue) }
 }

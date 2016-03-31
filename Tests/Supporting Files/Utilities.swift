@@ -1,5 +1,5 @@
 //
-//  JASON.h
+//  Utilities.swift
 //
 //  Copyright (c) 2016 Damien (http://delba.io)
 //
@@ -22,8 +22,33 @@
 //  SOFTWARE.
 //
 
-@import Foundation;
-@import CoreGraphics;
+import XCTest
 
-FOUNDATION_EXPORT double JASONVersionNumber;
-FOUNDATION_EXPORT const unsigned char JASONVersionString[];
+internal extension XCTestCase {
+    func XCTAssertEqualDictionaries(lhs: [String: AnyObject], _ rhs: [String: AnyObject]) {
+        XCTAssertEqual(NSDictionary(dictionary: lhs), NSDictionary(dictionary: rhs))
+    }
+
+    func XCTAssertEqualArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
+        XCTAssertEqual(NSArray(array: lhs), NSArray(array: rhs))
+    }
+
+    func XCTAssertEqualUnorderedArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
+        let array = NSArray(array: rhs)
+
+        for object in lhs {
+            XCTAssert(array.containsObject(object))
+        }
+    }
+
+    func XCTAssertEqualOptionals<T: Equatable>(lhs: T?, _ rhs: T?) {
+        switch (lhs, rhs) {
+        case let (.Some(lhs), .Some(rhs)):
+            XCTAssertEqual(lhs, rhs)
+        case (nil, nil):
+            XCTAssertEqual(true, true) // meh
+        default:
+            XCTFail()
+        }
+    }
+}

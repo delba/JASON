@@ -71,7 +71,7 @@ extension JSON {
 
         - parameter index: A string
 
-        - returns: a new instance of JSON or itself is object is nil.
+        - returns: a new instance of JSON or itself if its object is nil.
     */
     public subscript(index: String) -> JSON {
         if object == nil { return self }
@@ -88,7 +88,7 @@ extension JSON {
 
         - parameter index: A string
 
-        - returns: a new instance of JSON or itself is object is nil.
+        - returns: a new instance of JSON or itself if its object is nil.
     */
     public subscript(index: Int) -> JSON {
         if object == nil { return self }
@@ -98,6 +98,42 @@ extension JSON {
         }
 
         return JSON(object: nil)
+    }
+    
+    /**
+        Creates a new instance of JSON.
+        
+        - parameter indexes: Any
+        
+        - returns: a new instance of JSON or itself if its object is nil
+     */
+    public subscript(path indexes: Any...) -> JSON {
+        return self[indexes]
+    }
+    
+    internal subscript(indexes: [Any]) -> JSON {
+        if object == nil { return self }
+        
+        var json = self
+        
+        for index in indexes {
+            if let string = index as? String, object = json.nsDictionary?[string] {
+                json = JSON(object)
+                continue
+            }
+            
+            if let int = index as? Int, object = json.nsArray?[safe: int] {
+                json = JSON(object)
+                continue
+            }
+            
+            else {
+                json = JSON(nil)
+                break
+            }
+        }
+        
+        return json
     }
 }
 
