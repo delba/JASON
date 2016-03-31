@@ -23,6 +23,7 @@
 //
 
 @import Foundation;
+@import CoreGraphics;
 
 FOUNDATION_EXPORT double JASONVersionNumber;
 FOUNDATION_EXPORT const unsigned char JASONVersionString[];

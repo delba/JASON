@@ -96,6 +96,9 @@ class PropertiesTests: XCTestCase {
 
         XCTAssertNil(json["name"].float)
         XCTAssertEqual(Float(0), json["name"].floatValue)
+        
+        XCTAssertEqual(CGFloat(17), json["age"].cgFloat!)
+        XCTAssertEqual(CGFloat(17), json["age"].cgFloatValue)
     }
 
     func testBool() {
