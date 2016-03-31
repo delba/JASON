@@ -111,7 +111,7 @@ class JASONTests: XCTestCase {
     }
 
     func testInitWithData() {
-        if let path = NSBundle(forClass: JASONTests.self).pathForResource("JASON", ofType: "json") {
+        if let path = NSBundle(forClass: JASONTests.self).pathForResource("shots", ofType: "json") {
             let data: NSData?
             do {
                 data = try NSData(contentsOfFile: path, options: [])
@@ -119,7 +119,7 @@ class JASONTests: XCTestCase {
                 data = nil
             }
             let json = JSON(data)
-            XCTAssertEqual("Brandon Walsh", json["name"].stringValue)
+            XCTAssertEqual("Create New Project", json[0]["title"].stringValue)
         } else {
             XCTFail("JASON.json doesn't exist.")
         }
