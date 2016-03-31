@@ -139,6 +139,12 @@ It will *never* break if the key doesn't exist or the index is out of bounds.
 friends["whatever"][42]["whatever"][42] // that's fine too
 ```
 
+Alternatively, you can use `json[path: Any...]`:
+
+```swift
+friends[path: "characters", 0, "first_name"]
+```
+
 ##### Iterating over a JSON array
 
 If the underlying JSON object is an array, you can iterate over it.
