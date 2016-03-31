@@ -107,6 +107,16 @@ extension JSON {
         return self[key.type].floatValue
     }
     
+    /// The value as a CGFloat or nil if not present/convertible
+    public subscript(key: JSONKey<CGFloat?>) -> CGFloat? {
+        return self[key.type].cgFloat
+    }
+    
+    /// The value as a CGFloat or 0.0 if not present/convertible
+    public subscript(key: JSONKey<CGFloat>) -> CGFloat {
+        return self[key.type].cgFloatValue
+    }
+    
     /// The value as JSON
     public subscript(key: JSONKey<JSON>) -> JSON {
         return self[key.type]
