@@ -24,37 +24,43 @@ JASON is a JSON deserializer written in Swift. It offers a nice and comprehensiv
 
 ```swift
 extension JSONKeys {
-    static let id = JSONKey<Int>("id")
+    static let id    = JSONKey<Int>("id")
     static let title = JSONKey<String>("title")
-    static let normal_image_url = JSONKey<NSURL?>(path: "images", "normal_image_url")
-    static let hidpi_image_url = JSONKey<NSURL?>(path: "images", "hidpi_image_url")
+    
+    static let normal_image_url = JSONKey<NSURL?>(path: "images", "normal")
+    static let hidpi_image_url  = JSONKey<NSURL?>(path: "images", "hidpi")
+    
     static let user = JSONKey<JSON>("user")
-    static let full_name = JSONKey<String>("full_name") 
+    static let name = JSONKey<String>("name") 
 }
 
 struct Shot {
     let id: Int
     let title: String
+    
     var normalImageURL: NSURL!
     var hidpiImageURL: NSURL?
+    
     let user: User
 
     init(_ json: JSON) {
-        id = json[.id]
+        id    = json[.id]
         title = json[.title]
+        
         normalImageURL = json[.normal_image_url]
-        hidpiImageURL = json[.hidpi_image_url]
+        hidpiImageURL  = json[.hidpi_image_url]
+        
         user = User(json[.user])
     }
 }
 
 struct User {
     let id: Int
-    let fullName: String
+    let name: String
 
     init(_ json: JSON) {
-        id = json[.id]
-        fullName = json[.full_name]
+        id   = json[.id]
+        name = json[.name]
     }
 }
 
