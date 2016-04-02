@@ -164,8 +164,8 @@ extension JSONKeys {
     static let id    = JSONKey<Int>("id")
     static let title = JSONKey<String>("title")
     
-    static let normal_image_url = JSONKey<NSURL?>(path: "images", "normal")
-    static let hidpi_image_url  = JSONKey<NSURL?>(path: "images", "hidpi")
+    static let normalImageURL = JSONKey<NSURL?>(path: "images", "normal")
+    static let hidpiImageURL  = JSONKey<NSURL?>(path: "images", "hidpi")
     
     static let user = JSONKey<JSON>("user")
     static let name = JSONKey<String>("name") 
@@ -184,8 +184,8 @@ struct Shot {
         id    = json[.id]
         title = json[.title]
         
-        normalImageURL = json[.normal_image_url]
-        hidpiImageURL  = json[.hidpi_image_url]
+        normalImageURL = json[.normalImageURL]
+        hidpiImageURL  = json[.hidpiImageURL]
         
         user = User(json[.user])
     }
