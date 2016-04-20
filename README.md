@@ -1,6 +1,7 @@
-<p align="center">
-<img src="https://github.com/delba/JASON/raw/assets/JASON@2x.png">
-</p>
+<br/>
+<h3 align="center">JASON</h3>
+<br/>
+<br/>
 
 <p align="center">
     <a href="https://travis-ci.org/delba/JASON"><img alt="Travis Status" src="https://img.shields.io/travis/delba/JASON.svg"/></a>
@@ -8,156 +9,86 @@
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
 </p>
 
-JASON is a JSON deserializer written in Swift. It offers a nice and comprehensive API without sacrificing performance. The implementation is minimal and easily extendable; the library is tested and thoughtfully documented. JASON is fast. JASON is installable through Carthage and CocoaPods.
+**`JASON`** is a faster JSON deserializer written in Swift.
 
 <p align="center">
-<a href="#features">Features</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#license">License</a>
+<a href="#features">Features</a> • <a href="#usage">Usage</a> • <a href="#example">Example</a> • <a href="#references">References</a> • <a href="#installation">Installation</a> • <a href="#license">License</a>
 </p>
 
 ## Features
 
-- [x] Built for performance - [`benchmarks`](https://github.com/delba/JASON/tree/benchmarks)
-- [x] User-friendly API
-- [x] Fully tested and documented
-- [x] Installation via Carthage or CocoaPods
-- [x] Extensions available - [`extensions`](https://github.com/delba/JASON/tree/extensions)
+- [x] Very fast
+- [x] Fully tested
+- [x] Fully documented
+<p></p>
+- [x] Clean code
+- [x] Beautiful API
+- [x] Regular updates
+<p></p>
+- [x] Support for iOS, OSX, tvOS, watchOS
+- [x] Compatible with Carthage/CocoaPods
+- [x] Provide extensions
 
 ## Usage
 
-### Initialization
-
-JASON can be initialized with an instance of `AnyObject?` or `NSData?`.
+##### Initialization
 
 ```swift
-let jsonFromAnyObject = JSON(object) // where object is an instance of AnyObject?
-let jsonFromNSData = JSON(data) // where data is an instance of AnyData?
+let json = JSON(anything)
 ```
 
-JASON implements *literal convertible protocols* and can be initialized from the following types:
-- `Dictionary`
-- `Array`
-- `String`
-- `Integer`
-- `Float`
-- `Bool`
-- the value `nil`
-
-For instance:
-
 ```swift
-let brandon: JSON = [
-    "name": "Brandon Walsh",
-    "city": "Beverly Hills",
-    "age" 17
-]
+let json: JSON = xxxLiteralConvertible
 ```
 
-### Accessing JSON values
-
-You can access JSON values by using subscripts.
-
-##### Using subscript
-
-Use a subscript with an integer or a string key depending on whether the JSON is an array or a dictionary.
-
 ```swift
-let friends: JSON = [
-    "title": "Friends",
-    "characters": [
-        ["first_name": "Chandler", "last_name": "Bing"],
-        ["first_name": "Phoebe", "last_name": "Buffay"],
-        ["first_name": "Rachel", "last_name": "Green"],
-        ["first_name": "Joey", "last_name": "Tribbiani"],
-        ["first_name": "Monica", "last_name": "Geller"],
-        ["first_name": "Ross", "last_name": "Geller"]
-    ]
-]
-
-friends["title"]
-```
-
-##### Chaining subscript calls
-
-Each subscript call returns an instance of JASON.JSON to allow chaining.
-
-```swift
-friends["characters"][0]["first_name"]
-```
-
-It will *never* break if the key doesn't exist or the index is out of bounds.
-
-```swift
-friends["whatever"][42]["whatever"][42] // that's fine too
-```
-
-##### Using a path
-
-Alternatively, you can use `json[path: Any...]`:
-
-```swift
-friends[path: "characters", 0, "first_name"]
-```
-
-##### Iterating over a JSON array
-
-If the underlying JSON object is an array, you can iterate over it.
-
-```swift
-for character in friends["characters"] {
-    character["first_name"]
+Alamofire.request(.GET, URL).responseJASON { response in
+    if let json = response.result.value {
+        print("JSON: \(json)")
+    }
 }
+```
+
+If the underlying JSON object is an array, you can iterate over it:
+
+```swift
+let people = json.map(Person.init)
 ```
 
 ### Casting JSON values
 
-Next, you will want to convert a JASON.JSON object to a more appropriate type.
-
-##### Using the internal object
-
-You can do so by casting it's internal value like so:
-
-```swift
-let maybeName: String? = friends["characters"][0]["first_name"].object as? String
-let name: String = friends["characters"][0]["first_name"].object as? String ?? ""
-```
-
 ##### Using computed properties
 
-JASON provides a set of computed properties to make anyone's job easier:
+```swift
+json["people"][0]["name"]
+```
+
+Alternatively, you can use `json[path: Any...]`:
 
 ```swift
-let maybeName = friends["characters"][0]["first_name"].string
-let name = friends["characters"][0]["first_name"].stringValue
+json[path: "people", 0, "name"]
+```
+
+**`JASON`** provides a set of computed properties to make anyone's job easier:
+
+```swift
+let maybeName = json[path: "people", 0, "name"].string
+let name = json[path: "people", 0, "name"].stringValue
 ```
 
 These getters come by two, `json.<type>` and `json.<type>Value`, and returns an optional or a non-optional type, respectively.
 
 If the value can't be converted to the given type, the optional getter will return nil and the non-optional one a default value.
 
-Property              | Type                   | Default value
------------------     | ---------------------- | -------------
-`string`              | `String?`              |
-`stringValue`         | `String`               | `""`
-`bool`                | `Bool?`                |
-`boolValue`           | `Bool`                 | `false`
-`int`                 | `Int?`                 |
-`intValue`            | `Int`                  | `0`
-`double`              | `Double?`              |
-`doubleValue`         | `Double`               | `0.0`
-`float`               | `Float?`               |
-`floatValue`          | `Float`                | `0.0`
-`array`               | `[AnyObject]?`         |
-`arrayValue`          | `[AnyObject]`          | `[]`
-`jsonArray`           | `[JSON]?`              |
-`jsonArrayValue`      | `[JSON]`               | `[]`
-`dictionary`          | `[String: AnyObject]?` |
-`dictionaryValue`     | `[String: AnyObject]`  | `[:]`
-`jsonDictionary`      | `[String: JSON]?`      |
-`jsonDictionaryValue` | `[String: JSON]`       | `[:]`
+**`JASON`** gives you access to the internal object (`AnyObject`) so you can cast the value to anything you want:
 
-> You can find more getters on the [`extensions` branch](https://github.com/delba/JASON/tree/extensions)
+```swift
+let name = json["people"][0]["name"].object as? String ?? ""
+```
 
 ##### Using `JSONKey`
+
+## Example
 
 ```swift
 extension JSONKeys {
@@ -170,7 +101,9 @@ extension JSONKeys {
     static let user = JSONKey<JSON>("user")
     static let name = JSONKey<String>("name") 
 }
+```
 
+```swift
 struct Shot {
     let id: Int
     let title: String
@@ -190,7 +123,9 @@ struct Shot {
         user = User(json[.user])
     }
 }
+```
 
+```swift
 struct User {
     let id: Int
     let name: String
@@ -202,7 +137,41 @@ struct User {
 }
 ```
 
+## References
+
+                         | Property              | JSONKey Type           | Default value
+ ----------------------- | --------------------- | ---------------------- | -------------
+ **String**              | `string`              | `String?`              |
+                         | `stringValue`         | `String`               | `""`
+ **Integer**             | `int`                 | `Int?`                 |
+                         | `intValue`            | `Int`                  | `0`
+ **FloatingPointType**   | `double`              | `Double?`              |
+                         | `doubleValue`         | `Double`               | `0.0`
+                         | `float`               | `Float?`               |
+                         | `floatValue`          | `Float`                | `0.0`
+                         | `cgFloat`             | `CGFloat?`             |
+                         | `cgFloatValue`        | `CGFloat`              | `0.0`
+ **Bool**                | `bool`                | `Bool?`                |
+                         | `boolValue`           | `Bool`                 | `false`
+ **NSURL**               | `nsURL`               | `NSURL?`               |
+ **Dictionary**          | `dictionary`          | `[String: AnyObject]?` |
+                         | `dictionaryValue`     | `[String: AnyObject]`  | `[:]`
+                         | `jsonDictionary`      | `[String: JSON]?`      |
+                         | `jsonDictionaryValue` | `[String: JSON]`       | `[:]`
+                         | `nsDictionary`        | `NSDictionary?`        |
+                         | `nsDictionaryValue`   | `NSDictionary`         | `NSDictionary()`
+ **Array**               | `array`               | `[AnyObject]?`         |
+                         | `arrayValue`          | `[AnyObject]`          | `[]`
+                         | `jsonArray`           | `[JSON]?`              |
+                         | `jsonArrayValue`      | `[JSON]`               | `[]`
+                         | `nsArray`             | `NSArray?`             |
+                         | `nsArrayValue`        | `NSArray`              | `NSArray()`
+
+> You can find more getters on the [`extensions` branch](https://github.com/delba/JASON/tree/extensions)
+
 ## Installation
+
+#### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
@@ -213,13 +182,13 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate JASON into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate **`JASON`** into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "delba/JASON" >= 1.0
+github "delba/JASON" >= 2.0
 ```
 
-### CocoaPods
+#### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
@@ -229,12 +198,12 @@ You can install it with the following command:
 $ gem install cocoapods
 ```
 
-To integrate JASON into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate **`JASON`** into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
 
-pod 'JASON', '~> 1.0'
+pod 'JASON', '~> 2.0'
 ```
 
 ## License
