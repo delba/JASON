@@ -1,7 +1,7 @@
 //
-//  JASON.swift
+// JASON+Alamofire.swift
 //
-// Copyright (c) 2015 Damien (http://delba.io)
+// Copyright (c) 2015-2016 Damien (http://delba.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@
 // SOFTWARE.
 //
 
-import Alamofire
 import JASON
+import Alamofire
 
 extension Alamofire.Request {
     /**
