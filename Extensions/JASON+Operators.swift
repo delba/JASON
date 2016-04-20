@@ -1,5 +1,5 @@
 //
-// Operators.swift
+// JASON+Operators.swift
 //
 // Copyright (c) 2015-2016 Damien (http://delba.io)
 //
@@ -25,8 +25,8 @@
 // MARK: - The <| operator
 
 infix operator <| {
-    associativity right
-    precedence 90
+associativity right
+precedence 90
 }
 
 /// Assigns the value if it is present and convertible to T
@@ -53,8 +53,8 @@ public func <| <T: Any>(inout lhs: T!, json: JSON) {
 // MARK: - The <? operator
 
 infix operator <? {
-    associativity right
-    precedence 90
+associativity right
+precedence 90
 }
 
 /// Assigns the value or nil if not present/convertible to T
@@ -70,8 +70,8 @@ public func <? <T: Any>(inout lhs: T!, json: JSON) {
 // MARK: - The <! operator
 
 infix operator <! {
-    associativity right
-    precedence 90
+associativity right
+precedence 90
 }
 
 /// Assigns the value or a default value if not present/convertible to T
@@ -99,12 +99,12 @@ public func <! <T: Any>(inout lhs: T!, json: JSON) {
 
 private extension JSON {
     /**
-        Given a struct or a class of any type, it returns its default value.
-
-        - parameter type: A type
-
-        - returns: An instance of the given type or nil
-    */
+     Given a struct or a class of any type, it returns its default value.
+     
+     - parameter type: A type
+     
+     - returns: An instance of the given type or nil
+     */
     static func defaultValueFor<T: Any>(type: T.Type) -> T? {
         switch type {
         case is String.Type:

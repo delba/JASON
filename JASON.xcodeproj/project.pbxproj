@@ -151,7 +151,6 @@
 				<string>6D05C7FF1B3EA7BE0050416C</string>
 				<string>6DE485551C98CA0A00D0EBD8</string>
 				<string>6DE485501C98C9AE00D0EBD8</string>
-				<string>6DE4854B1C98C94900D0EBD8</string>
 				<string>6DE485411C98C87200D0EBD8</string>
 				<string>6DE4855A1C98E00B00D0EBD8</string>
 			</array>
@@ -192,7 +191,6 @@
 				<string>6DC2598A1CADB4B3004E47C6</string>
 				<string>6DC259861CADB4A4004E47C6</string>
 				<string>6DC2598E1CADB4C6004E47C6</string>
-				<string>6DC259921CADB4D2004E47C6</string>
 				<string>6DC259961CADB4E2004E47C6</string>
 				<string>6DC2599A1CADB4F1004E47C6</string>
 			</array>
@@ -412,7 +410,6 @@
 			<array>
 				<string>6DE485511C98C9AE00D0EBD8</string>
 				<string>6DE485421C98C87200D0EBD8</string>
-				<string>6DE4854C1C98C94900D0EBD8</string>
 				<string>6DE485471C98C8E800D0EBD8</string>
 				<string>6D7C68E01C8C558F005782C9</string>
 				<string>6DE4855B1C98E00B00D0EBD8</string>
@@ -507,7 +504,6 @@
 				<string>6DC259971CADB4E2004E47C6</string>
 				<string>6DC259871CADB4A4004E47C6</string>
 				<string>6DC2599B1CADB4F1004E47C6</string>
-				<string>6DC259931CADB4D2004E47C6</string>
 				<string>6DC2599F1CADB7F0004E47C6</string>
 				<string>6DC2598B1CADB4B3004E47C6</string>
 			</array>
@@ -759,7 +755,6 @@
 			<array>
 				<string>6DE485541C98C9AE00D0EBD8</string>
 				<string>6DE485451C98C87200D0EBD8</string>
-				<string>6DE4854F1C98C94900D0EBD8</string>
 				<string>6DE4854A1C98C8E800D0EBD8</string>
 				<string>6D7C68E11C8C5590005782C9</string>
 				<string>6DE4855E1C98E00B00D0EBD8</string>
@@ -944,7 +939,6 @@
 			<array>
 				<string>6DE485531C98C9AE00D0EBD8</string>
 				<string>6DE485441C98C87200D0EBD8</string>
-				<string>6DE4854E1C98C94900D0EBD8</string>
 				<string>6DE485491C98C8E800D0EBD8</string>
 				<string>6D7C68E21C8C5593005782C9</string>
 				<string>6DE4855D1C98E00B00D0EBD8</string>
@@ -1039,7 +1033,6 @@
 				<string>6DC259991CADB4E2004E47C6</string>
 				<string>6DC259891CADB4A4004E47C6</string>
 				<string>6DC2599D1CADB4F1004E47C6</string>
-				<string>6DC259951CADB4D2004E47C6</string>
 				<string>6DC259A11CADB7F0004E47C6</string>
 				<string>6DC2598D1CADB4B3004E47C6</string>
 			</array>
@@ -1303,7 +1296,6 @@
 			<array>
 				<string>6DE485521C98C9AE00D0EBD8</string>
 				<string>6DE485431C98C87200D0EBD8</string>
-				<string>6DE4854D1C98C94900D0EBD8</string>
 				<string>6DE485481C98C8E800D0EBD8</string>
 				<string>6D7C68E31C8C5594005782C9</string>
 				<string>6DE4855C1C98E00B00D0EBD8</string>
@@ -1398,7 +1390,6 @@
 				<string>6DC259981CADB4E2004E47C6</string>
 				<string>6DC259881CADB4A4004E47C6</string>
 				<string>6DC2599C1CADB4F1004E47C6</string>
-				<string>6DC259941CADB4D2004E47C6</string>
 				<string>6DC259A01CADB7F0004E47C6</string>
 				<string>6DC2598C1CADB4B3004E47C6</string>
 			</array>
@@ -1920,40 +1911,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>6DC259921CADB4D2004E47C6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>OperatorsTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6DC259931CADB4D2004E47C6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DC259921CADB4D2004E47C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6DC259941CADB4D2004E47C6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DC259921CADB4D2004E47C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6DC259951CADB4D2004E47C6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DC259921CADB4D2004E47C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>6DC259961CADB4E2004E47C6</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -2135,47 +2092,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>6DE485461C98C8E800D0EBD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6DE4854B1C98C94900D0EBD8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Operators.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6DE4854C1C98C94900D0EBD8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DE4854B1C98C94900D0EBD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6DE4854D1C98C94900D0EBD8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DE4854B1C98C94900D0EBD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6DE4854E1C98C94900D0EBD8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DE4854B1C98C94900D0EBD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6DE4854F1C98C94900D0EBD8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DE4854B1C98C94900D0EBD8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
