@@ -31,17 +31,17 @@ extension JSON: SequenceType {
     */
     public func generate() -> AnyGenerator<JSON> {
         guard let array = nsArray else {
-            return anyGenerator { nil }
+            return AnyGenerator { nil }
         }
         
         var index = 0
         
-        return anyGenerator {
-            if index < array.count {
-                return JSON(array[index++])
-            } else {
-                return nil
-            }
+        return AnyGenerator {
+            guard index < array.count else { return nil }
+            
+            index += 1
+            
+            return JSON(array[index - 1])
         }
     }
 }
