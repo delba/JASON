@@ -128,6 +128,8 @@ extension JSON {
     }
 }
 
+// MARK: - Array
+
 extension JSON {
     /// The value as an array or nil if not present/convertible
     public subscript(key: JSONKey<[AnyObject]?>) -> [AnyObject]? {
@@ -137,6 +139,16 @@ extension JSON {
     /// The value as an array or an empty array if not present/convertible
     public subscript(key: JSONKey<[AnyObject]>) -> [AnyObject] {
         return self[key.type].arrayValue
+    }
+    
+    /// The value as an array or nil if not present/convertible
+    public subscript(key: JSONKey<NSArray?>) -> NSArray? {
+        return self[key.type].nsArray
+    }
+    
+    /// The value as an array or an empty array if not present/convertible
+    public subscript(key: JSONKey<NSArray>) -> NSArray {
+        return self[key.type].nsArrayValue
     }
     
     /// The value as an array or nil if not present/convertible
@@ -150,6 +162,8 @@ extension JSON {
     }
 }
 
+// MARK: - Dictionary
+
 extension JSON {
     /// The value as a dictionary or nil if not present/convertible
     public subscript(key: JSONKey<[String: AnyObject]?>) -> [String: AnyObject]? {
@@ -159,6 +173,16 @@ extension JSON {
     /// The value as a dictionary or an empty dictionary if not present/convertible
     public subscript(key: JSONKey<[String: AnyObject]>) -> [String: AnyObject] {
         return self[key.type].dictionaryValue
+    }
+    
+    /// The value as a dictionary or nil if not present/convertible
+    public subscript(key: JSONKey<NSDictionary?>) -> NSDictionary? {
+        return self[key.type].nsDictionary
+    }
+    
+    /// The value as a dictionary or an empty dictionary if not present/convertible
+    public subscript(key: JSONKey<NSDictionary>) -> NSDictionary {
+        return self[key.type].nsDictionaryValue
     }
     
     /// The value as a dictionary or nil if not present/convertible

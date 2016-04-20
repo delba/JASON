@@ -68,6 +68,13 @@ extension JSON {
     public var boolValue: Bool { return bool ?? false }
 }
 
+// MARK: - NSURL
+
+extension JSON {
+    /// The value as an instance of NSURL or nil if not convertible
+    public var nsURL: NSURL? { return NSURL(string: stringValue) }
+}
+
 // MARK: - Dictionary
 
 extension JSON {
@@ -75,9 +82,12 @@ extension JSON {
     public var dictionary: [String: AnyObject]? { return object as? [String: AnyObject] }
     /// The value as a dictionary or an empty dictionary if not present/convertible
     public var dictionaryValue: [String: AnyObject] { return dictionary ?? [:] }
-}
-
-extension JSON {
+    
+    /// The value as a dictionary (NSDictionary) or nil if not present/convertible
+    public var nsDictionary: NSDictionary? { return object as? NSDictionary }
+    /// The value as a dictionary (NSDictionary) or an empty dictionary if not present/convertible
+    public var nsDictionaryValue: NSDictionary { return nsDictionary ?? NSDictionary() }
+    
     /// The value as a dictionary or nil if not present/convertible
     public var jsonDictionary: [String: JSON]? { return dictionary?.reduceValues{ JSON($0) }}
     /// The value as a dictionary or an empty dictionary if not present/convertible
@@ -91,32 +101,14 @@ extension JSON {
     public var array: [AnyObject]? { return object as? [AnyObject] }
     /// The value as an array or an empty array if not present/convertible
     public var arrayValue: [AnyObject] { return array ?? [] }
-}
-
-extension JSON {
+    
+    /// The value as an array (NSArray) or nil if not present/convertible
+    public var nsArray: NSArray? { return object as? NSArray }
+    /// The value as an array (NSArray) or an empty array if not present/convertible
+    public var nsArrayValue: NSArray { return nsArray ?? NSArray() }
+    
     /// The value as an array or nil if not present/convertible
     public var jsonArray: [JSON]? { return array?.map{ JSON($0) } }
     /// The value as an array or an empty array if not present/convertible
     public var jsonArrayValue: [JSON] { return jsonArray ?? [] }
-}
-
-// MARK: - NSDictionary
-
-internal extension JSON {
-    /// The value as a dictionary (NSDictionary) or nil if not present/convertible
-    var nsDictionary: NSDictionary? { return object as? NSDictionary }
-}
-
-// MARK: - NSArray
-
-internal extension JSON {
-    /// The value as an array (NSArray) or nil if not present/convertible
-    var nsArray: NSArray? { return object as? NSArray }
-}
-
-// MARK: - NSURL
-
-extension JSON {
-    /// The value as an instance of NSURL or nil if not convertible
-    public var nsURL: NSURL? { return NSURL(string: stringValue) }
 }
