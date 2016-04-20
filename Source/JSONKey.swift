@@ -56,6 +56,13 @@ private extension JSON {
     }
 }
 
+extension JSON {
+    /// The value as JSON
+    public subscript(key: JSONKey<JSON>) -> JSON {
+        return self[key.type]
+    }
+}
+
 // MARK: - String
 
 extension JSON {
@@ -67,20 +74,6 @@ extension JSON {
     /// The value as a string or "" if not present/convertible
     public subscript(key: JSONKey<String>) -> String {
         return self[key.type].stringValue
-    }
-}
-
-// MARK: - Bool
-
-extension JSON {
-    /// The value as a boolean or nil if not present/convertible
-    public subscript(key: JSONKey<Bool?>) -> Bool? {
-        return self[key.type].bool
-    }
-    
-    /// The value as a boolean or false if not present/convertible
-    public subscript(key: JSONKey<Bool>) -> Bool {
-        return self[key.type].boolValue
     }
 }
 
@@ -132,10 +125,17 @@ extension JSON {
     }
 }
 
+// MARK: - Bool
+
 extension JSON {
-    /// The value as JSON
-    public subscript(key: JSONKey<JSON>) -> JSON {
-        return self[key.type]
+    /// The value as a boolean or nil if not present/convertible
+    public subscript(key: JSONKey<Bool?>) -> Bool? {
+        return self[key.type].bool
+    }
+    
+    /// The value as a boolean or false if not present/convertible
+    public subscript(key: JSONKey<Bool>) -> Bool {
+        return self[key.type].boolValue
     }
 }
 
@@ -145,40 +145,6 @@ extension JSON {
     /// The value as NSURL?
     public subscript(key: JSONKey<NSURL?>) -> NSURL? {
         return self[key.type].nsURL
-    }
-}
-
-// MARK: - Array
-
-extension JSON {
-    /// The value as an array or nil if not present/convertible
-    public subscript(key: JSONKey<[AnyObject]?>) -> [AnyObject]? {
-        return self[key.type].array
-    }
-    
-    /// The value as an array or an empty array if not present/convertible
-    public subscript(key: JSONKey<[AnyObject]>) -> [AnyObject] {
-        return self[key.type].arrayValue
-    }
-    
-    /// The value as an array or nil if not present/convertible
-    public subscript(key: JSONKey<NSArray?>) -> NSArray? {
-        return self[key.type].nsArray
-    }
-    
-    /// The value as an array or an empty array if not present/convertible
-    public subscript(key: JSONKey<NSArray>) -> NSArray {
-        return self[key.type].nsArrayValue
-    }
-    
-    /// The value as an array or nil if not present/convertible
-    public subscript(key: JSONKey<[JSON]?>) -> [JSON]? {
-        return self[key.type].jsonArray
-    }
-    
-    /// The value as an array or an empty array if not present/convertible
-    public subscript(key: JSONKey<[JSON]>) -> [JSON] {
-        return self[key.type].jsonArrayValue
     }
 }
 
@@ -213,5 +179,39 @@ extension JSON {
     /// The value as a dictionary or an empty dictionary if not present/convertible
     public subscript(key: JSONKey<[String: JSON]>) -> [String: JSON] {
         return self[key.type].jsonDictionaryValue
+    }
+}
+
+// MARK: - Array
+
+extension JSON {
+    /// The value as an array or nil if not present/convertible
+    public subscript(key: JSONKey<[AnyObject]?>) -> [AnyObject]? {
+        return self[key.type].array
+    }
+    
+    /// The value as an array or an empty array if not present/convertible
+    public subscript(key: JSONKey<[AnyObject]>) -> [AnyObject] {
+        return self[key.type].arrayValue
+    }
+    
+    /// The value as an array or nil if not present/convertible
+    public subscript(key: JSONKey<NSArray?>) -> NSArray? {
+        return self[key.type].nsArray
+    }
+    
+    /// The value as an array or an empty array if not present/convertible
+    public subscript(key: JSONKey<NSArray>) -> NSArray {
+        return self[key.type].nsArrayValue
+    }
+    
+    /// The value as an array or nil if not present/convertible
+    public subscript(key: JSONKey<[JSON]?>) -> [JSON]? {
+        return self[key.type].jsonArray
+    }
+    
+    /// The value as an array or an empty array if not present/convertible
+    public subscript(key: JSONKey<[JSON]>) -> [JSON] {
+        return self[key.type].jsonArrayValue
     }
 }
