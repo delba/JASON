@@ -56,6 +56,8 @@ private extension JSON {
     }
 }
 
+// MARK: - String
+
 extension JSON {
     /// The value as a string or nil if not present/convertible
     public subscript(key: JSONKey<String?>) -> String? {
@@ -66,7 +68,11 @@ extension JSON {
     public subscript(key: JSONKey<String>) -> String {
         return self[key.type].stringValue
     }
-    
+}
+
+// MARK: - Bool
+
+extension JSON {
     /// The value as a boolean or nil if not present/convertible
     public subscript(key: JSONKey<Bool?>) -> Bool? {
         return self[key.type].bool
@@ -76,7 +82,11 @@ extension JSON {
     public subscript(key: JSONKey<Bool>) -> Bool {
         return self[key.type].boolValue
     }
-    
+}
+
+// MARK: - Integer
+
+extension JSON {
     /// The value as a 64-bit signed integer or nil if not present/convertible
     public subscript(key: JSONKey<Int?>) -> Int? {
         return self[key.type].int
@@ -86,7 +96,11 @@ extension JSON {
     public subscript(key: JSONKey<Int>) -> Int {
         return self[key.type].intValue
     }
-    
+}
+
+// MARK: - FloatingPointType
+
+extension JSON {
     /// The value as a 64-bit floating-point number or nil if not present/convertible
     public subscript(key: JSONKey<Double?>) -> Double? {
         return self[key.type].double
@@ -116,12 +130,18 @@ extension JSON {
     public subscript(key: JSONKey<CGFloat>) -> CGFloat {
         return self[key.type].cgFloatValue
     }
-    
+}
+
+extension JSON {
     /// The value as JSON
     public subscript(key: JSONKey<JSON>) -> JSON {
         return self[key.type]
     }
-    
+}
+
+// MARK: - NSURL
+
+extension JSON {
     /// The value as NSURL?
     public subscript(key: JSONKey<NSURL?>) -> NSURL? {
         return self[key.type].nsURL
