@@ -22,6 +22,13 @@
 // SOFTWARE.
 //
 
+// MARK: - JSON
+
+extension JSON {
+    /// The value as JSON
+    public var json: JSON { return self }
+}
+
 // MARK: - String
 
 extension JSON {

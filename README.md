@@ -141,6 +141,7 @@ struct User {
 
                          | Property              | JSONKey Type           | Default value
  ----------------------- | --------------------- | ---------------------- | -------------
+ **JSON**                | `json`                | `JSON`                 |
  **String**              | `string`              | `String?`              |
                          | `stringValue`         | `String`               | `""`
  **Integer**             | `int`                 | `Int?`                 |
