@@ -121,7 +121,7 @@ You might find more convenient to extend `JSONKeys` as shown in the [Example sec
 
 > This example uses the **Dribbble API** ([docs](http://developer.dribbble.com/v1/)).
 <br/>
-> An example of the server response can be find in [`Tests/Supporting Files/shots.json`](https://github.com/delba/JASON/blob/master/Tests/Supporting%20Files/shots.json)
+> An example of the server response can be found in [`Tests/Supporting Files/shots.json`](https://github.com/delba/JASON/blob/master/Tests/Supporting%20Files/shots.json)
 
 - **Step 1:** Extend `JSONKeys` to define your `JSONKey`
 
