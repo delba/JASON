@@ -24,7 +24,7 @@ of the app when dealing with large amout of data.
 
 ## Features
 
-- [x] Very fast
+- [x] Very fast - [`benchmarks`](https://github.com/delba/JASON/tree/benchmarks)
 - [x] Fully tested
 - [x] Fully documented
 <p></p>
@@ -33,7 +33,7 @@ of the app when dealing with large amout of data.
 - [x] Regular updates
 <p></p>
 - [x] Support for iOS, OSX, tvOS, watchOS
-- [x] Compatible with Carthage/CocoaPods
+- [x] Compatible with [Carthage](https://github.com/delba/JASON#carthage) / [CocoaPods](https://github.com/delba/JASON#cocoapods)
 - [x] Provide extensions
 
 ## Usage
@@ -61,15 +61,13 @@ Use subscripts to parse the `JSON` object:
 
 ```swift
 json["people"][0]["name"]
-```
 
-Alternatively, you can use a path:
+// Or with a path:
 
-```swift
 json[path: "people", 0, "name"]
 ```
 
-#### Casting the value
+#### Type casting
 
 Cast `JSON` value to its appropriate type by using the computed property `json.<type>`:
 
@@ -80,7 +78,7 @@ let name = json["name"].string // the name as String?
 The non-optional variant `json.<type>Value` will return a default value if not present/convertible:
 
 ```swift
-let name = json["wrong"].string // the name will be ""
+let name = json["wrong"].stringValue // the name will be ""
 ```
 
 You can also access the internal value as `AnyObject?` if you want to cast it yourself:
@@ -91,9 +89,42 @@ let something = json["something"].object
 
 *See the [References section](https://github.com/delba/JASON#references) for the full list of properties.*
 
-#### `JSONKey`
+#### `JSONKey`:
+
+> This idea is stolen from [`SwiftyUserDefaults`](https://github.com/radex/SwiftyUserDefaults) by **Radek Pietruszewski** ([GitHub](https://github.com/radex), [Twitter](https://twitter.com/radexp), [Blog](http://radex.io)).
+<br/>
+> I can't recommend enough to read his article about it! :boom: [Statically-typed NSUserDefaults](http://radex.io/swift/nsuserdefaults/static/) :boom:
+
+Define and use your `JSONKey` as follow:
+
+```swift
+// With a int key:
+
+let personKey = JSONKey<JSON>(0)
+let personJSON = peopleJSON[personKey]
+
+// With a string key:
+
+let nameKey = JSONKey<String>("name")
+let name = personJSON[nameKey]
+
+// With a path:
+
+let twitterURLKey = JSONKey<NSURL?>(path: 0, "twitter")
+let twitterURL = peopleJSON[twitterURLKey]
+```
+
+You might find more convenient to extend `JSONKeys` as shown in the [Example section](https://github.com/delba/JASON#example).
+
+*See the [References section](https://github.com/delba/JASON#references) for the full list of `JSONKey` types.*
 
 ## Example
+
+> This example uses the **Dribbble API** ([docs](http://developer.dribbble.com/v1/)).
+<br/>
+> An example of the server response can be find in [`Tests/Supporting Files/shots.json`](https://github.com/delba/JASON/blob/master/Tests/Supporting%20Files/shots.json)
+
+- **Step 1:** Extend `JSONKeys` to define your `JSONKey`
 
 ```swift
 extension JSONKeys {
@@ -107,6 +138,8 @@ extension JSONKeys {
     static let name = JSONKey<String>("name") 
 }
 ```
+
+- **Step 2:** Create the `Shot` and `User` models
 
 ```swift
 struct Shot {
@@ -142,11 +175,22 @@ struct User {
 }
 ```
 
+- **Step 3:** Use the [`JASON+Alamofire.swift`](https://github.com/delba/JASON/blob/master/Extensions/JASON%2BAlamofire.swift) extension to fetch the shots
+
+```swift
+Alamofire.request(.GET, shotsURL).responseJASON { response in
+    if let json = response.result.value {
+        let shots = json.map(Shot.init)
+    }
+}
+```
+
 ## References
+
+> Include [`JASON+Properties.swift`](https://github.com/delba/JASON/blob/master/Extensions/JASON%2BProperties.swift) for even more types!
 
 Property              | JSONKey Type           | Default value
 --------------------- | ---------------------- | -------------
-`json`                | `JSON`                 |
 `string`              | `String?`              |
 `stringValue`         | `String`               | `""`
 `int`                 | `Int?`                 |
@@ -172,8 +216,6 @@ Property              | JSONKey Type           | Default value
 `jsonArrayValue`      | `[JSON]`               | `[]`
 `nsArray`             | `NSArray?`             |
 `nsArrayValue`        | `NSArray`              | `NSArray()`
-
-> Include [`Extensions/JASON+Properties.swift`](https://github.com/delba/JASON/blob/master/Extensions/JASON%2BProperties.swift) for even more types
 
 ## Installation
 
