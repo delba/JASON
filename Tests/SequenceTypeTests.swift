@@ -33,6 +33,6 @@ class SequenceTypeTests: XCTestCase {
         ]
 
         let names = json["friends"].map {$0.stringValue}
-        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], names)
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], names)
     }
 }

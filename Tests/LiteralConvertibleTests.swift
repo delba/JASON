@@ -49,12 +49,12 @@ class LiteralConvertibleTests: XCTestCase {
 
     func testArrayLiteralConvertible() {
         let json: JSON = ["Steve Sanders", "Dylan McKay"]
-        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json.arrayValue)
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json.arrayValue)
     }
 
     func testDictionaryLiteralConvertible() {
         let json: JSON = ["name": "Brandon Walsh"]
-        XCTAssertEqualDictionaries(["name": "Brandon Walsh"], json.dictionaryValue)
+        AssertEqualDictionaries(["name": "Brandon Walsh"], json.dictionaryValue)
     }
 
     func testNilLiteralConvertible() {

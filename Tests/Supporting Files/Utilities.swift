@@ -25,15 +25,15 @@
 import XCTest
 
 internal extension XCTestCase {
-    func XCTAssertEqualDictionaries(lhs: [String: AnyObject], _ rhs: [String: AnyObject]) {
+    func AssertEqualDictionaries(lhs: [String: AnyObject], _ rhs: [String: AnyObject]) {
         XCTAssertEqual(NSDictionary(dictionary: lhs), NSDictionary(dictionary: rhs))
     }
 
-    func XCTAssertEqualArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
+    func AssertEqualArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
         XCTAssertEqual(NSArray(array: lhs), NSArray(array: rhs))
     }
 
-    func XCTAssertEqualUnorderedArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
+    func AssertEqualUnorderedArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
         let array = NSArray(array: rhs)
 
         for object in lhs {
@@ -41,7 +41,7 @@ internal extension XCTestCase {
         }
     }
 
-    func XCTAssertEqualOptionals<T: Equatable>(lhs: T?, _ rhs: T?) {
+    func AssertEqualOptionals<T: Equatable>(lhs: T?, _ rhs: T?) {
         switch (lhs, rhs) {
         case let (.Some(lhs), .Some(rhs)):
             XCTAssertEqual(lhs, rhs)

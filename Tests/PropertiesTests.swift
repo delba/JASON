@@ -134,18 +134,18 @@ class PropertiesTests: XCTestCase {
 
         // Value is present and convertible
 
-        XCTAssertEqualDictionaries(["name": "Cindy Walsh"], json["mother"].dictionary!)
-        XCTAssertEqualDictionaries(["name": "Cindy Walsh"], json["mother"].dictionaryValue)
+        AssertEqualDictionaries(["name": "Cindy Walsh"], json["mother"].dictionary!)
+        AssertEqualDictionaries(["name": "Cindy Walsh"], json["mother"].dictionaryValue)
 
         // Value is not present
 
         XCTAssertNil(json["father"].dictionary)
-        XCTAssertEqualDictionaries([String: AnyObject](), json["father"].dictionaryValue)
+        AssertEqualDictionaries([String: AnyObject](), json["father"].dictionaryValue)
 
         // Value is not convertible
 
         XCTAssertNil(json["name"].dictionary)
-        XCTAssertEqualDictionaries([String: AnyObject](), json["name"].dictionaryValue)
+        AssertEqualDictionaries([String: AnyObject](), json["name"].dictionaryValue)
     }
     
     func testJsonDictionary() {
@@ -185,18 +185,18 @@ class PropertiesTests: XCTestCase {
 
         // Value is present and convertible
 
-        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].array!)
-        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].arrayValue)
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].array!)
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].arrayValue)
 
         // Value is not present
 
         XCTAssertNil(json["romances"].array)
-        XCTAssertEqualArrays([AnyObject](), json["romances"].arrayValue)
+        AssertEqualArrays([AnyObject](), json["romances"].arrayValue)
 
         // Value is not convertible
 
         XCTAssertNil(json["name"].array)
-        XCTAssertEqualArrays([AnyObject](), json["name"].arrayValue)
+        AssertEqualArrays([AnyObject](), json["name"].arrayValue)
     }
     
     func testJsonArray() {
@@ -207,8 +207,8 @@ class PropertiesTests: XCTestCase {
         
         // Value is present and convertible
         
-        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArray!.map{$0.stringValue})
-        XCTAssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArrayValue.map{$0.stringValue})
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArray!.map{$0.stringValue})
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArrayValue.map{$0.stringValue})
         
         // Value is not present
         

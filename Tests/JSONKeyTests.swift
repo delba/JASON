@@ -76,10 +76,10 @@ class JSONKeyTests: XCTestCase {
         XCTAssertEqual(4.2, json[.optional_float])
         XCTAssertEqual(true, json[.bool])
         XCTAssertEqual(true, json[.optional_bool])
-        XCTAssertEqualArrays(["string", 42, 4.2, true], json[.array])
-        XCTAssertEqualArrays(["string", 42, 4.2, true], json[.optional_array]!)
-        XCTAssertEqualDictionaries(["string": 42], json[.dictionary])
-        XCTAssertEqualDictionaries(["string": 42], json[.optional_dictionary])
+        AssertEqualArrays(["string", 42, 4.2, true], json[.array])
+        AssertEqualArrays(["string", 42, 4.2, true], json[.optional_array]!)
+        AssertEqualDictionaries(["string": 42], json[.dictionary])
+        AssertEqualDictionaries(["string": 42], json[.optional_dictionary])
     }
     
     func testPath() {
