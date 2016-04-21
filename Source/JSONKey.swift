@@ -35,14 +35,35 @@ private enum KeyType {
 public class JSONKey<ValueType>: JSONKeys {
     private let type: KeyType
     
+    /**
+     Creates a new instance of JSONKey.
+     
+     - parameter key: A string.
+     
+     - returns: A new instance of JSONKey.
+     */
     public init(_ key: String) {
         self.type = .String(key)
     }
     
+    /**
+     Creates a new instance of JSONKey.
+     
+     - parameter key: An integer.
+     
+     - returns: A new instance of JSONKey.
+     */
     public init(_ key: Int) {
         self.type = .Int(key)
     }
     
+    /**
+     Creates a new instance of JSONKey.
+     
+     - parameter key: Any
+     
+     - returns: A new instance of JSONKey.
+     */
     public init(path indexes: Any...) {
         self.type = .Path(indexes)
     }
