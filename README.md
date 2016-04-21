@@ -17,7 +17,7 @@
 
 ## Features
 
-- [x] Very fast
+- [x] Very [fast](https://github.com/delba/JASON/tree/benchmarks)
 - [x] Fully tested
 - [x] Fully documented
 <p></p>
@@ -26,8 +26,8 @@
 - [x] Regular updates
 <p></p>
 - [x] Support for iOS, OSX, tvOS, watchOS
-- [x] Compatible with Carthage/CocoaPods
-- [x] Provide extensions
+- [x] Compatible with [Carthage](https://github.com/delba/JASON#carthage)/[CocoaPods](https://github.com/delba/JASON#cocoapods)
+- [x] Provide [extensions](https://github.com/delba/JASON/tree/master/Extensions)
 
 ## Usage
 
