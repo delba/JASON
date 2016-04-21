@@ -1,7 +1,6 @@
-<br/>
-<h3 align="center">JASON</h3>
-<br/>
-<br/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/delba/JASON/assets/JASON.png">
+</p>
 
 <p align="center">
     <a href="https://travis-ci.org/delba/JASON"><img alt="Travis Status" src="https://img.shields.io/travis/delba/JASON.svg"/></a>
