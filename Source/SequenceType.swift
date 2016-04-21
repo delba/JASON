@@ -37,11 +37,11 @@ extension JSON: SequenceType {
         var index = 0
         
         return AnyGenerator {
-            guard index < array.count else { return nil }
+            guard let object = array[safe: index] else  { return nil }
             
             index += 1
             
-            return JSON(array[index - 1])
+            return JSON(object)
         }
     }
 }
