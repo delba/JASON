@@ -11,13 +11,20 @@
 
 **`JASON`** is a faster JSON deserializer written in Swift.
 
+```md
+JASON is the best framework we found to manage JSON at Swapcard. This is by far the fastest and
+the most convenient out there, it made our code clearer and improved the global performance
+of the app when dealing with large amout of data.
+```
+> *[Gautier Gédoux](https://github.com/gautier-gdx), lead iOS developer at [Swapcard](https://www.swapcard.com/)*
+
 <p align="center">
 <a href="#features">Features</a> • <a href="#usage">Usage</a> • <a href="#example">Example</a> • <a href="#references">References</a> • <a href="#installation">Installation</a> • <a href="#license">License</a>
 </p>
 
 ## Features
 
-- [x] Very [fast](https://github.com/delba/JASON/tree/benchmarks)
+- [x] Very fast
 - [x] Fully tested
 - [x] Fully documented
 <p></p>
@@ -26,67 +33,65 @@
 - [x] Regular updates
 <p></p>
 - [x] Support for iOS, OSX, tvOS, watchOS
-- [x] Compatible with [Carthage](https://github.com/delba/JASON#carthage)/[CocoaPods](https://github.com/delba/JASON#cocoapods)
-- [x] Provide [extensions](https://github.com/delba/JASON/tree/master/Extensions)
+- [x] Compatible with Carthage/CocoaPods
+- [x] Provide extensions
 
 ## Usage
 
-##### Initialization
+#### Initialization
 
 ```swift
-let json = JSON(anything)
+let json = JSON(anything) // where `anything` is `AnyObject?`
 ```
 
-```swift
-let json: JSON = xxxLiteralConvertible
-```
+If you're using [`Alamofire`](https://github.com/Alamofire/Alamofire), include [`JASON+Alamofire.swift`](https://github.com/delba/JASON/blob/master/Extensions/JASON%2BAlamofire.swift) in your project for even more awesomeness:
 
 ```swift
-Alamofire.request(.GET, URL).responseJASON { response in
+Alamofire.request(.GET, peopleURL).responseJASON { response in
     if let json = response.result.value {
-        print("JSON: \(json)")
+        let people = json.map(Person.init)
+        print("people: \(people)")
     }
 }
 ```
 
-If the underlying JSON object is an array, you can iterate over it:
+#### Parsing
 
-```swift
-let people = json.map(Person.init)
-```
-
-### Casting JSON values
-
-##### Using computed properties
+Use subscripts to parse the `JSON` object:
 
 ```swift
 json["people"][0]["name"]
 ```
 
-Alternatively, you can use `json[path: Any...]`:
+Alternatively, you can use a path:
 
 ```swift
 json[path: "people", 0, "name"]
 ```
 
-**`JASON`** provides a set of computed properties to make anyone's job easier:
+#### Casting the value
+
+Cast `JSON` value to its appropriate type by using the computed property `json.<type>`:
 
 ```swift
-let maybeName = json[path: "people", 0, "name"].string
-let name = json[path: "people", 0, "name"].stringValue
+let name = json["name"].string // the name as String?
 ```
 
-These getters come by two, `json.<type>` and `json.<type>Value`, and returns an optional or a non-optional type, respectively.
-
-If the value can't be converted to the given type, the optional getter will return nil and the non-optional one a default value.
-
-**`JASON`** gives you access to the internal object (`AnyObject`) so you can cast the value to anything you want:
+The non-optional variant `json.<type>Value` will return a default value if not present/convertible:
 
 ```swift
-let name = json["people"][0]["name"].object as? String ?? ""
+let name = json["wrong"].string // the name will be ""
 ```
 
-##### Using `JSONKey`
+You can also access the internal value as `AnyObject?` if you want to cast it yourself:
+
+```swift
+let something = json["something"].object
+```
+
+*See the [References section](https://github.com/delba/JASON#references) for the full list of properties.*
+
+#### `JSONKey`
 
 ## Example
 
@@ -139,36 +144,36 @@ struct User {
 
 ## References
 
-                         | Property              | JSONKey Type           | Default value
- ----------------------- | --------------------- | ---------------------- | -------------
- **JSON**                | `json`                | `JSON`                 |
- **String**              | `string`              | `String?`              |
-                         | `stringValue`         | `String`               | `""`
- **Integer**             | `int`                 | `Int?`                 |
-                         | `intValue`            | `Int`                  | `0`
- **FloatingPointType**   | `double`              | `Double?`              |
-                         | `doubleValue`         | `Double`               | `0.0`
-                         | `float`               | `Float?`               |
-                         | `floatValue`          | `Float`                | `0.0`
-                         | `cgFloat`             | `CGFloat?`             |
-                         | `cgFloatValue`        | `CGFloat`              | `0.0`
- **Bool**                | `bool`                | `Bool?`                |
-                         | `boolValue`           | `Bool`                 | `false`
- **NSURL**               | `nsURL`               | `NSURL?`               |
- **Dictionary**          | `dictionary`          | `[String: AnyObject]?` |
-                         | `dictionaryValue`     | `[String: AnyObject]`  | `[:]`
-                         | `jsonDictionary`      | `[String: JSON]?`      |
-                         | `jsonDictionaryValue` | `[String: JSON]`       | `[:]`
-                         | `nsDictionary`        | `NSDictionary?`        |
-                         | `nsDictionaryValue`   | `NSDictionary`         | `NSDictionary()`
- **Array**               | `array`               | `[AnyObject]?`         |
-                         | `arrayValue`          | `[AnyObject]`          | `[]`
-                         | `jsonArray`           | `[JSON]?`              |
-                         | `jsonArrayValue`      | `[JSON]`               | `[]`
-                         | `nsArray`             | `NSArray?`             |
-                         | `nsArrayValue`        | `NSArray`              | `NSArray()`
+Property              | JSONKey Type           | Default value
+--------------------- | ---------------------- | -------------
+`json`                | `JSON`                 |
+`string`              | `String?`              |
+`stringValue`         | `String`               | `""`
+`int`                 | `Int?`                 |
+`intValue`            | `Int`                  | `0`
+`double`              | `Double?`              |
+`doubleValue`         | `Double`               | `0.0`
+`float`               | `Float?`               |
+`floatValue`          | `Float`                | `0.0`
+`cgFloat`             | `CGFloat?`             |
+`cgFloatValue`        | `CGFloat`              | `0.0`
+`bool`                | `Bool?`                |
+`boolValue`           | `Bool`                 | `false`
+`nsURL`               | `NSURL?`               |
+`dictionary`          | `[String: AnyObject]?` |
+`dictionaryValue`     | `[String: AnyObject]`  | `[:]`
+`jsonDictionary`      | `[String: JSON]?`      |
+`jsonDictionaryValue` | `[String: JSON]`       | `[:]`
+`nsDictionary`        | `NSDictionary?`        |
+`nsDictionaryValue`   | `NSDictionary`         | `NSDictionary()`
+`array`               | `[AnyObject]?`         |
+`arrayValue`          | `[AnyObject]`          | `[]`
+`jsonArray`           | `[JSON]?`              |
+`jsonArrayValue`      | `[JSON]`               | `[]`
+`nsArray`             | `NSArray?`             |
+`nsArrayValue`        | `NSArray`              | `NSArray()`
 
-> You can find more getters on the [`extensions` branch](https://github.com/delba/JASON/tree/extensions)
+> Include [`Extensions/JASON+Properties.swift`](https://github.com/delba/JASON/blob/master/Extensions/JASON%2BProperties.swift) for even more types
 
 ## Installation
 
