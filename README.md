@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/delba/JASON/raw/assets/benchmarks@2x.png">
+<img src="https://github.com/delba/JASON/raw/assets/JASON.png">
 </p>
 
 ```swift
