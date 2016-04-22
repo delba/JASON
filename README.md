@@ -37,7 +37,7 @@ struct Struct {
     let optionalArray: [AnyObject]?
     let optionalDictionary: [String: AnyObject]?
 
-    init(_ json: JSON) {
+    init(_ json: JASON.JSON) {
         // The properties are set
     }
 }
