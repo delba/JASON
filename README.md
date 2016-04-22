@@ -8,7 +8,7 @@
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
 </p>
 
-**JASON** is a faster `JSON` deserializer written in Swift.
+**JASON** is a [faster](https://github.com/delba/JASON/tree/benchmarks) `JSON` deserializer written in Swift.
 
 ```md
 JASON is the best framework we found to manage JSON at Swapcard. This is by far the fastest and
