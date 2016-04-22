@@ -29,4 +29,5 @@ xcuserdata
 *.ipa
 
 # Carthage
+Carthage/Checkouts
 Carthage/Build
