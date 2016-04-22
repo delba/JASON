@@ -23,7 +23,7 @@ let object: AnyObject = [
 ]
 
 class BenchmarksTests: XCTestCase {
-    func testJASON100() {
+    func testJASON_100() {
         measureBlock {
             for _ in 0..<100 {
                 let json = JASON.JSON(object)
@@ -32,7 +32,7 @@ class BenchmarksTests: XCTestCase {
         }
     }
     
-    func testSwiftyJSON100() {
+    func testSwiftyJSON_100() {
         measureBlock {
             for _ in 0..<100 {
                 let json = SwiftyJSON.JSON(object)
@@ -41,7 +41,7 @@ class BenchmarksTests: XCTestCase {
         }
     }
     
-    func testJASON1_000() {
+    func testJASON_1000() {
         measureBlock {
             for _ in 0..<1_000 {
                 let json = JASON.JSON(object)
@@ -50,7 +50,7 @@ class BenchmarksTests: XCTestCase {
         }
     }
     
-    func testSwiftyJSON1_000() {
+    func testSwiftyJSON_1000() {
         measureBlock {
             for _ in 0..<1_000 {
                 let json = SwiftyJSON.JSON(object)
@@ -60,7 +60,7 @@ class BenchmarksTests: XCTestCase {
     }
     
     
-    func testJASON10_000() {
+    func testJASON_10000() {
         measureBlock {
             for _ in 0..<10_000 {
                 let json = JASON.JSON(object)
@@ -69,7 +69,7 @@ class BenchmarksTests: XCTestCase {
         }
     }
     
-    func testSwiftyJSON10_000() {
+    func testSwiftyJSON_10000() {
         measureBlock {
             for _ in 0..<10_000 {
                 let json = SwiftyJSON.JSON(object)
