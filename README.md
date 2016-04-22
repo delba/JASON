@@ -19,6 +19,8 @@ JASON$ xcodebuild test -project Benchmarks.xcodeproj -scheme Benchmarks -destina
 
 ##### The tests
 
+[`BenchmarksTests/Struct.swift`](https://github.com/delba/JASON/blob/benchmarks/BenchmarksTests/Struct.swift)
+
 ```swift
 struct Struct {
     let string: String
@@ -42,9 +44,20 @@ struct Struct {
 }
 ```
 
+[`BenchmarksTests/BenchmarksTests.swift`](https://github.com/delba/JASON/blob/benchmarks/BenchmarksTests/BenchmarksTests.swift)
+
 ```swift
-for _ in 0..<n {
-    let json = JSON(object)
-    let _ = Struct(json)
+class BenchmarksTest: XCTestCase {
+
+    func testJASON_100 {
+        measureBlock {
+            for _ in 0..<100 {
+                let json = JASON.JSON(object)
+                let _ = Struct(json)
+            }
+        }
+    }
+    
+    // etc.
 }
 ```
