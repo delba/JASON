@@ -2,11 +2,22 @@
 <img src="https://github.com/delba/JASON/raw/assets/JASON.png">
 </p>
 
-n      | JASON             | SwiftyJSON        | Δ
+n      | JASON 2.0         | SwiftyJSON 2.3.1  | Δ
 ------ | ----------------- | ----------------- | -------
 100    | 0.006 (24% STDEV) | 0.012 (38% STDEV) | ~2.00x
 1000   | 0.049 (5% STDEV)  | 0.108 (8% STDEV)  | ~2.20x
 10000  | 0.506 (2% STDEV)  | 1.098 (3% STDEV)  | ~2.16x
+
+##### Running the tests
+
+```
+~$ git clone -b benchmarks https://github.com/delba/JASON.git
+~$ cd JASON
+JASON$ carthage update
+JASON$ xcodebuild test -project Benchmarks.xcodeproj -scheme Benchmarks -destination "platform=iOS Simulator,name=iPhone 6s"
+```
+
+##### The tests
 
 ```swift
 struct Struct {
