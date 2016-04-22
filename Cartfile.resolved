@@ -1,2 +1,2 @@
-github "delba/JASON" "09d43f154371fa9c87937861623cb6ab54031b9b"
-github "SwiftyJSON/SwiftyJSON" "2.2.0"
+github "delba/JASON" "v2.0"
+github "SwiftyJSON/SwiftyJSON" "2.3.1"

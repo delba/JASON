@@ -1,2 +1,2 @@
-github "delba/JASON" "master"
-github "SwiftyJSON/SwiftyJSON"
+github "delba/JASON" >= 2.0
+github "SwiftyJSON/SwiftyJSON" "2.3.1"

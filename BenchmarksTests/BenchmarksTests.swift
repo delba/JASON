@@ -78,7 +78,7 @@ class BenchmarksTests: XCTestCase {
         measureBlock {
             for _ in 0..<100 {
                 let json = JASON.JSON(object)
-                Struct(jason: json)
+                let _ = Struct(jason: json)
             }
         }
     }
@@ -87,7 +87,7 @@ class BenchmarksTests: XCTestCase {
         measureBlock {
             for _ in 0..<100 {
                 let json = SwiftyJSON.JSON(object)
-                Struct(swityJson: json)
+                let _ = Struct(swityJson: json)
             }
         }
     }
@@ -96,7 +96,7 @@ class BenchmarksTests: XCTestCase {
         measureBlock {
             for _ in 0..<1_000 {
                 let json = JASON.JSON(object)
-                Struct(jason: json)
+                let _ = Struct(jason: json)
             }
         }
     }
@@ -105,7 +105,7 @@ class BenchmarksTests: XCTestCase {
         measureBlock {
             for _ in 0..<1_000 {
                 let json = SwiftyJSON.JSON(object)
-                Struct(swityJson: json)
+                let _ = Struct(swityJson: json)
             }
         }
     }
@@ -115,7 +115,7 @@ class BenchmarksTests: XCTestCase {
         measureBlock {
             for _ in 0..<10_000 {
                 let json = JASON.JSON(object)
-                Struct(jason: json)
+                let _ = Struct(jason: json)
             }
         }
     }
@@ -124,7 +124,7 @@ class BenchmarksTests: XCTestCase {
         measureBlock {
             for _ in 0..<10_000 {
                 let json = SwiftyJSON.JSON(object)
-                Struct(swityJson: json)
+                let _ = Struct(swityJson: json)
             }
         }
     }
