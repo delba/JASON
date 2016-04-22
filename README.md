@@ -10,9 +10,8 @@ n      | JASON 2.0         | SwiftyJSON 2.3.1  | Δ
 
 ##### Running the tests
 
-```
-~$ git clone -b benchmarks https://github.com/delba/JASON.git
-~$ cd JASON
+```bash
+~$ git clone -b benchmarks https://github.com/delba/JASON.git && cd JASON
 JASON$ carthage update
 JASON$ xcodebuild test -project Benchmarks.xcodeproj -scheme Benchmarks -destination "platform=iOS Simulator,name=iPhone 6s"
 ```
