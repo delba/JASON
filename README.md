@@ -13,7 +13,7 @@
 ```md
 JASON is the best framework we found to manage JSON at Swapcard. This is by far the fastest and
 the most convenient out there, it made our code clearer and improved the global performance
-of the app when dealing with large amout of data.
+of the app when dealing with large amount of data.
 ```
 > *[Gautier Gédoux](https://github.com/gautier-gdx), lead iOS developer at [Swapcard](https://www.swapcard.com/)*
 
