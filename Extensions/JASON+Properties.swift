@@ -24,7 +24,7 @@
 
 import JASON
 
-// MARK: Signed Integers
+// MARK: - Signed Integers
 
 extension JSON {
     // The value as a 8-bit signed integer or nil if not present/convertible
@@ -48,7 +48,7 @@ extension JSON {
     public var int64Value: Int64 { return int64 ?? 0 }
 }
 
-// MARK: Unsigned Integers
+// MARK: - Unsigned Integers
 
 extension JSON {
     // The value as a 64-bit unsigned integer or nil if not present/convertible
