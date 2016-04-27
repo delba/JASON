@@ -31,7 +31,7 @@ of the app when dealing with large amount of data.
 - [x] Beautiful API
 - [x] Regular updates
 <p></p>
-- [x] Support for iOS, OSX, tvOS
+- [x] Support for iOS, OSX, tvOS, watchOS
 - [x] Compatible with [Carthage](https://github.com/delba/JASON#carthage) / [CocoaPods](https://github.com/delba/JASON#cocoapods)
 - [x] Provide extensions - [`Extensions/`](https://github.com/delba/JASON/tree/master/Extensions)
 
