@@ -54,6 +54,8 @@ Alamofire.request(.GET, peopleURL).responseJASON { response in
 }
 ```
 
+If you're using [`Moya`](https://github.com/Moya/Moya), check out [`Moya-JASON`](https://github.com/DroidsOnRoids/Moya-JASON)!
+
 #### Parsing
 
 Use subscripts to parse the `JSON` object:
@@ -116,6 +118,10 @@ let twitterURL = peopleJSON[twitterURLKey]
 You might find more convenient to extend `JSONKeys` as shown in the [Example section](https://github.com/delba/JASON#example).
 
 *See the [References section](https://github.com/delba/JASON#references) for the full list of `JSONKey` types.*
+
+#### Third-party libraries:
+
+- [DroidsOnRoids/**Moya-JASON**](https://github.com/DroidsOnRoids/Moya-JASON) JASON bindings for Moya.
 
 ## Example
 
