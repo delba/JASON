@@ -6,7 +6,7 @@
     <a href="https://travis-ci.org/delba/JASON"><img alt="Travis Status" src="https://img.shields.io/travis/delba/JASON.svg"/></a>
     <a href="https://img.shields.io/cocoapods/v/JASON.svg"><img alt="CocoaPods compatible" src="https://img.shields.io/cocoapods/v/JASON.svg"/></a>
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
-    <a href="https://img.shields.io/cocoapods/p/JASON.svg"><img alt="Platform" src="https://img.shields.io/cocoapods/p/JASON.svg"/>
+    <a href="https://img.shields.io/cocoapods/p/JASON.svg"><img alt="Platform" src="https://img.shields.io/cocoapods/p/JASON.svg"/></a>
 </p>
 
 **JASON** is a [faster](https://github.com/delba/JASON/tree/benchmarks) `JSON` deserializer written in Swift.
