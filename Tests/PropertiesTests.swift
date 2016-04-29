@@ -89,7 +89,7 @@ class PropertiesTests: XCTestCase {
         XCTAssertNil(json["romances_count"].float)
         XCTAssertEqual(Float(0), json["romances_count"].floatValue)
 
-        // VAlue is not convertible
+        // Value is not convertible
 
         XCTAssertNil(json["name"].double)
         XCTAssertEqual(Double(0), json["name"].doubleValue)
