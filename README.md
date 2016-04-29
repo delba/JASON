@@ -205,6 +205,8 @@ Property              | JSONKey Type           | Default value
 `doubleValue`         | `Double`               | `0.0`
 `float`               | `Float?`               |
 `floatValue`          | `Float`                | `0.0`
+`nsNumber`            | `NSNumber?`            |
+`nsNumberValue`       | `NSNumber`             | `0`
 `cgFloat`             | `CGFloat?`             |
 `cgFloatValue`        | `CGFloat`              | `0.0`
 `bool`                | `Bool?`                |
