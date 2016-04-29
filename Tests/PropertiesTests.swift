@@ -97,6 +97,9 @@ class PropertiesTests: XCTestCase {
         XCTAssertNil(json["name"].float)
         XCTAssertEqual(Float(0), json["name"].floatValue)
         
+        XCTAssertEqual(NSNumber(integer: 17), json["age"].nsNumber!)
+        XCTAssertEqual(NSNumber(integer: 17), json["age"].nsNumberValue)
+        
         XCTAssertEqual(CGFloat(17), json["age"].cgFloat!)
         XCTAssertEqual(CGFloat(17), json["age"].cgFloatValue)
     }

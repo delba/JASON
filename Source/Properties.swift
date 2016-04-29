@@ -60,6 +60,11 @@ extension JSON {
     /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
     public var floatValue: Float { return float ?? 0 }
     
+    /// The value as a NSNumber or nil if not present/convertible
+    public var nsNumber: NSNumber? { return object as? NSNumber }
+    /// The value as a NSNumber or 0 if not present/convertible
+    public var nsNumberValue: NSNumber { return nsNumber ?? 0 }
+    
     /// The value as a CGFloat or nil if not present/convertible
     public var cgFloat: CGFloat? { return object as? CGFloat }
     /// The value as a CGFloat or 0.0 if not present/convertible

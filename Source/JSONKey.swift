@@ -196,6 +196,28 @@ extension JSON {
     }
     
     /**
+     Returns the value associated with the given key as a NSNumber or nil if not present/convertible.
+     
+     - parameter key: The key.
+     
+     - returns: The value associated with the given key as a NSNumber or nil if not present/convertible.
+     */
+    public subscript(key: JSONKey<NSNumber?>) -> NSNumber? {
+        return self[key.type].nsNumber
+    }
+    
+    /**
+     Returns the value associated with the given key as a NSNumber or 0 if not present/convertible.
+     
+     - parameter key: The key.
+     
+     - returns: The value associated with the given key as a NSNumber or 0 if not present/convertible.
+     */
+    public subscript(key: JSONKey<NSNumber>) -> NSNumber {
+        return self[key.type].nsNumberValue
+    }
+    
+    /**
      Returns the value associated with the given key as a CGFloat or nil if not present/convertible.
      
      - parameter key: The key.
