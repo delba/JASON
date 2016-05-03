@@ -211,6 +211,7 @@ Property              | JSONKey Type           | Default value
 `cgFloatValue`        | `CGFloat`              | `0.0`
 `bool`                | `Bool?`                |
 `boolValue`           | `Bool`                 | `false`
+`nsDate`              | `NSDate?`              |
 `nsURL`               | `NSURL?`               |
 `dictionary`          | `[String: AnyObject]?` |
 `dictionaryValue`     | `[String: AnyObject]`  | `[:]`
@@ -224,6 +225,8 @@ Property              | JSONKey Type           | Default value
 `jsonArrayValue`      | `[JSON]`               | `[]`
 `nsArray`             | `NSArray?`             |
 `nsArrayValue`        | `NSArray`              | `NSArray()`
+
+> Configure JSON.dateFormatter if needed for `nsDate` parsing
 
 ## Installation
 

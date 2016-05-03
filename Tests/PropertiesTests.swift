@@ -223,5 +223,34 @@ class PropertiesTests: XCTestCase {
         XCTAssert(json["name"].jsonArray == nil)
         XCTAssert(json["name"].jsonArrayValue.isEmpty)
     }
+    
+    func testDate() {
+        let formatter = NSDateFormatter()
+        let json: JSON = [
+            "date1": "2016-04-12T13:29:32",
+            "date2": "16/04/2016",
+            "date3": "05/11/2012",
+            "date4": "April 10, 2020",
+            "invaliddate": "abc123"
+        ]
+        
+        // Value is present and convertible
+        
+        JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        XCTAssertEqual(formatter.dateFromString("2016-04-12T13:29:32"), json["date1"].nsDate)
+        
+        JSON.dateFormatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd-MM-yyyy"
+        XCTAssertEqual(formatter.dateFromString("16/04/2016"), json["date2"].nsDate)
+        XCTAssertEqual(formatter.dateFromString("05/11/2012"), json["date3"].nsDate)
+        
+        JSON.dateFormatter.dateFormat = "MMMM dd, yyyy"
+        formatter.dateFormat = "MMMM dd, yyyy"
+        XCTAssertEqual(formatter.dateFromString("April 10, 2020"), json["date4"].nsDate)
+        
+        // Value is not present
+        XCTAssertNil(json["invaliddate"].nsDate)
+    }
 
 }

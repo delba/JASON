@@ -25,6 +25,9 @@
 // MARK: - Initializers
 
 public struct JSON {
+    /// The date formatter used for date conversions
+    public static var dateFormatter = NSDateFormatter()
+    
     /// The object on which any subsequent method operates
     public let object: AnyObject?
 

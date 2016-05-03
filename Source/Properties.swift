@@ -80,6 +80,13 @@ extension JSON {
     public var boolValue: Bool { return bool ?? false }
 }
 
+// MARK: - NSDate
+
+extension JSON {
+    /// The value as a NSDate or nil if not present/convertible
+    public var nsDate: NSDate? { return JSON.dateFormatter.dateFromString(stringValue) }
+}
+
 // MARK: - NSURL
 
 extension JSON {
