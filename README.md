@@ -133,8 +133,13 @@ You might find more convenient to extend `JSONKeys` as shown in the [Example sec
 - **Step 1:** Extend `JSONKeys` to define your `JSONKey`
 
 ```swift
+JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
 extension JSONKeys {
     static let id    = JSONKey<Int>("id")
+    static let createdAt = JSONKey<NSDate?>("created_at")
+    static let updatedAt = JSONKey<NSDate?>("updated_at")
+    
     static let title = JSONKey<String>("title")
     
     static let normalImageURL = JSONKey<NSURL?>(path: "images", "normal")
@@ -152,8 +157,11 @@ struct Shot {
     let id: Int
     let title: String
     
-    var normalImageURL: NSURL!
+    let normalImageURL: NSURL
     var hidpiImageURL: NSURL?
+    
+    let createdAt: NSDate
+    let updatedAt: NSDate
     
     let user: User
 
@@ -161,8 +169,11 @@ struct Shot {
         id    = json[.id]
         title = json[.title]
         
-        normalImageURL = json[.normalImageURL]
+        normalImageURL = json[.normalImageURL]!
         hidpiImageURL  = json[.hidpiImageURL]
+        
+        createdAt = json[.createdAt]!
+        updatedAt = json[.updatedAt]!
         
         user = User(json[.user])
     }
@@ -173,10 +184,16 @@ struct Shot {
 struct User {
     let id: Int
     let name: String
+    
+    let createdAt: NSDate
+    let updatedAt: NSDate
 
     init(_ json: JSON) {
         id   = json[.id]
         name = json[.name]
+        
+        createdAt = json[.createdAt]!
+        updatedAt = json[.updatedAt]!
     }
 }
 ```
