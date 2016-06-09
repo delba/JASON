@@ -151,14 +151,8 @@ private extension JSON {
         - returns: An instance of AnyObject or nil
     */
     static func objectWithData(data: NSData?) -> AnyObject? {
-        if let data = data {
-            do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: [])
-            } catch _ {
-                return nil
-            }
-        }
-
-        return nil
+        guard let data = data else { return nil }
+        
+        return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
     }
 }
