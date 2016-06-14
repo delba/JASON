@@ -252,5 +252,25 @@ class PropertiesTests: XCTestCase {
         // Value is not present
         XCTAssertNil(json["invaliddate"].nsDate)
     }
+    
+    func testUrl() {
+        let json: JSON = [
+            "valid": "https://github.com/delba/JASON",
+            "invalid": "http://example.com/file[/].html",
+            "empty": NSNull()
+        ]
+        
+        // Value is present and convertible
+        XCTAssertNotNil(json["valid"].nsURL)
+        XCTAssertNotNil(json["invalid"].nsURL) // Invalid url should be encoded
+        
+        // Value is present but not convertible
+        XCTAssertNil(json["empty"].nsURL)
+        
+        // Value is not present
+        XCTAssertNil(json["unkown"].nsURL)
+        
+        
+    }
 
 }

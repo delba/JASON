@@ -91,7 +91,12 @@ extension JSON {
 
 extension JSON {
     /// The value as an instance of NSURL or nil if not convertible
-    public var nsURL: NSURL? { return NSURL(string: stringValue) }
+    public var nsURL: NSURL? {
+        if let encodedString = string?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
+            return NSURL(string: encodedString)
+        }
+        return nil
+    }
 }
 
 // MARK: - Dictionary
