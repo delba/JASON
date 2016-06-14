@@ -47,6 +47,6 @@ extension Alamofire.Request {
      - returns: The request.
      */
     public func responseJASON(completionHandler: Alamofire.Response<JASON.JSON, NSError> -> Void) -> Self {
-        return response(responseSerializer: Request.JASONResponseSerializer(), completionHandler: completionHandler)
+        return response(responseSerializer: Alamofire.Request.JASONResponseSerializer(), completionHandler: completionHandler)
     }
 }
