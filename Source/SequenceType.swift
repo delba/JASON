@@ -23,20 +23,20 @@
 //
 
 /// Conforming types gain access to reduce, map, filter et al.
-extension JSON: SequenceType {
+extension JSON: Sequence {
     /**
         The required method to conform to the SequenceType protocol.
 
         - returns: a generator over the elements of arrayValue converted to JSON
     */
-    public func generate() -> AnyGenerator<JSON> {
+    public func makeIterator() -> AnyIterator<JSON> {
         guard let array = nsArray else {
-            return AnyGenerator { nil }
+            return AnyIterator { nil }
         }
         
         var index = 0
         
-        return AnyGenerator {
+        return AnyIterator {
             guard let object = array[safe: index] else  { return nil }
             
             index += 1

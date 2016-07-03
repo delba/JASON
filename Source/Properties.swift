@@ -84,7 +84,7 @@ extension JSON {
 
 extension JSON {
     /// The value as a NSDate or nil if not present/convertible
-    public var nsDate: NSDate? { return JSON.dateFormatter.dateFromString(stringValue) }
+    public var nsDate: NSDate? { return JSON.dateFormatter.date(from: stringValue) }
 }
 
 // MARK: - NSURL
@@ -92,7 +92,7 @@ extension JSON {
 extension JSON {
     /// The value as an instance of NSURL or nil if not convertible
     public var nsURL: NSURL? {
-        if let string = string?.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet()) {
+        if let string = string?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             return NSURL(string: string)
         }
         return nil
