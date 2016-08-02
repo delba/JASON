@@ -97,8 +97,8 @@ class PropertiesTests: XCTestCase {
         XCTAssertNil(json["name"].float)
         XCTAssertEqual(Float(0), json["name"].floatValue)
         
-        XCTAssertEqual(NSNumber(integer: 17), json["age"].nsNumber!)
-        XCTAssertEqual(NSNumber(integer: 17), json["age"].nsNumberValue)
+        XCTAssertEqual(NSNumber(value: 17), json["age"].nsNumber!)
+        XCTAssertEqual(NSNumber(value: 17), json["age"].nsNumberValue)
         
         XCTAssertEqual(CGFloat(17), json["age"].cgFloat!)
         XCTAssertEqual(CGFloat(17), json["age"].cgFloatValue)
@@ -225,7 +225,7 @@ class PropertiesTests: XCTestCase {
     }
     
     func testDate() {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         let json: JSON = [
             "date1": "2016-04-12T13:29:32",
             "date2": "16/04/2016",
@@ -238,16 +238,16 @@ class PropertiesTests: XCTestCase {
         
         JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        XCTAssertEqual(formatter.dateFromString("2016-04-12T13:29:32"), json["date1"].nsDate)
+        XCTAssertEqual(formatter.date(from: "2016-04-12T13:29:32"), json["date1"].nsDate)
         
         JSON.dateFormatter.dateFormat = "dd-MM-yyyy"
         formatter.dateFormat = "dd-MM-yyyy"
-        XCTAssertEqual(formatter.dateFromString("16/04/2016"), json["date2"].nsDate)
-        XCTAssertEqual(formatter.dateFromString("05/11/2012"), json["date3"].nsDate)
+        XCTAssertEqual(formatter.date(from: "16/04/2016"), json["date2"].nsDate)
+        XCTAssertEqual(formatter.date(from: "05/11/2012"), json["date3"].nsDate)
         
         JSON.dateFormatter.dateFormat = "MMMM dd, yyyy"
         formatter.dateFormat = "MMMM dd, yyyy"
-        XCTAssertEqual(formatter.dateFromString("April 10, 2020"), json["date4"].nsDate)
+        XCTAssertEqual(formatter.date(from: "April 10, 2020"), json["date4"].nsDate)
         
         // Value is not present
         XCTAssertNil(json["invaliddate"].nsDate)

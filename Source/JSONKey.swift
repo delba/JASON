@@ -25,9 +25,9 @@
 // MARK: - JSONKey
 
 private enum KeyType {
-    case String(Swift.String)
-    case Int(Swift.Int)
-    case Path([Any])
+    case string(Swift.String)
+    case int(Swift.Int)
+    case path([Any])
 }
 
 public class JSONKeys {
@@ -45,7 +45,7 @@ public class JSONKey<ValueType>: JSONKeys {
      - returns: A new instance of JSONKey.
      */
     public init(_ key: String) {
-        self.type = .String(key)
+        self.type = .string(key)
     }
     
     /**
@@ -56,7 +56,7 @@ public class JSONKey<ValueType>: JSONKeys {
      - returns: A new instance of JSONKey.
      */
     public init(_ key: Int) {
-        self.type = .Int(key)
+        self.type = .int(key)
     }
     
     /**
@@ -67,16 +67,16 @@ public class JSONKey<ValueType>: JSONKeys {
      - returns: A new instance of JSONKey.
      */
     public init(path indexes: Any...) {
-        self.type = .Path(indexes)
+        self.type = .path(indexes)
     }
 }
 
 private extension JSON {
     subscript(type: KeyType) -> JSON {
         switch type {
-        case .String(let key): return self[key]
-        case .Int(let key): return self[key]
-        case .Path(let indexes): return self[indexes]
+        case .string(let key): return self[key]
+        case .int(let key): return self[key]
+        case .path(let indexes): return self[indexes]
         }
     }
 }
@@ -276,7 +276,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSDate or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<NSDate?>) -> NSDate? {
+    public subscript(key: JSONKey<Date?>) -> Date? {
         return self[key.type].nsDate
     }
 }
@@ -291,7 +291,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSURL or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<NSURL?>) -> NSURL? {
+    public subscript(key: JSONKey<URL?>) -> URL? {
         return self[key.type].nsURL
     }
 }

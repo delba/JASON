@@ -38,7 +38,7 @@ internal extension NSArray {
 }
 
 internal extension Dictionary {
-    func reduceValues <T: Any>(transform: (value: Value) -> T) -> [Key: T] {
+    func reduceValues <T: Any>(_ transform: (value: Value) -> T) -> [Key: T] {
         return reduce([Key: T]()) { (dictionary, kv) in
             var dictionary = dictionary
             dictionary[kv.0] = transform(value: kv.1)

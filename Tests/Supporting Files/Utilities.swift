@@ -25,25 +25,25 @@
 import XCTest
 
 internal extension XCTestCase {
-    func AssertEqualDictionaries(lhs: [String: AnyObject], _ rhs: [String: AnyObject]) {
+    func AssertEqualDictionaries(_ lhs: [String: AnyObject], _ rhs: [String: AnyObject]) {
         XCTAssertEqual(NSDictionary(dictionary: lhs), NSDictionary(dictionary: rhs))
     }
 
-    func AssertEqualArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
+    func AssertEqualArrays(_ lhs: [AnyObject], _ rhs: [AnyObject]) {
         XCTAssertEqual(NSArray(array: lhs), NSArray(array: rhs))
     }
 
-    func AssertEqualUnorderedArrays(lhs: [AnyObject], _ rhs: [AnyObject]) {
+    func AssertEqualUnorderedArrays(_ lhs: [AnyObject], _ rhs: [AnyObject]) {
         let array = NSArray(array: rhs)
 
         for object in lhs {
-            XCTAssert(array.containsObject(object))
+            XCTAssert(array.contains(object))
         }
     }
 
-    func AssertEqualOptionals<T: Equatable>(lhs: T?, _ rhs: T?) {
+    func AssertEqualOptionals<T: Equatable>(_ lhs: T?, _ rhs: T?) {
         switch (lhs, rhs) {
-        case let (.Some(lhs), .Some(rhs)):
+        case let (.some(lhs), .some(rhs)):
             XCTAssertEqual(lhs, rhs)
         case (nil, nil):
             XCTAssertEqual(true, true) // meh

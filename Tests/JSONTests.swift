@@ -33,10 +33,10 @@ class JSONTests: XCTestCase {
     }
 
     func testInitWithData() {
-        if let path = NSBundle(forClass: JSONTests.self).pathForResource("shots", ofType: "json") {
-            let data: NSData?
+        if let path = Bundle(for: JSONTests.self).path(forResource: "shots", ofType: "json") {
+            let data: Data?
             do {
-                data = try NSData(contentsOfFile: path, options: [])
+                data = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
             } catch _ {
                 data = nil
             }
@@ -53,7 +53,7 @@ class JSONTests: XCTestCase {
             "age": 17
         ]
 
-        json[42]
+        _ = json[42]
     }
 
     func testSubscriptWithInt() {

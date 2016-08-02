@@ -49,7 +49,7 @@ extension JSONKeys {
     static let dictionaryJSON = JSONKey<[String: JSON]>("dictionaryJSON")
     static let optional_dictionaryJSON = JSONKey<[String: JSON]?>("optional_dictionaryJSON")
     static let json = JSONKey<JSON>("json")
-    static let date = JSONKey<NSDate?>("date")
+    static let date = JSONKey<Date?>("date")
 }
 
 class JSONKeyTests: XCTestCase {
@@ -80,8 +80,8 @@ class JSONKeyTests: XCTestCase {
         XCTAssertEqual(4.2, json[.optional_double])
         XCTAssertEqual(4.2, json[.float])
         XCTAssertEqual(4.2, json[.optional_float])
-        XCTAssertEqual(NSNumber(double: 4.2), json[.optional_nsNumber])
-        XCTAssertEqual(NSNumber(double: 4.2), json[.nsNumber])
+        XCTAssertEqual(NSNumber(value: 4.2), json[.optional_nsNumber])
+        XCTAssertEqual(NSNumber(value: 4.2), json[.nsNumber])
         XCTAssertEqual(true, json[.bool])
         XCTAssertEqual(true, json[.optional_bool])
         AssertEqualArrays(["string", 42, 4.2, true], json[.array])
@@ -91,9 +91,9 @@ class JSONKeyTests: XCTestCase {
         
         JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        XCTAssertEqual(formatter.dateFromString("2016-04-12T13:29:32"), json[.date])
+        XCTAssertEqual(formatter.date(from: "2016-04-12T13:29:32"), json[.date])
     }
     
     func testPath() {

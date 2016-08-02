@@ -50,7 +50,7 @@ public struct JSON {
         - returns: the created JSON
     */
     public init(_ data: Data?) {
-        self.init(object: JSON.objectWithData(data: data))
+        self.init(object: JSON.objectWithData(data))
     }
 
     /**
@@ -120,12 +120,12 @@ extension JSON {
         var json = self
         
         for index in indexes {
-            if let string = index as? String, object = json.nsDictionary?[string] {
+            if let string = index as? String, let object = json.nsDictionary?[string] {
                 json = JSON(object)
                 continue
             }
             
-            if let int = index as? Int, object = json.nsArray?[safe: int] {
+            if let int = index as? Int, let object = json.nsArray?[safe: int] {
                 json = JSON(object)
                 continue
             }
@@ -150,7 +150,7 @@ private extension JSON {
 
         - returns: An instance of AnyObject or nil
     */
-    static func objectWithData(data: Data?) -> AnyObject? {
+    static func objectWithData(_ data: Data?) -> AnyObject? {
         guard let data = data else { return nil }
         
         return try? JSONSerialization.jsonObject(with: data, options: [])

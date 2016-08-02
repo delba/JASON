@@ -25,7 +25,7 @@
 // MARK: - StringLiteralConvertible
 
 /// Conforming types can be initialized with arbitrary string literals.
-extension JSON: StringLiteralConvertible {
+extension JSON: ExpressibleByStringLiteral {
     /**
         Creates an instance of JSON from a string literal
 
@@ -63,7 +63,7 @@ extension JSON: StringLiteralConvertible {
 // MARK: - IntegerLiteralConvertible
 
 /// Conforming types can be initialized with integer literals.
-extension JSON: IntegerLiteralConvertible {
+extension JSON: ExpressibleByIntegerLiteral {
     /**
         Creates an instance of JSON from an integer literal.
 
@@ -79,7 +79,7 @@ extension JSON: IntegerLiteralConvertible {
 // MARK: - FloatLiteralConvertible
 
 /// Conforming types can be initialized with float literals.
-extension JSON: FloatLiteralConvertible {
+extension JSON: ExpressibleByFloatLiteral {
     /**
         Creates an instance of JSON from a float literal.
 
@@ -95,7 +95,7 @@ extension JSON: FloatLiteralConvertible {
 // MARK: - BooleanLiteralConvertible
 
 /// Conforming types can be initialized with the Boolean literals true and false.
-extension JSON: BooleanLiteralConvertible {
+extension JSON: ExpressibleByBooleanLiteral {
     /**
         Creates an instance of JSON from a boolean literal.
 
@@ -111,7 +111,7 @@ extension JSON: BooleanLiteralConvertible {
 // MARK: - DictionaryLiteralConvertible
 
 /// Conforming types can be initialized with dictionary literals.
-extension JSON: DictionaryLiteralConvertible {
+extension JSON: ExpressibleByDictionaryLiteral {
     /**
         Creates an instance of JSON from a dictionary literal.
 
@@ -133,7 +133,7 @@ extension JSON: DictionaryLiteralConvertible {
 // MARK: - ArrayLiteralConvertible
 
 /// Conforming types can be initialized with array literals.
-extension JSON: ArrayLiteralConvertible {
+extension JSON: ExpressibleByArrayLiteral {
     /**
         Creates an instance of JSON from an array literal.
 
@@ -149,7 +149,7 @@ extension JSON: ArrayLiteralConvertible {
 // MARK: - NilLiteralConvertible
 
 /// Conforming types can be initialized with nil.
-extension JSON: NilLiteralConvertible {
+extension JSON: ExpressibleByNilLiteral {
     /**
         Creates an instance of JSON from a nil literal.
 
