@@ -119,8 +119,8 @@ extension JSON: ExpressibleByDictionaryLiteral {
 
         - returns: An instance of JSON
     */
-    public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        var dictionary = [String: AnyObject]()
+    public init(dictionaryLiteral elements: (String, Any)...) {
+        var dictionary = [String: Any]()
 
         for (key, value) in elements {
             dictionary[key] = value
@@ -141,7 +141,7 @@ extension JSON: ExpressibleByArrayLiteral {
 
         - returns: An instance of JSON
     */
-    public init(arrayLiteral elements: AnyObject...) {
+    public init(arrayLiteral elements: Any...) {
         self.init(elements)
     }
 }

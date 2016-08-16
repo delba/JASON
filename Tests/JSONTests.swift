@@ -27,9 +27,9 @@ import JASON
 
 class JSONTests: XCTestCase {
     func testInitWithObject() {
-        let object: AnyObject = ["name": "Brandon Walsh"]
+        let object: Any = ["name": "Brandon Walsh"]
         let json = JSON(object)
-        AssertEqualDictionaries(object as! [String: AnyObject], json.dictionaryValue)
+        AssertEqualDictionaries(object as! [String: Any], json.dictionaryValue)
     }
 
     func testInitWithData() {

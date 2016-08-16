@@ -38,7 +38,7 @@ public struct JSON {
 
         - returns: the created JSON
     */
-    public init(_ object: AnyObject?) {
+    public init(_ object: Any?) {
         self.init(object: object)
     }
 
@@ -61,8 +61,8 @@ public struct JSON {
 
         - returns: the created JSON
     */
-    internal init(object: AnyObject?) {
-        self.object = object
+    internal init(object: Any?) {
+        self.object = object as AnyObject?
     }
 }
 
@@ -150,7 +150,7 @@ private extension JSON {
 
         - returns: An instance of AnyObject or nil
     */
-    static func objectWithData(_ data: Data?) -> AnyObject? {
+    static func objectWithData(_ data: Data?) -> Any? {
         guard let data = data else { return nil }
         
         return try? JSONSerialization.jsonObject(with: data, options: [])

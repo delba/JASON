@@ -30,7 +30,7 @@ internal extension NSArray {
 
         - returns: The element at the given index or nil
     */
-    @nonobjc subscript(safe index: Int) -> AnyObject? {
+    @nonobjc subscript(safe index: Int) -> Any? {
         guard index >= 0 && index < count else { return nil }
 
         return self[index]
@@ -38,10 +38,10 @@ internal extension NSArray {
 }
 
 internal extension Dictionary {
-    func reduceValues <T: Any>(_ transform: (value: Value) -> T) -> [Key: T] {
+    func reduceValues <T: Any>(_ transform: (Value) -> T) -> [Key: T] {
         return reduce([Key: T]()) { (dictionary, kv) in
             var dictionary = dictionary
-            dictionary[kv.0] = transform(value: kv.1)
+            dictionary[kv.0] = transform(kv.1)
             return dictionary
         }
     }

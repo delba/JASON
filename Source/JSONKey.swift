@@ -31,11 +31,11 @@ private enum KeyType {
 }
 
 public class JSONKeys {
-    private init() {}
+    fileprivate init() {}
 }
 
 public class JSONKey<ValueType>: JSONKeys {
-    private let type: KeyType
+    fileprivate let type: KeyType
     
     /**
      Creates a new instance of JSONKey.
