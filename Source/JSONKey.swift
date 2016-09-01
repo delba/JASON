@@ -30,11 +30,11 @@ private enum KeyType {
     case path([Any])
 }
 
-public class JSONKeys {
+open class JSONKeys {
     fileprivate init() {}
 }
 
-public class JSONKey<ValueType>: JSONKeys {
+open class JSONKey<ValueType>: JSONKeys {
     fileprivate let type: KeyType
     
     /**
