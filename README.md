@@ -261,7 +261,7 @@ $ brew install carthage
 To integrate **`JASON`** into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "delba/JASON" >= 2.2
+github "delba/JASON" >= 3.0
 ```
 
 #### CocoaPods
@@ -279,7 +279,7 @@ To integrate **`JASON`** into your Xcode project using CocoaPods, specify it in 
 ```ruby
 use_frameworks!
 
-pod 'JASON', '~> 2.2'
+pod 'JASON', '~> 3.0'
 ```
 
 ## License
