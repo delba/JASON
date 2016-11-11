@@ -22,29 +22,34 @@
 // SOFTWARE.
 //
 
+import JASON
+
+precedencegroup JASONPrecedence {
+    associativity: right
+    higherThan: AssignmentPrecedence
+}
+
 // MARK: - The <| operator
 
-infix operator <| {
-associativity right
-precedence 90
-}
+infix operator <| : JASONPrecedence
+
 
 /// Assigns the value if it is present and convertible to T
-public func <| <T: Any>(inout lhs: T, json: JSON) {
+public func <| <T: Any>( lhs: inout T, json: JSON) {
     if let value = json.object as? T {
         lhs = value
     }
 }
 
 /// Assigns the value if it is present and convertible to T
-public func <| <T: Any>(inout lhs: T?, json: JSON) {
+public func <| <T: Any>( lhs: inout T?, json: JSON) {
     if let value = json.object as? T {
         lhs = value
     }
 }
 
 /// Assigns the value if it is present and convertible to T
-public func <| <T: Any>(inout lhs: T!, json: JSON) {
+public func <| <T: Any>( lhs: inout T!, json: JSON) {
     if let value = json.object as? T {
         lhs = value
     }
@@ -52,45 +57,39 @@ public func <| <T: Any>(inout lhs: T!, json: JSON) {
 
 // MARK: - The <? operator
 
-infix operator <? {
-associativity right
-precedence 90
-}
+infix operator <? : JASONPrecedence
 
 /// Assigns the value or nil if not present/convertible to T
-public func <? <T: Any>(inout lhs: T?, json: JSON) {
+public func <? <T: Any>( lhs: inout T?, json: JSON) {
     lhs = json.object as? T
 }
 
 /// Assigns the value or nil if not present/convertible to T
-public func <? <T: Any>(inout lhs: T!, json: JSON) {
+public func <? <T: Any>( lhs: inout T!, json: JSON) {
     lhs = json.object as? T
 }
 
 // MARK: - The <! operator
 
-infix operator <! {
-associativity right
-precedence 90
-}
+infix operator <! : JASONPrecedence
 
 /// Assigns the value or a default value if not present/convertible to T
-public func <! <T: Any>(inout lhs: T, json: JSON) {
-    if let value = json.object as? T ?? JSON.defaultValueFor(T.self) {
+public func <! <T: Any>( lhs: inout T, json: JSON) {
+    if let value = json.object as? T ?? JSON.defaultValue(for: T.self) {
         lhs = value
     }
 }
 
 /// Assigns the value or a default value if not present/convertible to T
-public func <! <T: Any>(inout lhs: T?, json: JSON) {
-    if let value = json.object as? T ?? JSON.defaultValueFor(T.self) {
+public func <! <T: Any>( lhs: inout T?, json: JSON) {
+    if let value = json.object as? T ?? JSON.defaultValue(for: T.self) {
         lhs = value
     }
 }
 
 /// Assigns the value or a default value if not present/convertible to T
-public func <! <T: Any>(inout lhs: T!, json: JSON) {
-    if let value = json.object as? T ?? JSON.defaultValueFor(T.self) {
+public func <! <T: Any>( lhs: inout T!, json: JSON) {
+    if let value = json.object as? T ?? JSON.defaultValue(for: T.self) {
         lhs = value
     }
 }
@@ -105,7 +104,7 @@ private extension JSON {
      
      - returns: An instance of the given type or nil
      */
-    static func defaultValueFor<T: Any>(type: T.Type) -> T? {
+    static func defaultValue<T: Any>(for type: T.Type) -> T? {
         switch type {
         case is String.Type:
             return "" as? T
