@@ -131,7 +131,7 @@ extension JSON {
             }
             
             else {
-                json = JSON(nil)
+                json = JSON(object: nil)
                 break
             }
         }
