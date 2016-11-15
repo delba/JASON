@@ -33,18 +33,12 @@ class JSONTests: XCTestCase {
     }
 
     func testInitWithData() {
-        if let path = Bundle(for: JSONTests.self).path(forResource: "shots", ofType: "json") {
-            let data: Data?
-            do {
-                data = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
-            } catch _ {
-                data = nil
-            }
-            let json = JSON(data)
-            XCTAssertEqual("Create New Project", json[0]["title"].stringValue)
-        } else {
-            XCTFail("JASON.json doesn't exist.")
-        }
+        guard let path = Bundle(for: JSONTests.self).path(forResource: "shots", ofType: "json"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: path))
+            else { XCTFail("JASON.json doesn't exist."); return }
+        
+        let json = JSON(data)
+        XCTAssertEqual("Create New Project", json[0]["title"].stringValue)
     }
     
     func testSubscriptWithString() {
