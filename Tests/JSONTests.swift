@@ -41,6 +41,13 @@ class JSONTests: XCTestCase {
         XCTAssertEqual("Create New Project", json[0]["title"].stringValue)
     }
     
+    func testInitWithString() {
+        let string = "[{\"name\": \"Brandon Walsh\"}, {\"name\": \"Steve Sanders\"}]"
+        let json = JSON(string)
+        XCTAssertEqual("Brandon Walsh", json[path: 0, "name"].stringValue)
+        XCTAssertEqual("Steve Sanders", json[path: 1, "name"].stringValue)
+    }
+    
     func testSubscriptWithString() {
         let json: JSON = [
             "name": "Brandon Walsh",

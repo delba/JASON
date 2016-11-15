@@ -27,8 +27,8 @@ import JASON
 
 class LiteralConvertibleTests: XCTestCase {
     func testStringLiteralConvertible() {
-        let json: JSON = "Brandon Walsh"
-        XCTAssertEqual("Brandon Walsh", json.stringValue)
+        let json: JSON = "{ \"name\": \"Brandon Walsh\" }"
+        XCTAssertEqual("Brandon Walsh", json["name"].stringValue)
     }
 
     func testIntegerLiteralConvertible() {
