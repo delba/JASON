@@ -42,7 +42,7 @@ extension JSON {
 
 extension JSON {
     /// The value as a 64-bit signed integer or nil if not present/convertible
-    public var int: Int? { return object as? Int }
+    public var int: Int? { return nsNumber?.intValue }
     /// The value as a 64-bit signed integer or 0 if not present/convertible
     public var intValue: Int { return int ?? 0 }
 }
@@ -51,12 +51,12 @@ extension JSON {
 
 extension JSON {
     /// The value as a 64-bit floating-point number or nil if not present/convertible
-    public var double: Double? { return object as? Double }
+    public var double: Double? { return nsNumber?.doubleValue }
     /// The value as a 64-bit floating-point number or 0.0 if not present/convertible
     public var doubleValue: Double { return double ?? 0 }
 
     /// The value as a 32-bit floating-point number or nil if not present/convertible
-    public var float: Float? { return object as? Float }
+    public var float: Float? { return nsNumber?.floatValue }
     /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
     public var floatValue: Float { return float ?? 0 }
     
@@ -66,7 +66,7 @@ extension JSON {
     public var nsNumberValue: NSNumber { return nsNumber ?? 0 }
     
     /// The value as a CGFloat or nil if not present/convertible
-    public var cgFloat: CGFloat? { return object as? CGFloat }
+    public var cgFloat: CGFloat? { return nsNumber != nil ? CGFloat(nsNumber!) : nil }
     /// The value as a CGFloat or 0.0 if not present/convertible
     public var cgFloatValue: CGFloat { return cgFloat ?? 0 }
 }
