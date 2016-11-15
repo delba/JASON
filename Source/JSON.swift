@@ -153,7 +153,7 @@ private extension JSON {
     static func objectWithData(_ data: Data?) -> Any? {
         guard let data = data else { return nil }
         
-        return try? JSONSerialization.jsonObject(with: data, options: [])
+        return try? JSONSerialization.jsonObject(with: data)
     }
 }
 
