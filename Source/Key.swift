@@ -23,8 +23,6 @@
 //
 
 fileprivate enum Type {
-    case string(Swift.String)
-    case int(Swift.Int)
     case path([Any])
 }
 
