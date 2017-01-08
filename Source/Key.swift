@@ -22,9 +22,7 @@
 // SOFTWARE.
 //
 
-// MARK: - Key
-
-private enum KeyType {
+fileprivate enum Type {
     case string(Swift.String)
     case int(Swift.Int)
     case path([Any])
@@ -35,7 +33,7 @@ open class Keys {
 }
 
 open class Key<ValueType>: Keys {
-    fileprivate let type: KeyType
+    fileprivate let type: Type
     
     /**
      Creates a new instance of Key.
@@ -72,7 +70,7 @@ open class Key<ValueType>: Keys {
 }
 
 private extension JSON {
-    subscript(type: KeyType) -> JSON {
+    subscript(type: Type) -> JSON {
         switch type {
         case .string(let key): return self[key]
         case .int(let key): return self[key]
