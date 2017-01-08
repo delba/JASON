@@ -1,5 +1,5 @@
 //
-// JSONKeyTests.swift
+// KeyTests.swift
 //
 // Copyright (c) 2015-2016 Damien (http://delba.io)
 //
@@ -25,34 +25,34 @@
 import XCTest
 import JASON
 
-extension JSONKeys {
-    static let string = JSONKey<String>("string")
-    static let optional_string = JSONKey<String?>("optional_string")
-    static let int = JSONKey<Int>("int")
-    static let optional_int = JSONKey<Int?>("optional_int")
-    static let double = JSONKey<Double>("double")
-    static let optional_double = JSONKey<Double?>("optional_double")
-    static let float = JSONKey<Float>("float")
-    static let optional_float = JSONKey<Float?>("optional_float")
-    static let cgFloat = JSONKey<CGFloat>("float")
-    static let optional_cgFloat = JSONKey<CGFloat?>("float")
-    static let nsNumber = JSONKey<NSNumber>("float")
-    static let optional_nsNumber = JSONKey<NSNumber?>("optional_float")
-    static let bool = JSONKey<Bool>("bool")
-    static let optional_bool = JSONKey<Bool?>("optional_bool")
-    static let array = JSONKey<[AnyObject]>("array")
-    static let optional_array = JSONKey<[AnyObject]?>("optional_array")
-    static let dictionary = JSONKey<[String: AnyObject]>("dictionary")
-    static let optional_dictionary = JSONKey<[String: AnyObject]>("optional_dictionary")
-    static let arrayJSON = JSONKey<[JSON]>("arrayJSON")
-    static let optional_arrayJSON = JSONKey<[JSON]?>("optional_arrayJSON")
-    static let dictionaryJSON = JSONKey<[String: JSON]>("dictionaryJSON")
-    static let optional_dictionaryJSON = JSONKey<[String: JSON]?>("optional_dictionaryJSON")
-    static let json = JSONKey<JSON>("json")
-    static let date = JSONKey<Date?>("date")
+extension Keys {
+    static let string = Key<String>("string")
+    static let optional_string = Key<String?>("optional_string")
+    static let int = Key<Int>("int")
+    static let optional_int = Key<Int?>("optional_int")
+    static let double = Key<Double>("double")
+    static let optional_double = Key<Double?>("optional_double")
+    static let float = Key<Float>("float")
+    static let optional_float = Key<Float?>("optional_float")
+    static let cgFloat = Key<CGFloat>("float")
+    static let optional_cgFloat = Key<CGFloat?>("float")
+    static let nsNumber = Key<NSNumber>("float")
+    static let optional_nsNumber = Key<NSNumber?>("optional_float")
+    static let bool = Key<Bool>("bool")
+    static let optional_bool = Key<Bool?>("optional_bool")
+    static let array = Key<[AnyObject]>("array")
+    static let optional_array = Key<[AnyObject]?>("optional_array")
+    static let dictionary = Key<[String: AnyObject]>("dictionary")
+    static let optional_dictionary = Key<[String: AnyObject]>("optional_dictionary")
+    static let arrayJSON = Key<[JSON]>("arrayJSON")
+    static let optional_arrayJSON = Key<[JSON]?>("optional_arrayJSON")
+    static let dictionaryJSON = Key<[String: JSON]>("dictionaryJSON")
+    static let optional_dictionaryJSON = Key<[String: JSON]?>("optional_dictionaryJSON")
+    static let json = Key<JSON>("json")
+    static let date = Key<Date?>("date")
 }
 
-class JSONKeyTests: XCTestCase {
+class KeyTests: XCTestCase {
     func testStaticSubscripts() {
         let json: JSON = [
             "string": "string",
@@ -106,8 +106,8 @@ class JSONKeyTests: XCTestCase {
             ]
         ]
         
-        let name = JSONKey<String>(path: "user", "name")
-        let nickname = JSONKey<String>(path: "user", "nicknames", 0)
+        let name = Key<String>(path: "user", "name")
+        let nickname = Key<String>(path: "user", "nicknames", 0)
         XCTAssertEqual("Jason", json[name])
         XCTAssertEqual("J", json[nickname])
     }

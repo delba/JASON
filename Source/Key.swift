@@ -1,5 +1,5 @@
 //
-// JSONKey.swift
+// Key.swift
 //
 // Copyright (c) 2015-2016 Damien (http://delba.io)
 //
@@ -22,7 +22,7 @@
 // SOFTWARE.
 //
 
-// MARK: - JSONKey
+// MARK: - Key
 
 private enum KeyType {
     case string(Swift.String)
@@ -30,41 +30,41 @@ private enum KeyType {
     case path([Any])
 }
 
-open class JSONKeys {
+open class Keys {
     fileprivate init() {}
 }
 
-open class JSONKey<ValueType>: JSONKeys {
+open class Key<ValueType>: Keys {
     fileprivate let type: KeyType
     
     /**
-     Creates a new instance of JSONKey.
+     Creates a new instance of Key.
      
      - parameter key: A string.
      
-     - returns: A new instance of JSONKey.
+     - returns: A new instance of Key.
      */
     public init(_ key: String) {
         self.type = .string(key)
     }
     
     /**
-     Creates a new instance of JSONKey.
+     Creates a new instance of Key.
      
      - parameter key: An integer.
      
-     - returns: A new instance of JSONKey.
+     - returns: A new instance of Key.
      */
     public init(_ key: Int) {
         self.type = .int(key)
     }
     
     /**
-     Creates a new instance of JSONKey.
+     Creates a new instance of Key.
      
      - parameter key: Any
      
-     - returns: A new instance of JSONKey.
+     - returns: A new instance of Key.
      */
     public init(path indexes: Any...) {
         self.type = .path(indexes)
@@ -91,7 +91,7 @@ extension JSON {
      
      - returns: The value associated with the given key as JSON.
      */
-    public subscript(key: JSONKey<JSON>) -> JSON {
+    public subscript(key: Key<JSON>) -> JSON {
         return self[key.type]
     }
 }
@@ -106,7 +106,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a string or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<String?>) -> String? {
+    public subscript(key: Key<String?>) -> String? {
         return self[key.type].string
     }
     
@@ -117,7 +117,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a string or "" if not present/convertible.
      */
-    public subscript(key: JSONKey<String>) -> String {
+    public subscript(key: Key<String>) -> String {
         return self[key.type].stringValue
     }
 }
@@ -132,7 +132,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a 64-bit signed integer or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<Int?>) -> Int? {
+    public subscript(key: Key<Int?>) -> Int? {
         return self[key.type].int
     }
     
@@ -143,7 +143,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a 64-bit signed integer or 0 if not present/convertible.
      */
-    public subscript(key: JSONKey<Int>) -> Int {
+    public subscript(key: Key<Int>) -> Int {
         return self[key.type].intValue
     }
 }
@@ -158,7 +158,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a 64-bit floating-point number or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<Double?>) -> Double? {
+    public subscript(key: Key<Double?>) -> Double? {
         return self[key.type].double
     }
     
@@ -169,7 +169,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a 64-bit floating-point number or 0.0 if not present/convertible.
      */
-    public subscript(key: JSONKey<Double>) -> Double {
+    public subscript(key: Key<Double>) -> Double {
         return self[key.type].doubleValue
     }
     
@@ -180,7 +180,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a 32-bit floating-point number or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<Float?>) -> Float? {
+    public subscript(key: Key<Float?>) -> Float? {
         return self[key.type].float
     }
     
@@ -191,7 +191,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a 32-bit floating-point number or 0.0 if not present/convertible.
      */
-    public subscript(key: JSONKey<Float>) -> Float {
+    public subscript(key: Key<Float>) -> Float {
         return self[key.type].floatValue
     }
     
@@ -202,7 +202,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSNumber or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<NSNumber?>) -> NSNumber? {
+    public subscript(key: Key<NSNumber?>) -> NSNumber? {
         return self[key.type].nsNumber
     }
     
@@ -213,7 +213,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSNumber or 0 if not present/convertible.
      */
-    public subscript(key: JSONKey<NSNumber>) -> NSNumber {
+    public subscript(key: Key<NSNumber>) -> NSNumber {
         return self[key.type].nsNumberValue
     }
     
@@ -224,7 +224,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a CGFloat or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<CGFloat?>) -> CGFloat? {
+    public subscript(key: Key<CGFloat?>) -> CGFloat? {
         return self[key.type].cgFloat
     }
     
@@ -235,7 +235,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a CGFloat or 0.0 if not present/convertible.
      */
-    public subscript(key: JSONKey<CGFloat>) -> CGFloat {
+    public subscript(key: Key<CGFloat>) -> CGFloat {
         return self[key.type].cgFloatValue
     }
 }
@@ -250,7 +250,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a Bool or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<Bool?>) -> Bool? {
+    public subscript(key: Key<Bool?>) -> Bool? {
         return self[key.type].bool
     }
     
@@ -261,7 +261,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a Bool or false if not present/convertible.
      */
-    public subscript(key: JSONKey<Bool>) -> Bool {
+    public subscript(key: Key<Bool>) -> Bool {
         return self[key.type].boolValue
     }
 }
@@ -276,7 +276,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSDate or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<Date?>) -> Date? {
+    public subscript(key: Key<Date?>) -> Date? {
         return self[key.type].nsDate
     }
 }
@@ -291,7 +291,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSURL or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<URL?>) -> URL? {
+    public subscript(key: Key<URL?>) -> URL? {
         return self[key.type].nsURL
     }
 }
@@ -306,7 +306,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a dictionary or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<[String: AnyObject]?>) -> [String: AnyObject]? {
+    public subscript(key: Key<[String: AnyObject]?>) -> [String: AnyObject]? {
         return self[key.type].dictionary
     }
     
@@ -317,7 +317,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a dictionary or an empty dictionary if not present/convertible.
      */
-    public subscript(key: JSONKey<[String: AnyObject]>) -> [String: AnyObject] {
+    public subscript(key: Key<[String: AnyObject]>) -> [String: AnyObject] {
         return self[key.type].dictionaryValue
     }
     
@@ -328,7 +328,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a dictionary or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<[String: JSON]?>) -> [String: JSON]? {
+    public subscript(key: Key<[String: JSON]?>) -> [String: JSON]? {
         return self[key.type].jsonDictionary
     }
     
@@ -339,7 +339,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a dictionary or an empty dictionary if not present/convertible.
      */
-    public subscript(key: JSONKey<[String: JSON]>) -> [String: JSON] {
+    public subscript(key: Key<[String: JSON]>) -> [String: JSON] {
         return self[key.type].jsonDictionaryValue
     }
     /**
@@ -349,7 +349,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a dictionary or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<NSDictionary?>) -> NSDictionary? {
+    public subscript(key: Key<NSDictionary?>) -> NSDictionary? {
         return self[key.type].nsDictionary
     }
     
@@ -360,7 +360,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSDictionary or an empty NSDictionary if not present/convertible.
      */
-    public subscript(key: JSONKey<NSDictionary>) -> NSDictionary {
+    public subscript(key: Key<NSDictionary>) -> NSDictionary {
         return self[key.type].nsDictionaryValue
     }
 }
@@ -375,7 +375,7 @@ extension JSON {
      
      - returns: The value associated with the given key as an array or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<[AnyObject]?>) -> [AnyObject]? {
+    public subscript(key: Key<[AnyObject]?>) -> [AnyObject]? {
         return self[key.type].array
     }
     
@@ -386,7 +386,7 @@ extension JSON {
      
      - returns: The value associated with the given key as an array or an empty array if not present/convertible.
      */
-    public subscript(key: JSONKey<[AnyObject]>) -> [AnyObject] {
+    public subscript(key: Key<[AnyObject]>) -> [AnyObject] {
         return self[key.type].arrayValue
     }
     
@@ -397,7 +397,7 @@ extension JSON {
      
      - returns: The value associated with the given key as an array or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<[JSON]?>) -> [JSON]? {
+    public subscript(key: Key<[JSON]?>) -> [JSON]? {
         return self[key.type].jsonArray
     }
     
@@ -408,7 +408,7 @@ extension JSON {
      
      - returns: The value associated with the given key as an array or an empty array if not present/convertible.
      */
-    public subscript(key: JSONKey<[JSON]>) -> [JSON] {
+    public subscript(key: Key<[JSON]>) -> [JSON] {
         return self[key.type].jsonArrayValue
     }
     
@@ -419,7 +419,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSArray or nil if not present/convertible.
      */
-    public subscript(key: JSONKey<NSArray?>) -> NSArray? {
+    public subscript(key: Key<NSArray?>) -> NSArray? {
         return self[key.type].nsArray
     }
     
@@ -430,7 +430,7 @@ extension JSON {
      
      - returns: The value associated with the given key as a NSArray or an empty NSArray if not present/convertible.
      */
-    public subscript(key: JSONKey<NSArray>) -> NSArray {
+    public subscript(key: Key<NSArray>) -> NSArray {
         return self[key.type].nsArrayValue
     }
 }
