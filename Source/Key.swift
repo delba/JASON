@@ -22,8 +22,21 @@
 // SOFTWARE.
 //
 
-fileprivate enum Type {
+fileprivate enum Type: CustomStringConvertible {
+    case string(String)
+    case int(Int)
     case path([Any])
+
+    var description: String {
+        switch self {
+        case let .string(key):
+            return String(describing: key)
+        case let .int(key):
+            return String(describing: key)
+        case let .path(key):
+            return String(describing: key)
+        }
+    }
 }
 
 open class Keys {
