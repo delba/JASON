@@ -45,6 +45,7 @@ open class Keys {
 
 open class Key<ValueType>: Keys {
     fileprivate let type: Type
+    fileprivate let optional: Bool
     
     /**
      Creates a new instance of Key.
@@ -53,8 +54,9 @@ open class Key<ValueType>: Keys {
      
      - returns: A new instance of Key.
      */
-    public init(_ key: String) {
+    public init(_ key: String, optional: Bool = false) {
         self.type = .string(key)
+        self.optional = optional
     }
     
     /**
@@ -64,8 +66,9 @@ open class Key<ValueType>: Keys {
      
      - returns: A new instance of Key.
      */
-    public init(_ key: Int) {
+    public init(_ key: Int, optional: Bool = false) {
         self.type = .int(key)
+        self.optional = optional
     }
     
     /**
@@ -75,8 +78,9 @@ open class Key<ValueType>: Keys {
      
      - returns: A new instance of Key.
      */
-    public init(path indexes: Any...) {
+    public init(path indexes: Any..., optional: Bool = false) {
         self.type = .path(indexes)
+        self.optional = optional
     }
 }
 
