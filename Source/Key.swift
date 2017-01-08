@@ -87,9 +87,9 @@ open class Key<ValueType>: Keys {
 private extension JSON {
     subscript(type: Type) -> JSON {
         switch type {
-        case .string(let key): return self[key]
-        case .int(let key): return self[key]
-        case .path(let indexes): return self[indexes]
+        case let .string(key):   return self[key]
+        case let .int(key):      return self[key]
+        case let .path(indexes): return self[indexes]
         }
     }
 }
