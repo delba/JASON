@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D54A9E91E3BC5FC004184F9 /* Throwable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9E81E3BC5FC004184F9 /* Throwable.swift */; };
+		6D54A9EA1E3BC5FC004184F9 /* Throwable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9E81E3BC5FC004184F9 /* Throwable.swift */; };
+		6D54A9EB1E3BC5FC004184F9 /* Throwable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9E81E3BC5FC004184F9 /* Throwable.swift */; };
+		6D54A9EC1E3BC5FC004184F9 /* Throwable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9E81E3BC5FC004184F9 /* Throwable.swift */; };
+		6D54A9EE1E3BC770004184F9 /* ThrowableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9ED1E3BC770004184F9 /* ThrowableTests.swift */; };
+		6D54A9EF1E3BC770004184F9 /* ThrowableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9ED1E3BC770004184F9 /* ThrowableTests.swift */; };
+		6D54A9F01E3BC770004184F9 /* ThrowableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54A9ED1E3BC770004184F9 /* ThrowableTests.swift */; };
 		6D7C688E1C8C5510005782C9 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C68841C8C5510005782C9 /* JASON.framework */; };
 		6D7C68B71C8C5539005782C9 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C68AD1C8C5539005782C9 /* JASON.framework */; };
 		6D7C68D31C8C5549005782C9 /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C68C91C8C5549005782C9 /* JASON.framework */; };
@@ -90,6 +97,8 @@
 		6D05C7E81B3EA79A0050416C /* JASON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JASON.h; sourceTree = "<group>"; };
 		6D05C7F41B3EA79A0050416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D05C7FF1B3EA7BE0050416C /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		6D54A9E81E3BC5FC004184F9 /* Throwable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throwable.swift; sourceTree = "<group>"; };
+		6D54A9ED1E3BC770004184F9 /* ThrowableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrowableTests.swift; sourceTree = "<group>"; };
 		6D7C68841C8C5510005782C9 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7C688D1C8C5510005782C9 /* JASON iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JASON iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7C68A01C8C5528005782C9 /* JASON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JASON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +208,7 @@
 				6DE485501C98C9AE00D0EBD8 /* LiteralConvertible.swift */,
 				6DE485411C98C87200D0EBD8 /* Properties.swift */,
 				6DE4855A1C98E00B00D0EBD8 /* SequenceType.swift */,
+				6D54A9E81E3BC5FC004184F9 /* Throwable.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -212,6 +222,7 @@
 				6DC2598E1CADB4C6004E47C6 /* LiteralConvertibleTests.swift */,
 				6DC259961CADB4E2004E47C6 /* PropertiesTests.swift */,
 				6DC2599A1CADB4F1004E47C6 /* SequenceTypeTests.swift */,
+				6D54A9ED1E3BC770004184F9 /* ThrowableTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -520,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE485511C98C9AE00D0EBD8 /* LiteralConvertible.swift in Sources */,
+				6D54A9E91E3BC5FC004184F9 /* Throwable.swift in Sources */,
 				6DE485421C98C87200D0EBD8 /* Properties.swift in Sources */,
 				6DE485471C98C8E800D0EBD8 /* Utilities.swift in Sources */,
 				6D7C68E01C8C558F005782C9 /* JSON.swift in Sources */,
@@ -534,6 +546,7 @@
 			files = (
 				6DC2598F1CADB4C6004E47C6 /* LiteralConvertibleTests.swift in Sources */,
 				6DC259971CADB4E2004E47C6 /* PropertiesTests.swift in Sources */,
+				6D54A9EE1E3BC770004184F9 /* ThrowableTests.swift in Sources */,
 				6DC259871CADB4A4004E47C6 /* JSONTests.swift in Sources */,
 				6DC2599B1CADB4F1004E47C6 /* SequenceTypeTests.swift in Sources */,
 				6DC2599F1CADB7F0004E47C6 /* Utilities.swift in Sources */,
@@ -546,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE485541C98C9AE00D0EBD8 /* LiteralConvertible.swift in Sources */,
+				6D54A9EC1E3BC5FC004184F9 /* Throwable.swift in Sources */,
 				6DE485451C98C87200D0EBD8 /* Properties.swift in Sources */,
 				6DE4854A1C98C8E800D0EBD8 /* Utilities.swift in Sources */,
 				6D7C68E11C8C5590005782C9 /* JSON.swift in Sources */,
@@ -559,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE485531C98C9AE00D0EBD8 /* LiteralConvertible.swift in Sources */,
+				6D54A9EB1E3BC5FC004184F9 /* Throwable.swift in Sources */,
 				6DE485441C98C87200D0EBD8 /* Properties.swift in Sources */,
 				6DE485491C98C8E800D0EBD8 /* Utilities.swift in Sources */,
 				6D7C68E21C8C5593005782C9 /* JSON.swift in Sources */,
@@ -573,6 +588,7 @@
 			files = (
 				6DC259911CADB4C6004E47C6 /* LiteralConvertibleTests.swift in Sources */,
 				6DC259991CADB4E2004E47C6 /* PropertiesTests.swift in Sources */,
+				6D54A9F01E3BC770004184F9 /* ThrowableTests.swift in Sources */,
 				6DC259891CADB4A4004E47C6 /* JSONTests.swift in Sources */,
 				6DC2599D1CADB4F1004E47C6 /* SequenceTypeTests.swift in Sources */,
 				6DC259A11CADB7F0004E47C6 /* Utilities.swift in Sources */,
@@ -585,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE485521C98C9AE00D0EBD8 /* LiteralConvertible.swift in Sources */,
+				6D54A9EA1E3BC5FC004184F9 /* Throwable.swift in Sources */,
 				6DE485431C98C87200D0EBD8 /* Properties.swift in Sources */,
 				6DE485481C98C8E800D0EBD8 /* Utilities.swift in Sources */,
 				6D7C68E31C8C5594005782C9 /* JSON.swift in Sources */,
@@ -599,6 +616,7 @@
 			files = (
 				6DC259901CADB4C6004E47C6 /* LiteralConvertibleTests.swift in Sources */,
 				6DC259981CADB4E2004E47C6 /* PropertiesTests.swift in Sources */,
+				6D54A9EF1E3BC770004184F9 /* ThrowableTests.swift in Sources */,
 				6DC259881CADB4A4004E47C6 /* JSONTests.swift in Sources */,
 				6DC2599C1CADB4F1004E47C6 /* SequenceTypeTests.swift in Sources */,
 				6DC259A01CADB7F0004E47C6 /* Utilities.swift in Sources */,

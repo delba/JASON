@@ -25,7 +25,7 @@
 import XCTest
 import JASON
 
-extension Keys {
+fileprivate extension Keys {
     static let string = Key<String>("string")
     static let optional_string = Key<String?>("optional_string")
     static let int = Key<Int>("int")
@@ -53,25 +53,25 @@ extension Keys {
 }
 
 class KeyTests: XCTestCase {
+    let json: JSON = [
+        "string": "string",
+        "optional_string": "string",
+        "int": 42,
+        "optional_int": 42,
+        "double": 4.2,
+        "optional_double": 4.2,
+        "float": 4.2,
+        "optional_float": 4.2,
+        "bool": true,
+        "optional_bool": true,
+        "array": ["string", 42, 4.2, true],
+        "optional_array": ["string", 42, 4.2, true],
+        "dictionary": ["string": 42],
+        "optional_dictionary": ["string": 42],
+        "date": "2016-04-12T13:29:32"
+    ]
+
     func testStaticSubscripts() {
-        let json: JSON = [
-            "string": "string",
-            "optional_string": "string",
-            "int": 42,
-            "optional_int": 42,
-            "double": 4.2,
-            "optional_double": 4.2,
-            "float": 4.2,
-            "optional_float": 4.2,
-            "bool": true,
-            "optional_bool": true,
-            "array": ["string", 42, 4.2, true],
-            "optional_array": ["string", 42, 4.2, true],
-            "dictionary": ["string": 42],
-            "optional_dictionary": ["string": 42],
-            "date": "2016-04-12T13:29:32"
-        ]
-        
         XCTAssertEqual("string", json[.string])
         XCTAssertEqual("string", json[.optional_string])
         XCTAssertEqual(42, json[.int])
@@ -110,5 +110,31 @@ class KeyTests: XCTestCase {
         let nickname = Key<String>(path: "user", "nicknames", 0)
         XCTAssertEqual("Jason", json[name])
         XCTAssertEqual("J", json[nickname])
+    }
+
+    func testThrowable() {
+        do {
+            let string = try json.get(.string)
+            XCTAssertEqual("string", string)
+
+            // XCTAssertEqual("string", json[.string])
+            // XCTAssertEqual("string", json[.optional_string])
+            // XCTAssertEqual(42, json[.int])
+            // XCTAssertEqual(42, json[.optional_int])
+            // XCTAssertEqual(4.2, json[.double])
+            // XCTAssertEqual(4.2, json[.optional_double])
+            // XCTAssertEqual(4.2, json[.float])
+            // XCTAssertEqual(4.2, json[.optional_float])
+            // XCTAssertEqual(NSNumber(value: 4.2), json[.optional_nsNumber])
+            // XCTAssertEqual(NSNumber(value: 4.2), json[.nsNumber])
+            // XCTAssertEqual(true, json[.bool])
+            // XCTAssertEqual(true, json[.optional_bool])
+            // AssertEqualArrays(["string", 42, 4.2, true], json[.array])
+            // AssertEqualArrays(["string", 42, 4.2, true], json[.optional_array]!)
+            // AssertEqualDictionaries(["string": 42], json[.dictionary])
+            // AssertEqualDictionaries(["string": 42], json[.optional_dictionary])
+        } catch {
+            print(error)
+        }
     }
 }
