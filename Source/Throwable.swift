@@ -34,49 +34,13 @@ extension JSON {
 
         return value
     }
-    
-    // public func get(_ key: JASON.Key<String>) throws -> String {
-    //     guard let object = self[key.type].object else {
-    //         throw Error.missing(key)
-    //     }
 
-    //     guard let value = object as? String else {
-    //         throw Error.casting(key)
-    //     }
-
-    //     return value
-    // }
-
-    public func get(_ key: JASON.Key<Int>) throws -> Int {
+    public func get<T>(_ key: JASON.Key<[T]>) throws -> [T] {
         guard let object = self[key.type].object else {
             throw Error.missing(key)
         }
 
-        guard let value = object as? Int else {
-            throw Error.casting(key)
-        }
-
-        return value
-    }
-
-    public func get(_ key: JASON.Key<Double>) throws -> Double {
-        guard let object = self[key.type].object else {
-            throw Error.missing(key)
-        }
-
-        guard let value = object as? Double else {
-            throw Error.casting(key)
-        }
-
-        return value
-    }
-
-    public func get(_ key: JASON.Key<Bool>) throws -> Bool {
-        guard let object = self[key.type].object else {
-            throw Error.missing(key)
-        }
-
-        guard let value = object as? Bool else {
+        guard let value = object as? [T] else {
             throw Error.casting(key)
         }
 
@@ -93,30 +57,6 @@ extension JSON {
         }
 
         return value.floatValue
-    }
-
-    public func get(_ key: JASON.Key<NSNumber>) throws -> NSNumber {
-        guard let object = self[key.type].object else {
-            throw Error.missing(key)
-        }
-
-        guard let value = object as? NSNumber else {
-            throw Error.casting(key)
-        }
-
-        return value
-    }
-
-    public func get(_ key: JASON.Key<[Any]>) throws -> [Any] {
-        guard let object = self[key.type].object else {
-            throw Error.missing(key)
-        }
-
-        guard let value = object as? [Any] else {
-            throw Error.casting(key)
-        }
-
-        return value
     }
 
     public func get(_ key: JASON.Key<[String: Any]>) throws -> [String: Any] {
@@ -153,5 +93,29 @@ extension JSON {
         }
 
         return JSON(object)
+    }
+
+    public func get(_ key: JASON.Key<[JSON]>) throws -> [JSON] {
+        guard let object = self[key.type].object else {
+            throw Error.missing(key)
+        }
+
+        guard let array = object as? [Any] else {
+            throw Error.casting(key)
+        }
+
+        return array.map { JSON($0) }
+    }
+
+    public func get(_ key: JASON.Key<[String: JSON]>) throws -> [String: JSON] {
+        guard let object = self[key.type].object else {
+            throw Error.missing(key)
+        }
+
+        guard let dictionary = object as? [String: Any] else {
+            throw Error.casting(key)
+        }
+
+        return dictionary.reduceValues { JSON($0) }
     }
 }

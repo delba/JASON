@@ -137,7 +137,7 @@ class ThrowableTests: XCTestCase {
             AssertEqualDictionaries(["string": 42], object.optionalDictionary!)
             print(object)
         } catch {
-            print(error)
+            XCTFail(error.localizedDescription)
         }
     }
 }
