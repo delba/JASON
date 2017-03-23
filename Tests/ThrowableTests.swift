@@ -57,6 +57,7 @@ fileprivate struct Object {
     let json: JSON
     let date: Date
     let ids: [String]
+    let nested: String
     // let cgFloat: CGFloat
     // var optionalCGFloat: CGFloat?
     // let arrayJSON: [JSON]
@@ -87,6 +88,7 @@ fileprivate struct Object {
         self.json                   = try  json.get("json")
         self.date                   = try  json.get("date")
         self.ids = try json.get("ids")
+        self.nested = try json.get(path: "nesting", "nested")
 
         // self.cgFloat                = try json.get(.cgFloat)
         // self.optionalCGFloat        = try json.get(.optionalCGFloat)
@@ -117,6 +119,7 @@ class ThrowableTests: XCTestCase {
         "date": "2016-04-12T13:29:32",
         "json": ["name": "Ale", "age": 25],
         "ids": ["abc", "def"],
+        "nesting": ["nested": "hello"]
     ]
 
     func testThrowable() {
@@ -138,6 +141,7 @@ class ThrowableTests: XCTestCase {
             AssertEqualArrays(["string", 42, 4.2, true], object.optionalArray!)
             AssertEqualDictionaries(["string": 42], object.dictionary)
             AssertEqualDictionaries(["string": 42], object.optionalDictionary!)
+            XCTAssertEqual("hello", object.nested)
             print(object)
         } catch {
             XCTFail(error.localizedDescription)

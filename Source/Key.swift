@@ -78,6 +78,10 @@ public class Key<ValueType>: Keys {
     public init(path indexes: Any...) {
         self.type = .path(indexes)
     }
+
+    public init(indexes: [Any]) {
+        self.type = .path(indexes)
+    }
 }
 
 internal extension JSON {

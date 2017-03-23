@@ -37,8 +37,8 @@ extension JSON {
         return try get(JASON.Key<T>(key))
     }
 
-    public func get<T>(path: Any...) throws -> T {
-        return try get(JASON.Key<T>(path: path))
+    public func get<T>(path indexes: Any...) throws -> T {
+        return try get(JASON.Key<T>(indexes: indexes))
     }
 
     // Float
@@ -51,8 +51,8 @@ extension JSON {
         return try get(JASON.Key<Float>(key))
     }
 
-    public func get(path: Any...) throws -> Float {
-        return try get(JASON.Key<Float>(path: path))
+    public func get(path indexes: Any...) throws -> Float {
+        return try get(JASON.Key<Float>(indexes: indexes))
     }
 
     // Dictionary
@@ -65,8 +65,8 @@ extension JSON {
         return try get(JASON.Key<[String: Any]>(key))
     }
 
-    public func get(path: Any...) throws -> [String: Any] {
-        return try get(JASON.Key<[String: Any]>(path: path))
+    public func get(path indexes: Any...) throws -> [String: Any] {
+        return try get(JASON.Key<[String: Any]>(indexes: indexes))
     }
 
     // Date
@@ -79,8 +79,8 @@ extension JSON {
         return try get(JASON.Key<Date>(key))
     }
 
-    public func get(path: Any...) throws -> Date {
-        return try get(JASON.Key<Date>(path: path))
+    public func get(path indexes: Any...) throws -> Date {
+        return try get(JASON.Key<Date>(indexes: indexes))
     }
 
     // JSON
@@ -93,8 +93,8 @@ extension JSON {
         return try get(JASON.Key<JSON>(key))
     }
 
-    public func get(path: Any...) throws -> JSON {
-        return try get(JASON.Key<JSON>(path: path))
+    public func get(path indexes: Any...) throws -> JSON {
+        return try get(JASON.Key<JSON>(indexes: indexes))
     }
 
     // Array JSON
@@ -107,8 +107,8 @@ extension JSON {
         return try get(JASON.Key<[JSON]>(key))
     }
 
-    public func get(path: Any...) throws -> [JSON] {
-        return try get(JASON.Key<[JSON]>(path: path))
+    public func get(path indexes: Any...) throws -> [JSON] {
+        return try get(JASON.Key<[JSON]>(indexes: indexes))
     }
 
     // Dictionary JSON
@@ -121,8 +121,8 @@ extension JSON {
         return try get(JASON.Key<[String: JSON]>(key))
     }
 
-    public func get(path: Any...) throws -> [String: JSON] {
-        return try get(JASON.Key<[String: JSON]>(path: path))
+    public func get(path indexes: Any...) throws -> [String: JSON] {
+        return try get(JASON.Key<[String: JSON]>(indexes: indexes))
     }
 
     public func get<T>(_ key: JASON.Key<T>) throws -> T {
