@@ -29,6 +29,102 @@ enum Error<T: Any>: Swift.Error, CustomStringConvertible {
 }
 
 extension JSON {
+    public func get<T>(_ key: String) throws -> T {
+        return try get(JASON.Key<T>(key))
+    }
+
+    public func get<T>(_ key: Int) throws -> T {
+        return try get(JASON.Key<T>(key))
+    }
+
+    public func get<T>(path: Any...) throws -> T {
+        return try get(JASON.Key<T>(path: path))
+    }
+
+    // Float
+
+    public func get(_ key: String) throws -> Float {
+        return try get(JASON.Key<Float>(key))
+    }
+
+    public func get(_ key: Int) throws -> Float {
+        return try get(JASON.Key<Float>(key))
+    }
+
+    public func get(path: Any...) throws -> Float {
+        return try get(JASON.Key<Float>(path: path))
+    }
+
+    // Dictionary
+
+    public func get(_ key: String) throws -> [String: Any] {
+        return try get(JASON.Key<[String: Any]>(key))
+    }
+
+    public func get(_ key: Int) throws -> [String: Any] {
+        return try get(JASON.Key<[String: Any]>(key))
+    }
+
+    public func get(path: Any...) throws -> [String: Any] {
+        return try get(JASON.Key<[String: Any]>(path: path))
+    }
+
+    // Date
+
+    public func get(_ key: String) throws -> Date {
+        return try get(JASON.Key<Date>(key))
+    }
+
+    public func get(_ key: Int) throws -> Date {
+        return try get(JASON.Key<Date>(key))
+    }
+
+    public func get(path: Any...) throws -> Date {
+        return try get(JASON.Key<Date>(path: path))
+    }
+
+    // JSON
+
+    public func get(_ key: String) throws -> JSON {
+        return try get(JASON.Key<JSON>(key))
+    }
+
+    public func get(_ key: Int) throws -> JSON {
+        return try get(JASON.Key<JSON>(key))
+    }
+
+    public func get(path: Any...) throws -> JSON {
+        return try get(JASON.Key<JSON>(path: path))
+    }
+
+    // Array JSON
+
+    public func get(_ key: String) throws -> [JSON] {
+        return try get(JASON.Key<[JSON]>(key))
+    }
+
+    public func get(_ key: Int) throws -> [JSON] {
+        return try get(JASON.Key<[JSON]>(key))
+    }
+
+    public func get(path: Any...) throws -> [JSON] {
+        return try get(JASON.Key<[JSON]>(path: path))
+    }
+
+    // Dictionary JSON
+
+    public func get(_ key: String) throws -> [String: JSON] {
+        return try get(JASON.Key<[String: JSON]>(key))
+    }
+
+    public func get(_ key: Int) throws -> [String: JSON] {
+        return try get(JASON.Key<[String: JSON]>(key))
+    }
+
+    public func get(path: Any...) throws -> [String: JSON] {
+        return try get(JASON.Key<[String: JSON]>(path: path))
+    }
+
     public func get<T>(_ key: JASON.Key<T>) throws -> T {
         guard let object = self[key.type].object else {
             throw Error.missingKey(key)

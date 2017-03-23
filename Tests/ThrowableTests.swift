@@ -56,6 +56,7 @@ fileprivate struct Object {
     let optionalDictionary: [String: Any]?
     let json: JSON
     let date: Date
+    let ids: [String]
     // let cgFloat: CGFloat
     // var optionalCGFloat: CGFloat?
     // let arrayJSON: [JSON]
@@ -67,24 +68,25 @@ fileprivate struct Object {
     init(json: JSON) throws {
         JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
 
-        self.string                 = try  json.get(.string)
-        self.optionalString         = try? json.get(.optionalString)
-        self.int                    = try  json.get(.int)
-        self.optionalInt            = try? json.get(.optionalInt)
-        self.double                 = try  json.get(.double)
-        self.optionalDouble         = try? json.get(.optionalDouble)
-        self.nsNumber               = try  json.get(.nsNumber)
-        self.optionalNSNumber       = try? json.get(.optionalNSNumber)
-        self.bool                   = try  json.get(.bool)
-        self.optionalBool           = try? json.get(.optionalBool)
-        self.float                  = try  json.get(.float)
-        self.optionalFloat          = try? json.get(.optionalFloat)
-        self.array                  = try  json.get(.array)
-        self.optionalArray          = try? json.get(.optionalArray)
-        self.dictionary             = try  json.get(.dictionary)
-        self.optionalDictionary     = try? json.get(.optionalDictionary)
-        self.json                   = try  json.get(.json)
-        self.date                   = try  json.get(.date)
+        self.string                 = try  json.get("string")
+        self.optionalString         = try? json.get("optional_string")
+        self.int                    = try  json.get("int")
+        self.optionalInt            = try? json.get("optional_int")
+        self.double                 = try  json.get("double")
+        self.optionalDouble         = try? json.get("optional_double")
+        self.nsNumber               = try  json.get("float")
+        self.optionalNSNumber       = try? json.get("optional_float")
+        self.bool                   = try  json.get("bool")
+        self.optionalBool           = try? json.get("optional_bool")
+        self.float                  = try  json.get("float")
+        self.optionalFloat          = try? json.get("optional_float")
+        self.array                  = try  json.get("array")
+        self.optionalArray          = try? json.get("optional_array")
+        self.dictionary             = try  json.get("dictionary")
+        self.optionalDictionary     = try? json.get("optional_dictionary")
+        self.json                   = try  json.get("json")
+        self.date                   = try  json.get("date")
+        self.ids = try json.get("ids")
 
         // self.cgFloat                = try json.get(.cgFloat)
         // self.optionalCGFloat        = try json.get(.optionalCGFloat)
@@ -113,7 +115,8 @@ class ThrowableTests: XCTestCase {
         "dictionary": ["string": 42],
         "optional_dictionary": ["string": 42],
         "date": "2016-04-12T13:29:32",
-        "json": ["name": "Ale", "age": 25]
+        "json": ["name": "Ale", "age": 25],
+        "ids": ["abc", "def"],
     ]
 
     func testThrowable() {
@@ -138,6 +141,7 @@ class ThrowableTests: XCTestCase {
             print(object)
         } catch {
             XCTFail(error.localizedDescription)
+            print(error)
         }
     }
 }
