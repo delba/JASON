@@ -66,7 +66,7 @@ extension JSON {
     public var nsNumberValue: NSNumber { return nsNumber ?? 0 }
     
     /// The value as a CGFloat or nil if not present/convertible
-    public var cgFloat: CGFloat? { return nsNumber != nil ? CGFloat(nsNumber!) : nil }
+    public var cgFloat: CGFloat? { return nsNumber != nil ? CGFloat(truncating: nsNumber!) : nil }
     /// The value as a CGFloat or 0.0 if not present/convertible
     public var cgFloatValue: CGFloat { return cgFloat ?? 0 }
 }
