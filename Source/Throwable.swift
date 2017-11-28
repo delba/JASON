@@ -26,6 +26,10 @@ enum Error<T: Any>: Swift.Error, CustomStringConvertible {
             return "Date formatting error '\(key.type)'"
         }
     }
+
+    var localizedDescription: String {
+        return description
+    }
 }
 
 extension JSON {
