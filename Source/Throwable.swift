@@ -75,16 +75,16 @@ extension JSON {
 
     // Date
 
-    public func get(_ key: String) throws -> Date {
-        return try get(JASON.Key<Date>(key))
+    public func get(_ key: String, formatter: DateFormatter? = nil) throws -> Date {
+        return try get(JASON.Key<Date>(key), formatter: formatter)
     }
 
-    public func get(_ key: Int) throws -> Date {
-        return try get(JASON.Key<Date>(key))
+    public func get(_ key: Int, formatter: DateFormatter? = nil) throws -> Date {
+        return try get(JASON.Key<Date>(key), formatter: formatter)
     }
 
-    public func get(path indexes: Any...) throws -> Date {
-        return try get(JASON.Key<Date>(indexes: indexes))
+    public func get(path indexes: Any..., formatter: DateFormatter? = nil) throws -> Date {
+        return try get(JASON.Key<Date>(indexes: indexes), formatter: formatter)
     }
 
     // JSON
@@ -193,7 +193,7 @@ extension JSON {
         return value
     }
 
-    public func get(_ key: JASON.Key<Date>) throws -> Date {
+    public func get(_ key: JASON.Key<Date>, formatter: DateFormatter? = nil) throws -> Date {
         guard let object = self[key.type].object else {
             throw Error.missingKey(key)
         }
@@ -205,8 +205,10 @@ extension JSON {
         guard let string = object as? String else {
             throw Error.castingValue(key)
         }
+        
+        let formatter = formatter ?? JSON.dateFormatter
 
-        guard let date = JSON.dateFormatter.date(from: string) else {
+        guard let date = formatter.date(from: string) else {
             throw Error.dateFormatting(key)
         }
 

@@ -148,4 +148,36 @@ class ThrowableTests: XCTestCase {
             print(error)
         }
     }
+    
+    func testDateParsing() {
+        JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let today = Date()
+        
+        let json = JSON([
+            "date": formatter.string(from: today),
+            "datetime": "2017-03-15T16:09:17.540Z",
+            "error": "jfdajfliaj",
+            "null": nil
+        ])
+        
+        let list: [JSON] = (0..<20).map { _ in return json }
+        
+        do {
+            let date: Date = try json.get("date", formatter: formatter)
+            print(date)
+            
+            let other: Date? = try? json.get("error", formatter: formatter)
+            let null: Date? = try? json.get("null", formatter: formatter)
+            let dates = list.map { json in
+                return try? json.get("date", formatter: formatter)
+            }
+            print(dates)
+        } catch {
+            XCTFail(error.localizedDescription)
+            print(error)
+        }
+    }
 }
