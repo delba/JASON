@@ -8,26 +8,26 @@
 
 import Foundation
 
-enum Error<T: Any>: Swift.Error, CustomStringConvertible {
+public enum Error<T: Any>: Swift.Error, CustomStringConvertible {
     case missingKey(JASON.Key<T>)
     case missingValue(JASON.Key<T>)
-    case castingValue(JASON.Key<T>)
-    case dateFormatting(JASON.Key<T>)
+    case castingValue(JASON.Key<T>, Any)
+    case dateFormatting(JASON.Key<T>, Any)
 
-    var description: String {
+    public var description: String {
         switch self {
         case let .missingKey(key):
             return "Missing key '\(key.type)'"
         case let .missingValue(key):
             return "Missing value '\(key.type)'"
-        case let .castingValue(key):
-            return "Casting error '\(key.type)'"
-        case let .dateFormatting(key):
-            return "Date formatting error '\(key.type)'"
+        case let .castingValue(key, value):
+            return "Casting error '\(key.type)'. Received \(value)"
+        case let .dateFormatting(key, value):
+            return "Date formatting error '\(key.type)'. Received \(value)"
         }
     }
 
-    var localizedDescription: String {
+    public var localizedDescription: String {
         return description
     }
 }
@@ -139,7 +139,7 @@ extension JSON {
         }
 
         guard let value = object as? T else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
 
         return value
@@ -155,7 +155,7 @@ extension JSON {
         }
 
         guard let value = object as? [T] else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
 
         return value
@@ -171,7 +171,7 @@ extension JSON {
         }
 
         guard let value = object as? NSNumber else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
 
         return value.floatValue
@@ -187,7 +187,7 @@ extension JSON {
         }
 
         guard let value = object as? [String: Any] else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
 
         return value
@@ -203,13 +203,13 @@ extension JSON {
         }
 
         guard let string = object as? String else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
         
         let formatter = formatter ?? JSON.dateFormatter
 
         guard let date = formatter.date(from: string) else {
-            throw Error.dateFormatting(key)
+            throw Error.dateFormatting(key, object)
         }
 
         return date
@@ -237,7 +237,7 @@ extension JSON {
         }
 
         guard let array = object as? [Any] else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
 
         return array.map { JSON($0) }
@@ -253,7 +253,7 @@ extension JSON {
         }
 
         guard let dictionary = object as? [String: Any] else {
-            throw Error.castingValue(key)
+            throw Error.castingValue(key, object)
         }
 
         return dictionary.reduceValues { JSON($0) }
