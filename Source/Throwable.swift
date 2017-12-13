@@ -12,7 +12,7 @@ public enum Error<T: Any>: Swift.Error, CustomStringConvertible {
     case missingKey(JASON.Key<T>)
     case missingValue(JASON.Key<T>)
     case castingValue(JASON.Key<T>, Any)
-    case dateFormatting(JASON.Key<T>, Any)
+    case dateFormatting(JASON.Key<T>, Any, String)
 
     public var description: String {
         switch self {
@@ -22,8 +22,8 @@ public enum Error<T: Any>: Swift.Error, CustomStringConvertible {
             return "Missing value '\(key.type)'"
         case let .castingValue(key, value):
             return "Casting error '\(key.type)'. Received \(value)"
-        case let .dateFormatting(key, value):
-            return "Date formatting error '\(key.type)'. Received \(value)"
+        case let .dateFormatting(key, value, format):
+            return "Date formatting error '\(key.type)'. Received \(value). Expected format \(format)"
         }
     }
 
@@ -209,7 +209,7 @@ extension JSON {
         let formatter = formatter ?? JSON.dateFormatter
 
         guard let date = formatter.date(from: string) else {
-            throw Error.dateFormatting(key, object)
+            throw Error.dateFormatting(key, object, formatter.dateFormat)
         }
 
         return date
