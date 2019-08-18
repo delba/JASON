@@ -33,14 +33,14 @@ extension JSON: Sequence {
         guard let array = nsArray else {
             return AnyIterator { nil }
         }
-        
+
         var index = 0
-        
+
         return AnyIterator {
-            guard let object = array[safe: index] else  { return nil }
-            
+            guard let object = array[safe: index] else { return nil }
+
             index += 1
-            
+
             return JSON(object)
         }
     }

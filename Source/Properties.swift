@@ -59,12 +59,12 @@ extension JSON {
     public var float: Float? { return nsNumber?.floatValue }
     /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
     public var floatValue: Float { return float ?? 0 }
-    
+
     /// The value as a NSNumber or nil if not present/convertible
     public var nsNumber: NSNumber? { return object as? NSNumber }
     /// The value as a NSNumber or 0 if not present/convertible
     public var nsNumberValue: NSNumber { return nsNumber ?? 0 }
-    
+
     /// The value as a CGFloat or nil if not present/convertible
     public var cgFloat: CGFloat? { return nsNumber != nil ? CGFloat(truncating: nsNumber!) : nil }
     /// The value as a CGFloat or 0.0 if not present/convertible
@@ -106,14 +106,14 @@ extension JSON {
     public var dictionary: [String: AnyObject]? { return object as? [String: AnyObject] }
     /// The value as a dictionary or an empty dictionary if not present/convertible
     public var dictionaryValue: [String: AnyObject] { return dictionary ?? [:] }
-    
+
     /// The value as a dictionary (NSDictionary) or nil if not present/convertible
     public var nsDictionary: NSDictionary? { return object as? NSDictionary }
     /// The value as a dictionary (NSDictionary) or an empty dictionary if not present/convertible
     public var nsDictionaryValue: NSDictionary { return nsDictionary ?? NSDictionary() }
-    
+
     /// The value as a dictionary or nil if not present/convertible
-    public var jsonDictionary: [String: JSON]? { return dictionary?.reduceValues{ JSON($0) }}
+    public var jsonDictionary: [String: JSON]? { return dictionary?.reduceValues { JSON($0) }}
     /// The value as a dictionary or an empty dictionary if not present/convertible
     public var jsonDictionaryValue: [String: JSON] { return jsonDictionary ?? [:] }
 }
@@ -125,14 +125,14 @@ extension JSON {
     public var array: [AnyObject]? { return object as? [AnyObject] }
     /// The value as an array or an empty array if not present/convertible
     public var arrayValue: [AnyObject] { return array ?? [] }
-    
+
     /// The value as an array (NSArray) or nil if not present/convertible
     public var nsArray: NSArray? { return object as? NSArray }
     /// The value as an array (NSArray) or an empty array if not present/convertible
     public var nsArrayValue: NSArray { return nsArray ?? NSArray() }
-    
+
     /// The value as an array or nil if not present/convertible
-    public var jsonArray: [JSON]? { return array?.map{ JSON($0) } }
+    public var jsonArray: [JSON]? { return array?.map { JSON($0) } }
     /// The value as an array or an empty array if not present/convertible
     public var jsonArrayValue: [JSON] { return jsonArray ?? [] }
 }

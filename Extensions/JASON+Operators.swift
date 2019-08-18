@@ -33,7 +33,6 @@ precedencegroup JASONPrecedence {
 
 infix operator <| : JASONPrecedence
 
-
 /// Assigns the value if it is present and convertible to T
 public func <| <T: Any>( lhs: inout T, json: JSON) {
     if let value = json.object as? T {

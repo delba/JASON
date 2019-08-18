@@ -36,18 +36,18 @@ class JSONTests: XCTestCase {
         guard let path = Bundle(for: JSONTests.self).path(forResource: "shots", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: path))
             else { XCTFail("JASON.json doesn't exist."); return }
-        
+
         let json = JSON(data)
         XCTAssertEqual("Create New Project", json[0]["title"].stringValue)
     }
-    
+
     func testInitWithString() {
         let string = "[{\"name\": \"Brandon Walsh\"}, {\"name\": \"Steve Sanders\"}]"
         let json = JSON(string)
         XCTAssertEqual("Brandon Walsh", json[path: 0, "name"].stringValue)
         XCTAssertEqual("Steve Sanders", json[path: 1, "name"].stringValue)
     }
-    
+
     func testSubscriptWithString() {
         let json: JSON = [
             "name": "Brandon Walsh",
@@ -70,7 +70,7 @@ class JSONTests: XCTestCase {
                 ]
             ]
         ]
-        
+
         XCTAssertEqual("Jason", json[path: "user", "name"].stringValue)
         XCTAssertEqual("J", json[path: "user", "nicknames", 0].stringValue)
     }

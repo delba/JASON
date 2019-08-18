@@ -71,7 +71,7 @@ class JSONKeyTests: XCTestCase {
             "optional_dictionary": ["string": 42],
             "date": "2016-04-12T13:29:32"
         ]
-        
+
         XCTAssertEqual("string", json[.string])
         XCTAssertEqual("string", json[.optional_string])
         XCTAssertEqual(42, json[.int])
@@ -88,14 +88,14 @@ class JSONKeyTests: XCTestCase {
         AssertEqualArrays(["string", 42, 4.2, true], json[.optional_array]!)
         AssertEqualDictionaries(["string": 42], json[.dictionary])
         AssertEqualDictionaries(["string": 42], json[.optional_dictionary])
-        
+
         JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        
+
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         XCTAssertEqual(formatter.date(from: "2016-04-12T13:29:32"), json[.date])
     }
-    
+
     func testPath() {
         let json: JSON = [
             "user": [
@@ -105,7 +105,7 @@ class JSONKeyTests: XCTestCase {
                 ]
             ]
         ]
-        
+
         let name = JSONKey<String>(path: "user", "name")
         let nickname = JSONKey<String>(path: "user", "nicknames", 0)
         XCTAssertEqual("Jason", json[name])

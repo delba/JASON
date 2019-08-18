@@ -32,13 +32,13 @@ extension DataRequest {
      - returns: A JASON.JSON object response serializer.
      */
     static public func JASONReponseSerializer() -> DataResponseSerializer<JASON.JSON> {
-        return DataResponseSerializer { _, _, data, error in 
+        return DataResponseSerializer { _, _, data, error in
             guard error == nil else { return .failure(error!) }
-            
+
             return .success(JASON.JSON(data))
         }
     }
-    
+
     /**
      Adds a handler to be called once the request has finished.
      
@@ -50,5 +50,5 @@ extension DataRequest {
     public func responseJASON(completionHandler: @escaping (DataResponse<JASON.JSON>) -> Void) -> Self {
         return response(responseSerializer: DataRequest.JASONReponseSerializer(), completionHandler: completionHandler)
     }
-    
+
 }

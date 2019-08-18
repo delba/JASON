@@ -96,10 +96,10 @@ class PropertiesTests: XCTestCase {
 
         XCTAssertNil(json["name"].float)
         XCTAssertEqual(Float(0), json["name"].floatValue)
-        
+
         XCTAssertEqual(NSNumber(value: 17), json["age"].nsNumber!)
         XCTAssertEqual(NSNumber(value: 17), json["age"].nsNumberValue)
-        
+
         XCTAssertEqual(CGFloat(17), json["age"].cgFloat!)
         XCTAssertEqual(CGFloat(17), json["age"].cgFloatValue)
     }
@@ -150,7 +150,7 @@ class PropertiesTests: XCTestCase {
         XCTAssertNil(json["name"].dictionary)
         AssertEqualDictionaries([String: AnyObject](), json["name"].dictionaryValue)
     }
-    
+
     func testJsonDictionary() {
         let json: JSON = [
             "name": "Brandon Walsh",
@@ -158,23 +158,23 @@ class PropertiesTests: XCTestCase {
                 "name": "Cindy Walsh"
             ]
         ]
-        
+
         var key: String
-        
+
         // Value is present and convertible
-        
+
         key = "mother"
         XCTAssertEqual("Cindy Walsh", json[key].jsonDictionary!["name"]!.string!)
         XCTAssertEqual("Cindy Walsh", json[key].jsonDictionaryValue["name"]!.stringValue)
-        
+
         // Value is not present
-        
+
         key = "father"
         XCTAssert(json[key].jsonDictionary == nil)
         XCTAssert(json[key].dictionaryValue.isEmpty)
-        
+
         // Value is not convertible
-        
+
         key = "name"
         XCTAssert(json[key].jsonDictionary == nil)
         XCTAssert(json[key].jsonDictionaryValue.isEmpty)
@@ -201,29 +201,29 @@ class PropertiesTests: XCTestCase {
         XCTAssertNil(json["name"].array)
         AssertEqualArrays([AnyObject](), json["name"].arrayValue)
     }
-    
+
     func testJsonArray() {
         let json: JSON = [
             "name": "Brandon Walsh",
             "friends": ["Steve Sanders", "Dylan McKay"]
         ]
-        
+
         // Value is present and convertible
-        
-        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArray!.map{$0.stringValue})
-        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArrayValue.map{$0.stringValue})
-        
+
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArray!.map {$0.stringValue})
+        AssertEqualArrays(["Steve Sanders", "Dylan McKay"], json["friends"].jsonArrayValue.map {$0.stringValue})
+
         // Value is not present
-        
+
         XCTAssert(json["romances"].jsonArray == nil)
         XCTAssert(json["romances"].jsonArrayValue.isEmpty)
-        
+
         // Value is not convertible
-        
+
         XCTAssert(json["name"].jsonArray == nil)
         XCTAssert(json["name"].jsonArrayValue.isEmpty)
     }
-    
+
     func testDate() {
         let formatter = DateFormatter()
         let json: JSON = [
@@ -233,44 +233,43 @@ class PropertiesTests: XCTestCase {
             "date4": "April 10, 2020",
             "invaliddate": "abc123"
         ]
-        
+
         // Value is present and convertible
-        
+
         JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         XCTAssertEqual(formatter.date(from: "2016-04-12T13:29:32"), json["date1"].nsDate)
-        
+
         JSON.dateFormatter.dateFormat = "dd-MM-yyyy"
         formatter.dateFormat = "dd-MM-yyyy"
         XCTAssertEqual(formatter.date(from: "16/04/2016"), json["date2"].nsDate)
         XCTAssertEqual(formatter.date(from: "05/11/2012"), json["date3"].nsDate)
-        
+
         JSON.dateFormatter.dateFormat = "MMMM dd, yyyy"
         formatter.dateFormat = "MMMM dd, yyyy"
         XCTAssertEqual(formatter.date(from: "April 10, 2020"), json["date4"].nsDate)
-        
+
         // Value is not present
         XCTAssertNil(json["invaliddate"].nsDate)
     }
-    
+
     func testUrl() {
         let json: JSON = [
             "valid": "https://github.com/delba/JASON",
             "invalid": "http://example.com/file[/].html",
             "empty": NSNull()
         ]
-        
+
         // Value is present and convertible
         XCTAssertNotNil(json["valid"].nsURL)
         XCTAssertNotNil(json["invalid"].nsURL) // Invalid url should be encoded
-        
+
         // Value is present but not convertible
         XCTAssertNil(json["empty"].nsURL)
-        
+
         // Value is not present
         XCTAssertNil(json["unkown"].nsURL)
-        
-        
+
     }
 
 }
