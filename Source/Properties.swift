@@ -22,6 +22,9 @@
 // SOFTWARE.
 //
 
+import Foundation
+import CoreGraphics
+
 // MARK: - JSON
 
 extension JSON {

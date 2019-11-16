@@ -1,5 +1,6 @@
+// swift-tools-version:5.0
 //
-// Utilities.swift
+// JSON.swift
 //
 // Copyright (c) 2015-2019 Damien (http://delba.io)
 //
@@ -22,29 +23,18 @@
 // SOFTWARE.
 //
 
-import Foundation
+import PackageDescription
 
-internal extension NSArray {
-    /**
-        Returns the element at the given index or nil if the index is out of bounds.
-
-        - parameter index: An integer
-
-        - returns: The element at the given index or nil
-    */
-    @nonobjc subscript(safe index: Int) -> Any? {
-        guard index >= 0 && index < count else { return nil }
-
-        return self[index]
-    }
-}
-
-internal extension Dictionary {
-    func reduceValues <T: Any>(_ transform: (Value) -> T) -> [Key: T] {
-        return reduce([Key: T]()) { (dictionary, kv) in
-            var dictionary = dictionary
-            dictionary[kv.0] = transform(kv.1)
-            return dictionary
-        }
-    }
-}
+let package = Package(
+    name: "JASON",
+    products: [
+        .library(
+            name: "JASON",
+            targets: ["JASON"]),
+    ],
+    targets: [
+        .target(
+            name: "JASON",
+            path: "Source")
+    ]
+)

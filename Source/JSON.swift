@@ -22,6 +22,8 @@
 // SOFTWARE.
 //
 
+import Foundation
+
 // MARK: - Initializers
 
 public struct JSON {

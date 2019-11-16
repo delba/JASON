@@ -22,6 +22,9 @@
 // SOFTWARE.
 //
 
+import Foundation
+import CoreGraphics
+
 // MARK: - JSONKey
 
 private enum KeyType {
